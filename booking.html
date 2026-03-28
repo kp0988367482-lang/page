@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>預約 1:1 諮詢 · SEOULMATE31</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@700;900&family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f0e0c;
+      --cream: #f5f0e8;
+      --gold: #c9a84c;
+      --red: #c0392b;
+      --mid: #6b6560;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: var(--cream);
+      font-family: 'Outfit', sans-serif;
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--ink);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--cream);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    .nav-back {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(245,240,232,0.6);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--cream); }
+
+    /* HERO */
+    .booking-hero {
+      background: var(--ink);
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+    }
+    .booking-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .booking-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--cream);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+    .booking-subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: rgba(245,240,232,0.55);
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.7;
+    }
+    .booking-price-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.6rem;
+      padding: 0.4rem 1.2rem;
+      border-radius: 2px;
+      margin-bottom: 0.5rem;
+    }
+    .booking-price-note {
+      font-size: 0.72rem;
+      color: rgba(245,240,232,0.45);
+    }
+
+    /* STEPS */
+    .steps-bar {
+      background: #1a1a18;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+    }
+    .step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-num.done {
+      background: var(--gold);
+      color: var(--ink);
+    }
+    .step-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(245,240,232,0.5);
+    }
+    .step.active .step-text { color: var(--cream); }
+    .step-arrow {
+      color: rgba(245,240,232,0.2);
+      font-size: 0.7rem;
+      padding: 0 0.3rem;
+    }
+
+    /* PAYMENT NOTICE */
+    .payment-notice {
+      max-width: 700px;
+      margin: 2rem auto 0;
+      padding: 0 1.5rem;
+    }
+    .notice-card {
+      background: white;
+      border: 1px solid rgba(15,14,12,0.1);
+      border-left: 3px solid var(--gold);
+      padding: 1.2rem 1.5rem;
+      border-radius: 2px;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .notice-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .notice-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+    .notice-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .notice-text a {
+      color: var(--red);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .notice-text a:hover { text-decoration: underline; }
+
+    /* CALENDLY EMBED */
+    .calendly-wrap {
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      padding: 0 1.5rem;
+    }
+    .calendly-inline-widget {
+      min-width: 320px;
+      height: 700px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    }
+
+    /* WHAT TO EXPECT */
+    .expect-section {
+      background: var(--ink);
+      padding: 3rem 2rem;
+    }
+    .expect-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .expect-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .expect-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .expect-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 1.2rem;
+      border-radius: 2px;
+    }
+    .expect-card-icon {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+    }
+    .expect-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 0.3rem;
+    }
+    .expect-card-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.74rem;
+      color: rgba(245,240,232,0.45);
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0a0908;
+      padding: 1.5rem 2rem;
+      text-align: center;
+    }
+    footer a {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(245,240,232,0.3);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--cream); }
+
+    @media (max-width: 600px) {
+      .steps-bar { gap: 0; }
+      .step { padding: 0.3rem 0.5rem; }
+      .step-text { font-size: 0.65rem; }
+      .calendly-inline-widget { height: 800px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">SEOULMATE31</a>
+    <a href="index.html" class="nav-back">← 返回首頁</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="booking-hero">
+    <div class="booking-tag">1:1 個人諮詢 · 30 分鐘</div>
+    <h1 class="booking-title">直接問我，<br>我給你答案</h1>
+    <p class="booking-subtitle">落地 / 租房 / 留學 / 電商 / 整形——<br>攻略解決不了的，直接跟我說。</p>
+    <div class="booking-price-badge">USD $79</div>
+    <div class="booking-price-note">30 分鐘 · Google Meet · 付款後選時間</div>
+  </div>
+
+  <!-- STEPS BAR -->
+  <div class="steps-bar">
+    <div class="step">
+      <div class="step-num done">1</div>
+      <span class="step-text">付款 $79</span>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step active">
+      <div class="step-num">2</div>
+      <span class="step-text">選擇時間</span>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <span class="step-text">收到確認信</span>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <span class="step-text">諮詢開始</span>
+    </div>
+  </div>
+
+  <!-- PAYMENT NOTICE -->
+  <div class="payment-notice">
+    <div class="notice-card">
+      <div class="notice-icon">⚠️</div>
+      <div>
+        <div class="notice-title">請先完成付款再選時間</div>
+        <div class="notice-text">
+          尚未付款？請先前往 <a href="https://paypal.me/HSIANGENTSAI/79" target="_blank">PayPal 付款 $79</a>，付款完成後再選擇下方時間。未付款的預約將不予確認。
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CALENDLY EMBED -->
+  <div class="calendly-wrap">
+    <div
+      class="calendly-inline-widget"
+      data-url="https://calendly.com/kp0988367482/30min?hide_gdpr_banner=1&primary_color=c9a84c"
+    ></div>
+  </div>
+
+  <!-- WHAT TO EXPECT -->
+  <div class="expect-section">
+    <div class="expect-inner">
+      <div class="expect-title">諮詢前你需要知道的事</div>
+      <div class="expect-grid">
+        <div class="expect-card">
+          <div class="expect-card-icon">📍</div>
+          <div class="expect-card-title">進行方式</div>
+          <div class="expect-card-text">Google Meet 視訊，預約確認後自動發送連結。</div>
+        </div>
+        <div class="expect-card">
+          <div class="expect-card-icon">🕐</div>
+          <div class="expect-card-title">時長</div>
+          <div class="expect-card-text">30 分鐘。建議提前準備好你的問題，效率最高。</div>
+        </div>
+        <div class="expect-card">
+          <div class="expect-card-icon">🌏</div>
+          <div class="expect-card-title">語言</div>
+          <div class="expect-card-text">中文（繁體）為主，可視情況切換英文。</div>
+        </div>
+        <div class="expect-card">
+          <div class="expect-card-icon">📋</div>
+          <div class="expect-card-title">可諮詢主題</div>
+          <div class="expect-card-text">落地 / 租房 / 留學 / 電商 / 整形 / 簽證規劃</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="index.html">← 返回 SEOULMATE31 首頁</a>
+  </footer>
+
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
