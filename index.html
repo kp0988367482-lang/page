@@ -1,0 +1,2188 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEOULMATE 31 — 居韓台灣人的指南</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --cream: #f5f0e8;
+    --warm: #f0e8d8;
+    --red: #c0392b;
+    --blue: #1a3a5c;
+    --gold: #c9a84c;
+    --mid: #8a8070;
+    --light-mid: #d4cfc4;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Outfit', 'Noto Sans KR', 'Noto Serif TC', sans-serif;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.5;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 64px;
+    background: rgba(245, 240, 232, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--light-mid);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.3rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+  }
+  .nav-logo span {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--red);
+    letter-spacing: 0.05em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 2.2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.18rem;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .nav-links a .nav-en {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    transition: color 0.2s;
+  }
+  .nav-links a .nav-zh {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover .nav-en { color: var(--red); }
+  .nav-links a:hover .nav-zh { color: var(--red); }
+
+  /* NAV DROPDOWN */
+  .nav-links > li {
+    position: relative;
+  }
+  .nav-links > li > a {
+    height: 64px;
+    justify-content: center;
+    padding: 0 0.2rem;
+  }
+  .nav-dropdown {
+    position: absolute;
+    top: 63px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: rgba(245, 240, 232, 0.98);
+    backdrop-filter: blur(20px);
+    border-top: 2px solid var(--red);
+    box-shadow: 0 12px 40px rgba(15,14,12,0.13);
+    padding: 1.8rem 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    white-space: nowrap;
+    z-index: 200;
+  }
+  .nav-links > li:hover .nav-dropdown {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-cols {
+    display: flex;
+    gap: 2.2rem;
+  }
+  .nav-dd-group {
+    min-width: 120px;
+  }
+  .nav-dd-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--light-mid);
+  }
+  .nav-dd-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .nav-dd-links a {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.76rem;
+    font-weight: 400;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: color 0.15s;
+    display: block;
+    padding: 0.12rem 0;
+  }
+  .nav-dd-links a:hover { color: var(--red); }
+
+  .nav-cta {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    background: var(--red);
+    color: white;
+    border: none;
+    padding: 0.65rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: #a02520; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    padding-top: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem 6rem 5rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-flag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+  .hero-flag-badge::before {
+    content: '';
+    display: inline-block;
+    width: 2.5rem;
+    height: 2px;
+    background: var(--red);
+  }
+  .hero-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(3.2rem, 6vw, 6.5rem);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.8rem;
+  }
+  .hero-title em {
+    font-style: italic;
+    font-family: 'DM Serif Display', serif;
+    color: var(--red);
+  }
+  .hero-sub {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--mid);
+    line-height: 1.85;
+    max-width: 420px;
+    margin-bottom: 3rem;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  .btn-primary {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    background: var(--ink);
+    color: var(--cream);
+    padding: 0.9rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--red); transform: translateY(-2px); }
+  .btn-outline {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    background: transparent;
+    color: var(--ink);
+    padding: 0.9rem 2rem;
+    border: 1.5px solid var(--ink);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--cream); }
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-right-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--ink);
+  }
+  .hero-year {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(8rem, 15vw, 18rem);
+    font-style: italic;
+    color: rgba(255,255,255,0.07);
+    white-space: nowrap;
+    user-select: none;
+  }
+  .hero-stat-block {
+    position: absolute;
+    bottom: 4rem;
+    left: 3rem;
+    right: 3rem;
+  }
+  .hero-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .hero-stat:last-child { border-bottom: none; margin-bottom: 0; }
+  .hero-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3rem;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(245,240,232,0.5);
+    line-height: 1.5;
+  }
+  .hero-flags {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  /* UTILITY */
+  .section-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--light-mid);
+    max-width: 60px;
+  }
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 900;
+    font-size: clamp(1.9rem, 3.2vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  /* TRENDING */
+  .trending {
+    padding: 6rem 5rem;
+    background: var(--warm);
+    border-top: 1px solid var(--light-mid);
+  }
+  .trending-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+  .trending-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--light-mid);
+  }
+  .trend-card {
+    background: var(--cream);
+    padding: 2.5rem 2rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .trend-card:hover { background: var(--ink); }
+  .trend-card:hover .trend-card-title { color: var(--cream); }
+  .trend-card:hover .trend-card-meta { color: rgba(245,240,232,0.4); }
+  .trend-card:hover .trend-card-tag { background: rgba(255,255,255,0.1); color: rgba(245,240,232,0.6); }
+  .trend-card-tag {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--warm);
+    color: var(--mid);
+    padding: 0.3rem 0.7rem;
+    margin-bottom: 1.2rem;
+    transition: all 0.2s;
+  }
+  .trend-card-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 0.8rem;
+    transition: color 0.2s;
+  }
+  .trend-card-meta {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--mid);
+    transition: color 0.2s;
+  }
+  .trend-card-arrow {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    color: var(--cream);
+  }
+  .trend-card:hover .trend-card-arrow { opacity: 1; transform: translate(4px, -4px); }
+
+  /* 3 PATHS */
+  .paths {
+    padding: 8rem 5rem;
+  }
+  .paths-header {
+    max-width: 500px;
+    margin-bottom: 4rem;
+  }
+  .paths-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background: var(--ink);
+  }
+  .path-card {
+    background: var(--cream);
+    padding: 3rem 2.5rem 4rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+  .path-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+  .path-card:nth-child(1)::before { background: var(--red); }
+  .path-card:nth-child(2)::before { background: var(--blue); }
+  .path-card:nth-child(3)::before { background: var(--gold); }
+  .path-card:hover { background: var(--ink); }
+  .path-card:hover .path-title { color: var(--cream); }
+  .path-card:hover .path-subtitle { color: rgba(245,240,232,0.5); }
+  .path-card:hover .path-items li { color: rgba(245,240,232,0.6); border-color: rgba(255,255,255,0.08); }
+  .path-card:hover .path-cta { color: var(--cream); border-color: rgba(255,255,255,0.3); }
+  .path-card:hover .path-num { color: rgba(255,255,255,0.04); }
+  .path-num {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 7rem;
+    color: rgba(15,14,12,0.04);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+    transition: color 0.3s;
+    user-select: none;
+  }
+  .path-icon { font-size: 1.8rem; margin-bottom: 1.5rem; }
+  .path-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.7rem;
+    font-weight: 900;
+    margin-bottom: 0.4rem;
+    transition: color 0.3s;
+  }
+  .path-subtitle {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 2rem;
+    transition: color 0.3s;
+  }
+  .path-items {
+    list-style: none;
+    margin-bottom: 2.5rem;
+  }
+  .path-items li {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: var(--mid);
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--light-mid);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    transition: color 0.3s, border-color 0.3s;
+    flex-direction: column;
+    padding-left: 1.1rem;
+    position: relative;
+  }
+  .path-items li::before {
+    content: '→';
+    font-size: 0.75rem;
+    position: absolute;
+    left: 0;
+    top: 0.65rem;
+  }
+  .path-item-sub {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 300;
+    color: var(--light-mid);
+    letter-spacing: 0.01em;
+    margin-top: 0.1rem;
+  }
+  .path-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--ink);
+    padding-bottom: 0.2rem;
+    transition: all 0.3s;
+  }
+
+  /* REAL CASES */
+  .cases {
+    padding: 8rem 5rem;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .cases-bg-text {
+    position: absolute;
+    top: -2rem;
+    right: -2rem;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 20rem;
+    color: rgba(255,255,255,0.025);
+    user-select: none;
+    pointer-events: none;
+    line-height: 1;
+  }
+  .cases .section-label { color: rgba(245,240,232,0.4); }
+  .cases .section-label::after { background: rgba(245,240,232,0.1); }
+  .cases .section-title { color: var(--cream); }
+  .cases-header {
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .cases-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 2px;
+  }
+  .case-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 3rem;
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .case-card:hover { background: rgba(255,255,255,0.07); }
+  .case-card-type {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+  .case-card-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+  .case-card-body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: rgba(245,240,232,0.55);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+  }
+  .case-stat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; }
+  .case-stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .case-stat-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.4);
+    margin-top: 0.4rem;
+    text-transform: uppercase;
+  }
+  .cases-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .case-mini {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .case-mini:hover { background: rgba(255,255,255,0.07); }
+
+  /* GUIDES */
+  .guides {
+    padding: 8rem 5rem;
+    background: var(--warm);
+  }
+  .guides-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+  .guides-list {
+    list-style: none;
+    border-top: 1px solid var(--light-mid);
+  }
+  .guide-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--light-mid);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .guide-item:hover { padding-left: 1rem; }
+  .guide-item:hover .guide-arrow { transform: translate(6px, -6px); opacity: 1; }
+  .guide-left {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+  .guide-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--light-mid);
+    min-width: 2rem;
+  }
+  .guide-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.18rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .guide-tag {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mid);
+    background: var(--light-mid);
+    padding: 0.25rem 0.6rem;
+  }
+  .guide-arrow {
+    font-size: 1.1rem;
+    opacity: 0.3;
+    transition: all 0.2s;
+  }
+  .guide-item--locked {
+    background: rgba(201, 168, 76, 0.04);
+  }
+  .guide-item--locked:hover { background: rgba(201, 168, 76, 0.08); }
+  .guide-item--locked .guide-num { color: var(--gold); }
+  .guide-item--locked .guide-title { color: var(--ink); }
+  .guide-tag--locked {
+    background: rgba(201, 168, 76, 0.15);
+    color: var(--gold);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+
+  /* TOOLS */
+  .tools {
+    padding: 8rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--light-mid);
+  }
+  .tool-card {
+    background: var(--cream);
+    padding: 5rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .tool-card:first-child { background: var(--ink); }
+  .tool-card-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 2rem;
+  }
+  .tool-card:first-child .tool-card-label { color: rgba(245,240,232,0.4); }
+  .tool-card-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 2.1rem;
+    font-weight: 900;
+    line-height: 1.18;
+    margin-bottom: 1rem;
+  }
+  .tool-card:first-child .tool-card-title { color: var(--cream); }
+  .tool-card-body {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--mid);
+    line-height: 1.75;
+    margin-bottom: 3rem;
+    max-width: 340px;
+  }
+  .tool-card:first-child .tool-card-body { color: rgba(245,240,232,0.5); }
+  .tool-bg-num {
+    position: absolute;
+    bottom: -2rem;
+    right: 1rem;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 14rem;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+    color: rgba(15,14,12,0.04);
+  }
+  .tool-card:first-child .tool-bg-num { color: rgba(255,255,255,0.04); }
+
+  /* SUBSCRIPTION */
+  .subscribe {
+    padding: 7rem 5rem;
+    background: var(--cream);
+    border-top: 1px solid var(--light-mid);
+  }
+  .subscribe-left {}
+  .subscribe-label {
+    font-family: 'Outfit', monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1rem;
+  }
+  .subscribe-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+  }
+  .subscribe-body {
+    font-size: 1rem;
+    color: var(--mid);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    max-width: 420px;
+  }
+  .subscribe-perks {
+    list-style: none;
+    margin-bottom: 2.5rem;
+  }
+  .subscribe-perks li {
+    font-size: 0.92rem;
+    color: var(--ink);
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--light-mid);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .subscribe-perks li::before {
+    content: '✓';
+    font-weight: 700;
+    color: var(--red);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+  .subscribe-right {
+    background: var(--ink);
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .subscribe-right::before {
+    content: '訂';
+    position: absolute;
+    bottom: -2rem;
+    right: -1rem;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14rem;
+    font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+  .sub-price-label {
+    font-family: 'Outfit', monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+    margin-bottom: 1rem;
+  }
+  .sub-price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .sub-price-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 3.8rem;
+    color: var(--cream);
+    line-height: 1;
+  }
+  .sub-price-unit {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(245,240,232,0.5);
+  }
+  .sub-price-note {
+    font-size: 0.8rem;
+    color: rgba(245,240,232,0.35);
+    margin-bottom: 2rem;
+    font-family: 'Outfit', sans-serif;
+  }
+  .sub-features {
+    list-style: none;
+    margin-bottom: 2.5rem;
+  }
+  .sub-features li {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    color: rgba(245,240,232,0.65);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .sub-features li::before {
+    content: '→';
+    color: var(--gold);
+    font-size: 0.78rem;
+    flex-shrink: 0;
+  }
+  .btn-sub {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'Outfit', monospace;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--red);
+    color: white;
+    padding: 1.1rem 2rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+  }
+  .btn-sub:hover { background: #a02520; transform: translateY(-2px); }
+  .sub-guarantee {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    color: rgba(245,240,232,0.25);
+    text-align: center;
+    margin-top: 1rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 900px) {
+    .subscribe { padding: 5rem 1.5rem; }
+  }
+  .consulting {
+    padding: 10rem 5rem;
+    background: var(--red);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+  }
+  .consulting-bg {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 30px,
+      rgba(255,255,255,0.025) 30px,
+      rgba(255,255,255,0.025) 31px
+    );
+  }
+  .consulting .section-label { color: rgba(255,255,255,0.5); }
+  .consulting .section-label::after { background: rgba(255,255,255,0.25); }
+  .consulting-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  .consulting-body {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    max-width: 420px;
+  }
+  .consulting-tags {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+  }
+  .ctag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    padding: 0.45rem 1rem;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .btn-white {
+    display: inline-block;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: white;
+    color: var(--red);
+    padding: 1rem 2.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .btn-white:hover { background: var(--ink); color: white; transform: translateY(-2px); }
+  .consulting-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .c-fact {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 1.2rem 1.2rem;
+    text-align: left;
+  }
+  .c-fact-num {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .c-fact-label {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  /* PARTNERS */
+  .partners {
+    padding: 4rem 5rem;
+    border-top: 1px solid var(--light-mid);
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  .partners-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--light-mid);
+    white-space: nowrap;
+    min-width: 80px;
+  }
+  .partners-divider {
+    width: 1px;
+    height: 3rem;
+    background: var(--light-mid);
+  }
+  .partners-list {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .partner-item {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--light-mid);
+    transition: color 0.2s;
+    cursor: pointer;
+    letter-spacing: -0.01em;
+  }
+  .partner-item:hover { color: var(--ink); }
+
+  /* FINAL CTA */
+  .final-cta {
+    padding: 12rem 5rem;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .final-cta-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 28vw;
+    color: rgba(255,255,255,0.022);
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    line-height: 1;
+  }
+  .final-cta-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+    margin-bottom: 2rem;
+  }
+  .final-cta-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(3rem, 7vw, 7rem);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 3.5rem;
+  }
+  .final-cta-title em {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--gold);
+  }
+  .final-cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 4rem 5rem 2rem;
+    border-top: 1px solid rgba(245,240,232,0.08);
+    background: var(--ink);
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(245,240,232,0.07);
+  }
+  .footer-brand {}
+  .footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--cream);
+    font-style: italic;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.7rem;
+  }
+  .footer-tagline {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.35);
+    line-height: 1.7;
+    max-width: 200px;
+  }
+  .footer-col-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.25);
+    margin-bottom: 1rem;
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .footer-links a {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 300;
+    color: rgba(245,240,232,0.45);
+    text-decoration: none;
+    transition: color 0.2s;
+    letter-spacing: 0.01em;
+  }
+  .footer-links a:hover { color: rgba(245,240,232,0.85); }
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-copy {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    color: rgba(245,240,232,0.18);
+    letter-spacing: 0.05em;
+  }
+  .footer-social {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .footer-social a {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.2);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-social a:hover { color: rgba(245,240,232,0.6); }
+
+  /* QUIZ MODAL */
+  .quiz-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15,14,12,0.85);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .quiz-overlay.open { opacity: 1; pointer-events: all; }
+  .quiz-box {
+    background: var(--cream);
+    max-width: 560px;
+    width: 100%;
+    padding: 3rem;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s;
+  }
+  .quiz-overlay.open .quiz-box { transform: translateY(0); }
+  .quiz-close {
+    position: absolute;
+    top: 1.2rem; right: 1.5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--mid);
+    background: none;
+    border: none;
+    line-height: 1;
+  }
+  .quiz-step { display: none; }
+  .quiz-step.active { display: block; }
+  .quiz-progress { display: flex; gap: 0.4rem; margin-bottom: 2rem; }
+  .quiz-progress-dot { height: 3px; flex: 1; background: var(--light-mid); transition: background 0.3s; }
+  .quiz-progress-dot.done { background: var(--red); }
+  .quiz-q { font-family: 'Noto Serif TC', serif; font-size: 1.35rem; font-weight: 900; line-height: 1.35; margin-bottom: 0.6rem; }
+  .quiz-hint { font-size: 0.82rem; color: var(--mid); margin-bottom: 2rem; line-height: 1.6; }
+  .quiz-options { display: flex; flex-direction: column; gap: 0.7rem; }
+  .quiz-opt {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.2rem;
+    border: 1.5px solid var(--light-mid);
+    cursor: pointer; transition: all 0.18s;
+    background: white; text-align: left;
+  }
+  .quiz-opt:hover { border-color: var(--ink); background: var(--warm); }
+  .quiz-opt.selected { border-color: var(--red); background: var(--warm); }
+  .quiz-opt-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .quiz-opt-label { font-size: 0.9rem; font-weight: 500; line-height: 1.4; }
+  .quiz-opt-sub { font-size: 0.75rem; color: var(--mid); font-weight: 400; }
+  .quiz-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; }
+  .quiz-back {
+    font-family: 'Space Mono', monospace; font-size: 0.7rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--mid); background: none; border: none; cursor: pointer; padding: 0;
+  }
+  .quiz-back:hover { color: var(--ink); }
+  .quiz-next {
+    font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    background: var(--ink); color: var(--cream);
+    border: none; padding: 0.75rem 1.8rem; cursor: pointer; transition: background 0.2s;
+  }
+  .quiz-next:hover { background: var(--red); }
+  .quiz-next:disabled { opacity: 0.3; cursor: not-allowed; }
+  .quiz-result { display: none; }
+  .quiz-result.active { display: block; }
+  .result-tag { font-family: 'Outfit', monospace; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.8rem; }
+  .result-title { font-family: 'Noto Serif TC', serif; font-size: 1.6rem; font-weight: 900; line-height: 1.3; margin-bottom: 0.8rem; }
+  .result-body { font-size: 0.9rem; color: var(--mid); line-height: 1.7; margin-bottom: 2rem; }
+  .result-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+  .quiz-restart { font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); background: none; border: none; cursor: pointer; margin-top: 1.5rem; display: block; padding: 0; }
+  .quiz-restart:hover { color: var(--ink); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * { animation: fadeUp 0.7s ease both; }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+
+  @media (max-width: 900px) {
+    nav { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 5rem 2rem 4rem; }
+    .trending, .paths, .cases, .guides, .consulting, .partners, .final-cta, footer {
+      padding-left: 1.5rem; padding-right: 1.5rem;
+    }
+    .tools { padding: 4rem 1.5rem; }
+    .trending-grid, .paths-grid, .cases-grid, .tools { grid-template-columns: 1fr; }
+    .consulting { grid-template-columns: 1fr; }
+    .consulting-right { grid-template-columns: 1fr 1fr; }
+    .partners { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">SEOULMATE <span>31</span></a>
+  <ul class="nav-links">
+
+    <!-- Arrival -->
+    <li>
+      <a href="#">
+        <span class="nav-en">Arrival</span>
+        <span class="nav-zh">落地</span>
+      </a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-cols">
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">生活</div>
+            <ul class="nav-dd-links">
+              <li><a href="#">韓國90天生存指南</a></li>
+              <li><a href="#">韓國生活必備APP</a></li>
+              <li><a href="#">韓國交通攻略</a></li>
+              <li><a href="#">韓國銀行開戶</a></li>
+            </ul>
+          </div>
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">租屋</div>
+            <ul class="nav-dd-links">
+              <li><a href="#">韓國租房完整攻略</a></li>
+              <li><a href="#">LH公宅申請指南</a></li>
+              <li><a href="#">韓國租屋保證金</a></li>
+            </ul>
+          </div>
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">簽證</div>
+            <ul class="nav-dd-links">
+              <li><a href="#">韓國打工度假攻略</a></li>
+              <li><a href="#">韓國留學簽證</a></li>
+              <li><a href="#">韓國工作簽證</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- Study -->
+    <li>
+      <a href="#">
+        <span class="nav-en">Study</span>
+        <span class="nav-zh">留學</span>
+      </a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-cols">
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">大學</div>
+            <ul class="nav-dd-links">
+              <li><a href="#">韓國大學排名</a></li>
+              <li><a href="#">韓國留學費用</a></li>
+              <li><a href="#">韓國交換學生</a></li>
+              <li><a href="#">韓國碩士申請</a></li>
+            </ul>
+          </div>
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">語學堂</div>
+            <ul class="nav-dd-links">
+              <li><a href="#">韓國語學堂比較</a></li>
+              <li><a href="#">首爾語學堂推薦</a></li>
+              <li><a href="#">語學堂費用</a></li>
+            </ul>
+          </div>
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">打工度假</div>
+            <ul class="nav-dd-links">
+              <li><a href="#">韓國打工度假攻略</a></li>
+              <li><a href="#">韓國WHV申請</a></li>
+              <li><a href="#">韓國打工度假工作</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- Opportunity -->
+    <li>
+      <a href="#">
+        <span class="nav-en">Opportunity</span>
+        <span class="nav-zh">機會</span>
+      </a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-cols">
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">整形醫美</div>
+            <ul class="nav-dd-links">
+              <li><a href="#">韓國整形診所推薦</a></li>
+              <li><a href="#">韓國整形價格</a></li>
+              <li><a href="#">韓國醫美比較</a></li>
+            </ul>
+          </div>
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">電商 / 代購</div>
+            <ul class="nav-dd-links">
+              <li><a href="#">韓國代購怎麼做</a></li>
+              <li><a href="#">韓國電商平台</a></li>
+              <li><a href="#">韓國批發市場</a></li>
+            </ul>
+          </div>
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">創業</div>
+            <ul class="nav-dd-links">
+              <li><a href="#">韓國開公司流程</a></li>
+              <li><a href="#">韓國開店成本</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- Tools -->
+    <li>
+      <a href="#">
+        <span class="nav-en">Tools</span>
+        <span class="nav-zh">工具</span>
+      </a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-cols">
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">決策工具</div>
+            <ul class="nav-dd-links">
+              <li><a href="#" onclick="event.preventDefault(); openQuiz()">韓國留學快篩</a></li>
+              <li><a href="#">韓國生活費計算</a></li>
+            </ul>
+          </div>
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">模板下載</div>
+            <ul class="nav-dd-links">
+              <li><a href="#">韓國留學懶人包</a></li>
+              <li><a href="#">韓國整形規劃表</a></li>
+              <li><a href="#">韓國生活 Notion 模板</a></li>
+            </ul>
+          </div>
+          <div class="nav-dd-group">
+            <div class="nav-dd-label">1:1 諮詢</div>
+            <ul class="nav-dd-links">
+              <li><a href="booking.html">留學諮詢</a></li>
+              <li><a href="booking.html">整形諮詢</a></li>
+              <li><a href="booking.html">電商諮詢</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- Consulting -->
+    <li>
+      <a href="#">
+        <span class="nav-en">Consulting</span>
+        <span class="nav-zh">諮詢</span>
+      </a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-cols">
+          <div class="nav-dd-group">
+            <ul class="nav-dd-links" style="margin-top:0">
+              <li><a href="#">諮詢流程</a></li>
+              <li><a href="#">真實案例</a></li>
+              <li><a href="booking.html">立即預約</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+
+    <!-- Advertise -->
+    <li>
+      <a href="#">
+        <span class="nav-en">Advertise</span>
+        <span class="nav-zh">廣告合作</span>
+      </a>
+      <div class="nav-dropdown">
+        <div class="nav-dropdown-cols">
+          <div class="nav-dd-group">
+            <ul class="nav-dd-links" style="margin-top:0">
+              <li><a href="#">廣告版位</a></li>
+              <li><a href="#">合作方案</a></li>
+              <li><a href="#">聯絡方式</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+  <a href="booking.html" class="nav-cta">預約諮詢</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-flag-badge">🇹🇼 × 🇰🇷 &nbsp;&nbsp; 居韓第10年</div>
+    <h1 class="hero-title">來韓國前<br>先問過<em>這裡</em></h1>
+    <p class="hero-sub">很多人來韓國前做了功課，<br>但還是踩了不該踩的坑。<br>因為免費的資訊，通常是最貴的。</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">查看落地指南</a>
+      <a href="#" class="btn-outline" onclick="event.preventDefault(); openQuiz()">3分鐘找到你的路線</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-bg"></div>
+    <div class="hero-year">10</div>
+    <div class="hero-stat-block">
+      <div class="hero-stat">
+        <div class="hero-stat-num">3,650</div>
+        <div class="hero-stat-label">在韓國的<br>每一天</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">數千件</div>
+        <div class="hero-stat-label">真實問題<br>第一手收錄</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">0 廢話</div>
+        <div class="hero-stat-label">只講<br>用得上的</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="trending">
+  <div class="trending-header">
+    <div>
+      <div class="section-label">熱門攻略</div>
+      <h2 class="section-title">你沒搜尋到的<br>才是最值錢的</h2>
+    </div>
+    <a href="#" class="btn-outline" style="font-size:0.72rem; padding:0.6rem 1.4rem">看更多 →</a>
+  </div>
+  <div class="trending-grid">
+    <div class="trend-card">
+      <div class="trend-card-tag">生活費用</div>
+      <div class="trend-card-title">首爾生活費<br>沒人告訴你的真實數字</div>
+      <div class="trend-card-meta">大多數估算表都低估了 30%</div>
+      <div class="trend-card-arrow">↗</div>
+    </div>
+    <div class="trend-card">
+      <div class="trend-card-tag">留學</div>
+      <div class="trend-card-title">語學堂 vs 自學<br>花錢前先看這篇</div>
+      <div class="trend-card-meta">80% 的人後來後悔了</div>
+      <div class="trend-card-arrow">↗</div>
+    </div>
+    <div class="trend-card">
+      <div class="trend-card-tag">整形</div>
+      <div class="trend-card-title">江南診所定價<br>外國人跟本地人不一樣</div>
+      <div class="trend-card-meta">差距有時超過兩倍</div>
+      <div class="trend-card-arrow">↗</div>
+    </div>
+  </div>
+</section>
+
+<section class="paths">
+  <div class="paths-header">
+    <div class="section-label">三條路線</div>
+    <h2 class="section-title">你是哪一種<br>想來韓國的人？</h2>
+  </div>
+  <div class="paths-grid">
+    <div class="path-card">
+      <div class="path-num">01</div>
+      <div class="path-icon">🏠</div>
+      <div class="path-title">Arrival</div>
+      <div class="path-subtitle">落地 · 生活 · 生存</div>
+      <ul class="path-items">
+        <li>簽證辦了，然後呢？<span class="path-item-sub">（韓國落地完整流程）</span></li>
+        <li>租房保證金怎麼保住<span class="path-item-sub">（韓國租屋真實規則）</span></li>
+        <li>銀行、手機、外登證<span class="path-item-sub">（韓國前三件必做）</span></li>
+        <li>像當地人一樣活下去<span class="path-item-sub">（韓國生活基本生存術）</span></li>
+      </ul>
+      <a href="#" class="path-cta">我要落地 →</a>
+    </div>
+    <div class="path-card">
+      <div class="path-num">02</div>
+      <div class="path-icon">📚</div>
+      <div class="path-title">Study</div>
+      <div class="path-subtitle">留學 · 語學堂 · 打工</div>
+      <ul class="path-items">
+        <li>語學堂值不值得花錢？<span class="path-item-sub">（六個月後的誠實報告）</span></li>
+        <li>大學審查沒人說的那道關<span class="path-item-sub">（韓國碩士 / 大學申請）</span></li>
+        <li>打工度假，合法能賺多少<span class="path-item-sub">（薪資 · 工時 · 稅後試算）</span></li>
+        <li>學費只是第一張帳單<span class="path-item-sub">（韓國留學隱藏成本清單）</span></li>
+      </ul>
+      <a href="#" class="path-cta">我要留學 →</a>
+    </div>
+    <div class="path-card">
+      <div class="path-num">03</div>
+      <div class="path-icon">💼</div>
+      <div class="path-title">Opportunity</div>
+      <div class="path-subtitle">電商 · 商務 · 創業</div>
+      <ul class="path-items">
+        <li>韓貨你多付了多少中間費<span class="path-item-sub">（韓國電商 · 代購進貨指南）</span></li>
+        <li>整形報價單怎麼看<span class="path-item-sub">（江南診所外國人定價現實）</span></li>
+        <li>韓國開公司第一年<span class="path-item-sub">（沒人告訴你的真實成本）</span></li>
+        <li>台韓之間哪裡才是真的錢<span class="path-item-sub">（B2B · 品牌 · 批發路線比較）</span></li>
+      </ul>
+      <a href="#" class="path-cta">我要找機會 →</a>
+    </div>
+  </div>
+</section>
+
+<section class="cases">
+  <div class="cases-bg-text">Real</div>
+  <div class="cases-header">
+    <div>
+      <div class="section-label">真實案例</div>
+      <h2 class="section-title">不是攻略<br>是真實發生的事</h2>
+    </div>
+    <a href="#" style="font-family:'Space Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,240,232,0.4); text-decoration:none; border-bottom:1px solid rgba(245,240,232,0.2); padding-bottom:0.2rem;">看所有案例 →</a>
+  </div>
+  <div class="cases-grid">
+    <div class="case-card">
+      <div class="case-card-type">🎓 留學 · 語學堂一年紀實</div>
+      <div class="case-card-title">「我以為800萬韓元<br>就夠了⋯」</div>
+      <div class="case-card-body">台灣女生，26歲，零韓語出發。一年後她發現，語學堂費用只是開始——她把所有帳目都公開了。</div>
+      <div class="case-stat">
+        <div>
+          <div class="case-stat-num">800萬+</div>
+          <div class="case-stat-label">實際花費韓元</div>
+        </div>
+        <div>
+          <div class="case-stat-num">12個月</div>
+          <div class="case-stat-label">完整時程</div>
+        </div>
+        <div>
+          <div class="case-stat-num">1→5級</div>
+          <div class="case-stat-label">韓語進度</div>
+        </div>
+      </div>
+    </div>
+    <div class="cases-right">
+      <div class="case-mini">
+        <div>
+          <div class="case-card-type">☕ 打工度假 · 現實版</div>
+          <div class="case-card-title" style="font-size:1.1rem">「月薪150萬，<br>但沒人說的是⋯」</div>
+        </div>
+        <div class="case-stat-num" style="font-size:1.6rem; color:var(--gold)">扣完剩多少？</div>
+      </div>
+      <div class="case-mini">
+        <div>
+          <div class="case-card-type">🏢 整形 · 江南實測</div>
+          <div class="case-card-title" style="font-size:1.1rem">同一項手術<br>報價差了兩倍</div>
+        </div>
+        <div class="case-stat-num" style="font-size:1.6rem; color:var(--gold)">怎麼問才對</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guides">
+  <div class="guides-header">
+    <div>
+      <div class="section-label">熱門攻略</div>
+      <h2 class="section-title">最多人<br>搜尋的問題</h2>
+    </div>
+  </div>
+  <ul class="guides-list">
+    <li><a href="#" class="guide-item">
+      <div class="guide-left">
+        <span class="guide-num">01</span>
+        <span class="guide-title">來韓國第一個月，我希望有人告訴我這些</span>
+        <span class="guide-tag">落地必讀</span>
+      </div>
+      <span class="guide-arrow">↗</span>
+    </a></li>
+    <li><a href="#" class="guide-item">
+      <div class="guide-left">
+        <span class="guide-num">02</span>
+        <span class="guide-title">韓國租房：保證金被沒收的 5 個常見原因</span>
+        <span class="guide-tag">租屋</span>
+      </div>
+      <span class="guide-arrow">↗</span>
+    </a></li>
+    <li><a href="#" class="guide-item">
+      <div class="guide-left">
+        <span class="guide-num">03</span>
+        <span class="guide-title">語學堂花了半年，值得嗎？老實說</span>
+        <span class="guide-tag">留學</span>
+      </div>
+      <span class="guide-arrow">↗</span>
+    </a></li>
+    <li><a href="#" class="guide-item">
+      <div class="guide-left">
+        <span class="guide-num">04</span>
+        <span class="guide-title">韓國整形診所定價：外國人為什麼比較貴</span>
+        <span class="guide-tag">整形醫美</span>
+      </div>
+      <span class="guide-arrow">↗</span>
+    </a></li>
+    <li><a href="booking.html" class="guide-item guide-item--locked">
+      <div class="guide-left">
+        <span class="guide-num">05</span>
+        <span class="guide-title">打工度假薪資拆解：月薪150萬韓元，扣完剩多少</span>
+        <span class="guide-tag guide-tag--locked">🔒 諮詢限定</span>
+      </div>
+      <span class="guide-arrow" style="color:var(--gold)">→</span>
+    </a></li>
+  </ul>
+</section>
+
+<section class="tools">
+  <div class="tool-card">
+    <div class="tool-bg-num">3</div>
+    <div class="tool-card-label">免費工具</div>
+    <h3 class="tool-card-title">不確定哪條路<br>適合你？</h3>
+    <p class="tool-card-body">回答 3 個問題，馬上知道你該看哪些資訊、該避開哪些坑。不用填資料，不用留信箱。</p>
+    <a href="#" class="btn-primary" style="background:var(--cream); color:var(--ink);" onclick="event.preventDefault(); openQuiz()">開始測試（免費）→</a>
+  </div>
+  <div class="tool-card">
+    <div class="tool-bg-num">PDF</div>
+    <div class="tool-card-label">實用工具</div>
+    <h3 class="tool-card-title">留學前<br>該確認的清單</h3>
+    <p class="tool-card-body">簽證、費用、語言門檻、時程安排——整理成一份可以直接用的 PDF，省去自己爬文的時間。</p>
+    <a href="#" class="btn-primary">下載清單 →</a>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="subscribe" id="subscribe">
+  <div style="margin-bottom: 2.5rem;">
+    <div class="subscribe-label">數位商品</div>
+    <h2 class="subscribe-title" style="max-width:600px">省時間的方式<br>就是直接拿答案</h2>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--light-mid);">
+
+    <!-- 落地包 -->
+    <div style="background:var(--cream); padding:2.5rem 2rem 2rem; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; min-height:460px;">
+      <div style="position:absolute; bottom:-1.5rem; right:-0.5rem; font-family:'DM Serif Display',serif; font-style:italic; font-size:9rem; color:rgba(15,14,12,0.04); line-height:1; user-select:none; pointer-events:none;">01</div>
+      <div>
+        <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--red); margin-bottom:1.4rem; display:flex; align-items:center; gap:0.6rem;">落地生存<span style="flex:1; height:1px; background:var(--light-mid); max-width:30px;"></span></div>
+        <div style="font-family:'Noto Serif TC',serif; font-size:2rem; font-weight:900; line-height:1.15; letter-spacing:-0.02em; margin-bottom:0.6rem;">落地包</div>
+        <div style="font-family:'Noto Sans KR',sans-serif; font-size:0.78rem; font-weight:300; color:var(--mid); line-height:1.75; margin-bottom:1.5rem;">租房、銀行開戶、外登證、手機門號——來韓國第一個月最容易踩的坑，全部整理好了。</div>
+        <ul style="list-style:none; margin-bottom:1.5rem;">
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:var(--ink); padding:0.45rem 0; border-bottom:1px solid var(--light-mid); display:flex; gap:0.6rem; align-items:center; letter-spacing:0.01em;"><span style="color:var(--red); font-size:0.7rem;">→</span> 租房合約查檢清單</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:var(--ink); padding:0.45rem 0; border-bottom:1px solid var(--light-mid); display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--red); font-size:0.7rem;">→</span> 銀行開戶流程 SOP</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:var(--ink); padding:0.45rem 0; border-bottom:1px solid var(--light-mid); display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--red); font-size:0.7rem;">→</span> 90天行政時程表</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:var(--ink); padding:0.45rem 0; display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--red); font-size:0.7rem;">→</span> PDF 即買即用</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'DM Serif Display',serif; font-style:italic; font-size:2.8rem; color:var(--ink); line-height:1; margin-bottom:1rem; letter-spacing:-0.02em;">NT$ ___</div>
+        <a href="#" class="btn-primary" style="width:100%; text-align:center; display:block;">購買落地包 →</a>
+      </div>
+    </div>
+
+    <!-- 留學包 -->
+    <div style="background:var(--ink); padding:2.5rem 2rem 2rem; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; min-height:460px;">
+      <div style="position:absolute; bottom:-1.5rem; right:-0.5rem; font-family:'DM Serif Display',serif; font-style:italic; font-size:9rem; color:rgba(255,255,255,0.04); line-height:1; user-select:none; pointer-events:none;">02</div>
+      <div>
+        <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:1.4rem; display:flex; align-items:center; gap:0.6rem;">留學 · 語學堂<span style="flex:1; height:1px; background:rgba(201,168,76,0.3); max-width:30px;"></span></div>
+        <div style="font-family:'Noto Serif TC',serif; font-size:2rem; font-weight:900; line-height:1.15; letter-spacing:-0.02em; margin-bottom:0.6rem; color:var(--cream);">留學包</div>
+        <div style="font-family:'Noto Sans KR',sans-serif; font-size:0.78rem; font-weight:300; color:rgba(245,240,232,0.5); line-height:1.75; margin-bottom:1.5rem;">語學堂選哪間、費用怎麼試算、打工度假能賺多少——決定前先看這份。</div>
+        <ul style="list-style:none; margin-bottom:1.5rem;">
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:rgba(245,240,232,0.75); padding:0.45rem 0; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--gold); font-size:0.7rem;">→</span> 語學堂比較表</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:rgba(245,240,232,0.75); padding:0.45rem 0; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--gold); font-size:0.7rem;">→</span> 一年費用試算表</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:rgba(245,240,232,0.75); padding:0.45rem 0; border-bottom:1px solid rgba(255,255,255,0.07); display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--gold); font-size:0.7rem;">→</span> 打工度假薪資拆解</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:rgba(245,240,232,0.75); padding:0.45rem 0; display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--gold); font-size:0.7rem;">→</span> PDF 即買即用</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'DM Serif Display',serif; font-style:italic; font-size:2.8rem; color:var(--cream); line-height:1; margin-bottom:1rem; letter-spacing:-0.02em;">NT$ ___</div>
+        <a href="#" class="btn-primary" style="width:100%; text-align:center; display:block; background:var(--gold); color:var(--ink);">購買留學包 →</a>
+      </div>
+    </div>
+
+    <!-- 電商包 -->
+    <div style="background:var(--cream); padding:2.5rem 2rem 2rem; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; min-height:460px;">
+      <div style="position:absolute; bottom:-1.5rem; right:-0.5rem; font-family:'DM Serif Display',serif; font-style:italic; font-size:9rem; color:rgba(15,14,12,0.04); line-height:1; user-select:none; pointer-events:none;">03</div>
+      <div>
+        <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--blue); margin-bottom:1.4rem; display:flex; align-items:center; gap:0.6rem;">電商 · 韓貨<span style="flex:1; height:1px; background:rgba(26,58,92,0.2); max-width:30px;"></span></div>
+        <div style="font-family:'Noto Serif TC',serif; font-size:2rem; font-weight:900; line-height:1.15; letter-spacing:-0.02em; margin-bottom:0.6rem;">電商包</div>
+        <div style="font-family:'Noto Sans KR',sans-serif; font-size:0.78rem; font-weight:300; color:var(--mid); line-height:1.75; margin-bottom:1.5rem;">韓貨怎麼拿、物流哪家不坑、台韓之間的價差在哪——想做韓貨生意的人先看這份。</div>
+        <ul style="list-style:none; margin-bottom:1.5rem;">
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:var(--ink); padding:0.45rem 0; border-bottom:1px solid var(--light-mid); display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--blue); font-size:0.7rem;">→</span> 物流管道比較清單</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:var(--ink); padding:0.45rem 0; border-bottom:1px solid var(--light-mid); display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--blue); font-size:0.7rem;">→</span> 台韓採購價差分析</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:var(--ink); padding:0.45rem 0; border-bottom:1px solid var(--light-mid); display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--blue); font-size:0.7rem;">→</span> 代購 SOP 流程表</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:var(--ink); padding:0.45rem 0; display:flex; gap:0.6rem; align-items:center;"><span style="color:var(--blue); font-size:0.7rem;">→</span> PDF 即買即用</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'DM Serif Display',serif; font-style:italic; font-size:2.8rem; color:var(--ink); line-height:1; margin-bottom:1rem; letter-spacing:-0.02em;">NT$ ___</div>
+        <a href="#" class="btn-primary" style="width:100%; text-align:center; display:block; background:var(--blue);">購買電商包 →</a>
+      </div>
+    </div>
+
+    <!-- 1:1 諮詢 -->
+    <div style="background:var(--red); padding:2.5rem 2rem 2rem; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; min-height:460px;">
+      <div style="position:absolute; bottom:-1.5rem; right:-0.5rem; font-family:'DM Serif Display',serif; font-style:italic; font-size:9rem; color:rgba(255,255,255,0.07); line-height:1; user-select:none; pointer-events:none;">1:1</div>
+      <div>
+        <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:1.4rem; display:flex; align-items:center; gap:0.6rem;">個人諮詢<span style="flex:1; height:1px; background:rgba(255,255,255,0.2); max-width:30px;"></span></div>
+        <div style="font-family:'Noto Serif TC',serif; font-size:2rem; font-weight:900; line-height:1.15; letter-spacing:-0.02em; margin-bottom:0.6rem; color:white;">1:1 直接問</div>
+        <div style="font-family:'Noto Sans KR',sans-serif; font-size:0.78rem; font-weight:300; color:rgba(255,255,255,0.7); line-height:1.75; margin-bottom:1.5rem;">問題太複雜、情況太特殊？攻略沒辦法解決的，直接跟我說。</div>
+        <ul style="list-style:none; margin-bottom:1.5rem;">
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.8); padding:0.45rem 0; border-bottom:1px solid rgba(255,255,255,0.15); display:flex; gap:0.6rem; align-items:center;"><span style="color:white; font-size:0.7rem;">→</span> 落地 / 租房問題</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.8); padding:0.45rem 0; border-bottom:1px solid rgba(255,255,255,0.15); display:flex; gap:0.6rem; align-items:center;"><span style="color:white; font-size:0.7rem;">→</span> 留學路線規劃</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.8); padding:0.45rem 0; border-bottom:1px solid rgba(255,255,255,0.15); display:flex; gap:0.6rem; align-items:center;"><span style="color:white; font-size:0.7rem;">→</span> 電商 / 韓貨商務</li>
+          <li style="font-family:'Outfit',sans-serif; font-size:0.8rem; color:rgba(255,255,255,0.8); padding:0.45rem 0; display:flex; gap:0.6rem; align-items:center;"><span style="color:white; font-size:0.7rem;">→</span> 整形諮詢建議</li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'DM Serif Display',serif; font-style:italic; font-size:2.8rem; color:white; line-height:1; margin-bottom:1rem; letter-spacing:-0.02em;">NT$ ___</div>
+        <a href="booking.html" class="btn-primary" style="width:100%; text-align:center; display:block; background:white; color:var(--red);">預約諮詢 →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="consulting">
+  <div class="consulting-bg"></div>
+  <div style="position:relative; z-index:2">
+    <div class="section-label">1:1 諮詢</div>
+    <h2 class="consulting-title">問題太複雜<br>攻略沒辦法解決？</h2>
+    <p class="consulting-body">有些事情需要有人坐下來跟你說清楚。不是制式回覆，是針對你的情況，直接給建議。</p>
+    <div class="consulting-tags">
+      <span class="ctag">留學規劃</span>
+      <span class="ctag">整形諮詢</span>
+      <span class="ctag">電商 · 代購</span>
+      <span class="ctag">簽證問題</span>
+    </div>
+    <a href="booking.html" class="btn-white">預約諮詢 →</a>
+  </div>
+  <div class="consulting-right" style="position:relative; z-index:2">
+    <div class="c-fact">
+      <div class="c-fact-num">信息差</div>
+      <div class="c-fact-label">找到真正有用的資訊<br><span style="opacity:0.5; font-size:0.68rem;">導遊 · 東大門 · 商務對接</span></div>
+    </div>
+    <div class="c-fact">
+      <div class="c-fact-num">認知差</div>
+      <div class="c-fact-label">看懂韓國的規則<br><span style="opacity:0.5; font-size:0.68rem;">研究所 · 韓國職場 · 在職</span></div>
+    </div>
+    <div class="c-fact">
+      <div class="c-fact-num">執行差</div>
+      <div class="c-fact-label">知道怎麼做<br><span style="opacity:0.5; font-size:0.68rem;">語學堂 · 打工度假 · 物流</span></div>
+    </div>
+    <div class="c-fact">
+      <div class="c-fact-num">競爭差</div>
+      <div class="c-fact-label">走在別人前面<br><span style="opacity:0.5; font-size:0.68rem;">10年 · 第一手經驗</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="partners">
+  <div class="partners-label">合作品牌</div>
+  <div class="partners-divider"></div>
+  <div class="partners-list">
+    <div class="partner-item">清潭整形</div>
+    <div class="partner-item">首爾語學堂</div>
+    <div class="partner-item">韓台物流</div>
+    <div class="partner-item">建國大學</div>
+    <div class="partner-item">CJ 物流</div>
+    <div class="partner-item">優留學</div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="final-cta-bg">KOREA</div>
+  <div style="position:relative; z-index:2">
+    <div class="final-cta-label">你還在爬文嗎</div>
+    <h2 class="final-cta-title">別讓免費資訊<br>變成<em>最貴的代價</em></h2>
+    <div class="final-cta-actions">
+      <a href="#" class="btn-primary" style="background:var(--cream); color:var(--ink);">查看落地指南</a>
+      <a href="#" class="btn-outline" style="color:rgba(245,240,232,0.6); border-color:rgba(245,240,232,0.25);" onclick="event.preventDefault(); openQuiz()">3分鐘快速測試</a>
+      <a href="booking.html" class="btn-primary" style="background:var(--red);">預約諮詢</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ MODAL -->
+<div class="quiz-overlay" id="quizOverlay">
+  <div class="quiz-box">
+    <button class="quiz-close" onclick="closeQuiz()">✕</button>
+    <div class="quiz-progress">
+      <div class="quiz-progress-dot" id="dot1"></div>
+      <div class="quiz-progress-dot" id="dot2"></div>
+      <div class="quiz-progress-dot" id="dot3"></div>
+      <div class="quiz-progress-dot" id="dot4"></div>
+      <div class="quiz-progress-dot" id="dot5"></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="quiz-step active" id="step1">
+      <div class="quiz-q">你來韓國的主要目的是什麼？</div>
+      <div class="quiz-hint">選一個最接近你的情況。</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this,1,'study')"><span class="quiz-opt-icon">📚</span><div><div class="quiz-opt-label">留學 / 語學堂</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,1,'work')"><span class="quiz-opt-icon">☕</span><div><div class="quiz-opt-label">打工度假</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,1,'life')"><span class="quiz-opt-icon">🏠</span><div><div class="quiz-opt-label">長期生活 / 落地</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,1,'beauty')"><span class="quiz-opt-icon">✨</span><div><div class="quiz-opt-label">整形 / 醫美</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,1,'biz')"><span class="quiz-opt-icon">📦</span><div><div class="quiz-opt-label">電商 / 代購</div></div></div>
+      </div>
+      <div class="quiz-nav"><span></span><button class="quiz-next" id="next1" disabled onclick="goStep(2)">下一題 →</button></div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="quiz-step" id="step2">
+      <div class="quiz-q">你預計什麼時候來韓國？</div>
+      <div class="quiz-hint">大概估算就好。</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this,2,'soon')"><span class="quiz-opt-icon">🔥</span><div><div class="quiz-opt-label">3個月內</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,2,'mid')"><span class="quiz-opt-icon">📅</span><div><div class="quiz-opt-label">6個月內</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,2,'later')"><span class="quiz-opt-icon">🗓️</span><div><div class="quiz-opt-label">1年內</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,2,'unsure')"><span class="quiz-opt-icon">🤔</span><div><div class="quiz-opt-label">還沒確定</div></div></div>
+      </div>
+      <div class="quiz-nav"><button class="quiz-back" onclick="goStep(1)">← 上一題</button><button class="quiz-next" id="next2" disabled onclick="goStep(3)">下一題 →</button></div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="quiz-step" id="step3">
+      <div class="quiz-q">你的預算大概是多少？</div>
+      <div class="quiz-hint">韓元計算，包含生活費。</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this,3,'low')"><span class="quiz-opt-icon">💰</span><div><div class="quiz-opt-label">200萬韓元以下</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,3,'mid')"><span class="quiz-opt-icon">💰💰</span><div><div class="quiz-opt-label">200–500萬韓元</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,3,'high')"><span class="quiz-opt-icon">💰💰💰</span><div><div class="quiz-opt-label">500–1000萬韓元</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,3,'top')"><span class="quiz-opt-icon">💎</span><div><div class="quiz-opt-label">1000萬以上</div></div></div>
+      </div>
+      <div class="quiz-nav"><button class="quiz-back" onclick="goStep(2)">← 上一題</button><button class="quiz-next" id="next3" disabled onclick="goStep(4)">下一題 →</button></div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="quiz-step" id="step4">
+      <div class="quiz-q">你目前最大的困惑是什麼？</div>
+      <div class="quiz-hint">最困擾你的那一個。</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this,4,'flow')"><span class="quiz-opt-icon">🗺️</span><div><div class="quiz-opt-label">不知道流程</div><div class="quiz-opt-sub">簽證、行政、怎麼開始</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,4,'cost')"><span class="quiz-opt-icon">🧮</span><div><div class="quiz-opt-label">不知道費用</div><div class="quiz-opt-sub">到底要花多少錢</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,4,'choice')"><span class="quiz-opt-icon">🔀</span><div><div class="quiz-opt-label">不知道選哪個方案</div><div class="quiz-opt-sub">選項太多，不知道哪個適合我</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,4,'start')"><span class="quiz-opt-icon">🚀</span><div><div class="quiz-opt-label">不知道如何開始</div><div class="quiz-opt-sub">完全沒頭緒</div></div></div>
+      </div>
+      <div class="quiz-nav"><button class="quiz-back" onclick="goStep(3)">← 上一題</button><button class="quiz-next" id="next4" disabled onclick="goStep(5)">下一題 →</button></div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="quiz-step" id="step5">
+      <div class="quiz-q">你希望得到什麼幫助？</div>
+      <div class="quiz-hint">決定我給你什麼建議。</div>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this,5,'read')"><span class="quiz-opt-icon">📄</span><div><div class="quiz-opt-label">先看攻略就好</div><div class="quiz-opt-sub">有資料我自己研究</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,5,'plan')"><span class="quiz-opt-icon">📋</span><div><div class="quiz-opt-label">想要詳細規劃</div><div class="quiz-opt-sub">幫我整理一份完整方向</div></div></div>
+        <div class="quiz-opt" onclick="selectOpt(this,5,'consult')"><span class="quiz-opt-icon">💬</span><div><div class="quiz-opt-label">想直接諮詢</div><div class="quiz-opt-sub">我的情況比較複雜，想直接問</div></div></div>
+      </div>
+      <div class="quiz-nav"><button class="quiz-back" onclick="goStep(4)">← 上一題</button><button class="quiz-next" id="next5" disabled onclick="showResult()">看結果 →</button></div>
+    </div>
+
+    <!-- RESULT -->
+    <div class="quiz-result" id="quizResult">
+      <div class="result-tag" id="resultTag"></div>
+      <div style="font-family:'Outfit',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--mid); margin-bottom:0.5rem;">根據你的回答，最適合你的路線是</div>
+      <div class="result-title" id="resultTitle"></div>
+      <div class="result-body" id="resultBody"></div>
+
+      <div style="font-family:'Outfit',monospace; font-size:0.68rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--mid); margin-bottom:0.8rem;">推薦先看這些</div>
+      <div id="resultGuides" style="display:flex; flex-direction:column; gap:0.4rem; margin-bottom:2rem;"></div>
+
+      <div id="resultCTA"></div>
+      <button class="quiz-restart" onclick="restartQuiz()">← 重新測試</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .result-guide-item {
+    display: flex; align-items: center; gap: 0.8rem;
+    padding: 0.7rem 1rem;
+    background: var(--warm);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink);
+    text-decoration: none;
+    transition: background 0.18s;
+  }
+  .result-guide-item:hover { background: var(--light-mid); }
+  .result-guide-item::before { content: '→'; color: var(--red); font-size: 0.8rem; flex-shrink:0; }
+  .result-consult-box {
+    background: var(--ink);
+    padding: 1.8rem 2rem;
+    margin-top: 1.5rem;
+  }
+  .result-consult-box .rc-label {
+    font-family: 'Outfit', monospace; font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(245,240,232,0.4); margin-bottom: 0.6rem;
+  }
+  .result-consult-box .rc-title {
+    font-family: 'Noto Serif TC', serif; font-size: 1.1rem; font-weight: 900;
+    color: var(--cream); margin-bottom: 0.4rem;
+  }
+  .result-consult-box .rc-body {
+    font-size: 0.82rem; color: rgba(245,240,232,0.5); line-height: 1.6; margin-bottom: 1.2rem;
+  }
+  .result-consult-box .rc-price {
+    display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 1.2rem;
+  }
+  .result-consult-box .rc-price-num {
+    font-family: 'DM Serif Display', serif; font-size: 2rem; color: var(--cream); line-height: 1;
+  }
+  .result-consult-box .rc-price-unit {
+    font-size: 0.8rem; color: rgba(245,240,232,0.4);
+  }
+</style>
+
+<script>
+  const answers = {};
+
+  function openQuiz() {
+    document.getElementById('quizOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeQuiz() {
+    document.getElementById('quizOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function selectOpt(el, step, val) {
+    el.closest('.quiz-options').querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    answers['q' + step] = val;
+    document.getElementById('next' + step).disabled = false;
+  }
+
+  function goStep(n) {
+    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('step' + n).classList.add('active');
+    updateProgress(n);
+  }
+
+  function updateProgress(step) {
+    for (let i = 1; i <= 5; i++) {
+      document.getElementById('dot' + i).classList.toggle('done', i < step);
+    }
+  }
+
+  const resultMap = {
+    study:  {
+      tag: '📚 留學 · 語學堂',
+      title: '留學 + 語學堂路線',
+      body: '語學堂費用、選校邏輯、打工度假可以同步規劃。先把費用跟時程搞清楚，再做決定。',
+      guides: ['語學堂比較：哪間值得花錢？', '留學一年實際花多少？', '打工度假薪資拆解'],
+      pkg: '留學包'
+    },
+    work:   {
+      tag: '☕ 打工度假',
+      title: '打工度假路線',
+      body: '月薪看起來不錯，但扣完稅、房租、生活費剩多少？簽證條件、找工作管道，先搞清楚再出發。',
+      guides: ['打工度假薪資拆解：實際剩多少', '韓國打工合法流程', '落地第一個月生存清單'],
+      pkg: '落地包'
+    },
+    life:   {
+      tag: '🏠 長期生活 · 落地',
+      title: '生活落地路線',
+      body: '租房、銀行開戶、外登證——第一個月最容易出問題的地方。先有清單，才不會手忙腳亂。',
+      guides: ['租房保證金怎麼保住', '銀行開戶流程 SOP', '來韓國第一個月清單'],
+      pkg: '落地包'
+    },
+    beauty: {
+      tag: '✨ 整形 · 醫美',
+      title: '整形 · 醫美路線',
+      body: '同一項手術，外國人跟本地人報價不一樣。診所怎麼挑、怎麼問才不被當觀光客。',
+      guides: ['江南診所定價：外國人為什麼比較貴', '整形前該問的問題清單', '術後恢復時間規劃'],
+      pkg: '落地包'
+    },
+    biz:    {
+      tag: '📦 電商 · 代購',
+      title: '電商 · 韓貨路線',
+      body: '韓貨怎麼拿不被坑、物流哪家可靠、台韓之間的價差在哪。想做韓貨生意先把這些搞清楚。',
+      guides: ['物流管道比較：哪家不坑', '台韓採購價差分析', '代購 SOP 流程'],
+      pkg: '電商包'
+    },
+  };
+
+  function showResult() {
+    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('quizResult').classList.add('active');
+    document.querySelectorAll('.quiz-progress-dot').forEach(d => d.classList.add('done'));
+
+    const r = resultMap[answers.q1] || resultMap.life;
+    const q5 = answers.q5;
+
+    document.getElementById('resultTag').textContent = r.tag;
+    document.getElementById('resultTitle').textContent = r.title;
+    document.getElementById('resultBody').textContent = r.body;
+
+    const guidesEl = document.getElementById('resultGuides');
+    guidesEl.innerHTML = r.guides.map(g => `<a href="#" class="result-guide-item">${g}</a>`).join('');
+
+    const ctaEl = document.getElementById('resultCTA');
+    if (q5 === 'read') {
+      ctaEl.innerHTML = `<a href="#subscribe" onclick="closeQuiz()" class="btn-primary" style="display:block; text-align:center;">購買 ${r.pkg} →</a>`;
+    } else {
+      ctaEl.innerHTML = `
+        <div class="result-consult-box">
+          <div class="rc-label">需要更完整的規劃？</div>
+          <div class="rc-title">1:1 個人諮詢</div>
+          <div class="rc-body">你的情況比較特殊，攻略沒辦法完全解決？直接跟我說，針對你的情況給建議。</div>
+          <div class="rc-price">
+            <span class="rc-price-num">NT$___</span>
+            <span class="rc-price-unit">/ 45分鐘</span>
+          </div>
+          <a href="booking.html" class="btn-primary" style="display:block; text-align:center; background:var(--red);">預約 1:1 諮詢 →</a>
+        </div>`;
+    }
+  }
+
+  function restartQuiz() {
+    Object.keys(answers).forEach(k => delete answers[k]);
+    document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('quizResult').classList.remove('active');
+    document.getElementById('step1').classList.add('active');
+    document.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+    document.querySelectorAll('.quiz-next').forEach(b => b.disabled = true);
+    updateProgress(1);
+  }
+
+  document.getElementById('quizOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeQuiz();
+  });
+</script>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">SEOULMATE 31</div>
+      <div class="footer-tagline">居韓第10年。<br>台灣人在韓國的<br>第一手資訊基地。</div>
+    </div>
+    <div>
+      <div class="footer-col-title">落地 · 攻略</div>
+      <ul class="footer-links">
+        <li><a href="#">韓國90天生存指南</a></li>
+        <li><a href="#">韓國交通攻略</a></li>
+        <li><a href="#">韓國租房完整攻略</a></li>
+        <li><a href="#">LH公宅申請指南</a></li>
+        <li><a href="#">打工度假攻略</a></li>
+        <li><a href="#">留學 · 語學堂</a></li>
+        <li><a href="#">整形 · 醫美</a></li>
+        <li><a href="#">電商 · 韓貨代購</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">服務</div>
+      <ul class="footer-links">
+        <li><a href="booking.html">1:1 諮詢預約</a></li>
+        <li><a href="#">落地包</a></li>
+        <li><a href="#">留學包</a></li>
+        <li><a href="#">電商包</a></li>
+        <li><a href="#" onclick="event.preventDefault(); openQuiz()">路線快速測試</a></li>
+        <li><a href="#">韓國生活費計算</a></li>
+        <li><a href="#">Notion 模板</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">關於</div>
+      <ul class="footer-links">
+        <li><a href="#">關於 SEOULMATE 31</a></li>
+        <li><a href="#">真實案例</a></li>
+        <li><a href="#">聯絡我們</a></li>
+        <li><a href="#">隱私政策</a></li>
+        <li><a href="#">使用條款</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">廣告合作</div>
+      <ul class="footer-links">
+        <li><a href="#">廣告版位介紹</a></li>
+        <li><a href="#">合作方案</a></li>
+        <li><a href="#">業配 · 業務合作</a></li>
+        <li><a href="#">聯絡方式</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 SEOULMATE 31. All rights reserved.</div>
+    <div class="footer-social">
+      <a href="#">Instagram</a>
+      <a href="#">LINE</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
