@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>韓國生活費計算機 — SEOULMATE 31</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --cream: #f5f0e8;
+    --warm: #f0e8d8;
+    --red: #c0392b;
+    --blue: #1a3a5c;
+    --gold: #c9a84c;
+    --mid: #8a8070;
+    --light-mid: #d4cfc4;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Outfit', 'Noto Sans KR', 'Noto Serif TC', sans-serif;
+    min-height: 100vh;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.5;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 3rem; height: 64px;
+    background: rgba(245,240,232,0.92); backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--light-mid);
+  }
+  .nav-logo {
+    font-family: 'DM Serif Display', serif; font-size: 1.3rem;
+    color: var(--ink); text-decoration: none;
+    display: flex; align-items: baseline; gap: 0.4rem;
+  }
+  .nav-logo span {
+    font-family: 'Space Mono', monospace; font-size: 0.75rem;
+    font-weight: 400; color: var(--red); letter-spacing: 0.05em;
+  }
+  .nav-back {
+    font-family: 'Space Mono', monospace; font-size: 0.72rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--mid); text-decoration: none;
+    border-bottom: 1px solid var(--light-mid); padding-bottom: 0.1rem;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--ink); }
+
+  /* HERO */
+  .calc-hero {
+    padding: 120px 3rem 3rem;
+    max-width: 860px; margin: 0 auto;
+  }
+  .calc-label {
+    font-family: 'Space Mono', monospace; font-size: 0.62rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--mid); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .calc-label::after {
+    content: ''; flex: 1; height: 1px; background: var(--light-mid); max-width: 40px;
+  }
+  .calc-title {
+    font-family: 'Noto Serif TC', serif; font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 900; line-height: 1.15; letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+  }
+  .calc-sub {
+    font-family: 'Noto Sans KR', sans-serif; font-size: 0.9rem;
+    font-weight: 300; color: var(--mid); line-height: 1.8;
+    margin-bottom: 0.4rem;
+  }
+  .calc-note {
+    font-family: 'Space Mono', monospace; font-size: 0.65rem;
+    color: var(--gold); letter-spacing: 0.05em;
+  }
+
+  /* MAIN LAYOUT */
+  .calc-wrap {
+    max-width: 860px; margin: 0 auto;
+    padding: 0 3rem 6rem;
+    display: grid; grid-template-columns: 1fr 340px; gap: 2px;
+    align-items: start;
+  }
+
+  /* FORM PANEL */
+  .calc-form {
+    background: white; padding: 2.5rem 2rem;
+    border: 1px solid var(--light-mid);
+  }
+  .calc-section-title {
+    font-family: 'Space Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 1.4rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .calc-section-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--light-mid);
+  }
+  .calc-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.9rem 0; border-bottom: 1px solid var(--warm);
+  }
+  .calc-row:last-child { border-bottom: none; }
+  .calc-row-label {
+    font-family: 'Noto Sans KR', sans-serif; font-size: 0.85rem;
+    font-weight: 400; color: var(--ink);
+    display: flex; flex-direction: column; gap: 0.2rem;
+  }
+  .calc-row-sub {
+    font-family: 'Outfit', sans-serif; font-size: 0.7rem;
+    color: var(--mid);
+  }
+  .calc-input-wrap {
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .calc-unit {
+    font-family: 'Space Mono', monospace; font-size: 0.7rem;
+    color: var(--mid); white-space: nowrap;
+  }
+  input[type="range"] {
+    -webkit-appearance: none; appearance: none;
+    width: 120px; height: 4px;
+    background: var(--light-mid); border-radius: 2px; outline: none;
+    cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; appearance: none;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--ink); cursor: pointer;
+  }
+  .calc-val {
+    font-family: 'Space Mono', monospace; font-size: 0.8rem;
+    color: var(--ink); min-width: 60px; text-align: right;
+  }
+  .calc-group { margin-bottom: 2rem; }
+
+  /* SELECT */
+  select {
+    font-family: 'Outfit', sans-serif; font-size: 0.82rem;
+    color: var(--ink); background: var(--warm);
+    border: 1px solid var(--light-mid); padding: 0.4rem 0.8rem;
+    cursor: pointer; outline: none; appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%238a8070'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 0.7rem center;
+    padding-right: 2rem;
+  }
+
+  /* RESULT PANEL */
+  .calc-result {
+    background: var(--ink); padding: 2.5rem 2rem;
+    position: sticky; top: 80px;
+  }
+  .result-label {
+    font-family: 'Space Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(245,240,232,0.4); margin-bottom: 1.6rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .result-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: rgba(245,240,232,0.1);
+  }
+  .result-total-label {
+    font-family: 'Outfit', sans-serif; font-size: 0.72rem;
+    font-weight: 500; letter-spacing: 0.08em;
+    color: rgba(245,240,232,0.5); margin-bottom: 0.4rem;
+  }
+  .result-total {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: 3rem; color: var(--cream); line-height: 1;
+    letter-spacing: -0.02em; margin-bottom: 0.3rem;
+  }
+  .result-total-unit {
+    font-family: 'Space Mono', monospace; font-size: 0.7rem;
+    color: var(--gold); letter-spacing: 0.1em; margin-bottom: 2rem;
+  }
+  .result-breakdown {
+    display: flex; flex-direction: column; gap: 0;
+    margin-bottom: 2rem;
+  }
+  .result-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .result-item:last-child { border-bottom: none; }
+  .result-item-label {
+    font-family: 'Noto Sans KR', sans-serif; font-size: 0.78rem;
+    font-weight: 300; color: rgba(245,240,232,0.6);
+  }
+  .result-item-val {
+    font-family: 'Space Mono', monospace; font-size: 0.78rem;
+    color: var(--cream);
+  }
+  .result-divider {
+    height: 1px; background: rgba(255,255,255,0.12); margin: 0.8rem 0;
+  }
+  .result-usd {
+    font-family: 'Outfit', sans-serif; font-size: 0.82rem;
+    color: rgba(245,240,232,0.5); margin-bottom: 1.6rem;
+    padding: 0.8rem 0; border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .result-usd span {
+    font-family: 'Space Mono', monospace; font-size: 0.9rem;
+    color: var(--gold);
+  }
+  .result-warning {
+    font-family: 'Outfit', sans-serif; font-size: 0.72rem;
+    color: rgba(245,240,232,0.35); line-height: 1.7;
+    margin-bottom: 1.6rem;
+  }
+  .result-cta {
+    display: block; width: 100%; text-align: center;
+    padding: 0.85rem 1.5rem;
+    background: var(--red); color: white;
+    font-family: 'Outfit', sans-serif; font-size: 0.82rem;
+    font-weight: 600; letter-spacing: 0.04em;
+    text-decoration: none; transition: opacity 0.2s;
+  }
+  .result-cta:hover { opacity: 0.88; }
+
+  /* TIPS */
+  .calc-tips {
+    max-width: 860px; margin: 0 auto;
+    padding: 0 3rem 6rem;
+  }
+  .tips-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+  }
+  .tip-card {
+    background: var(--warm); padding: 1.8rem 1.5rem;
+  }
+  .tip-icon { font-size: 1.4rem; margin-bottom: 0.8rem; }
+  .tip-title {
+    font-family: 'Noto Serif TC', serif; font-size: 0.95rem;
+    font-weight: 700; margin-bottom: 0.5rem;
+  }
+  .tip-body {
+    font-family: 'Noto Sans KR', sans-serif; font-size: 0.78rem;
+    font-weight: 300; color: var(--mid); line-height: 1.75;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1.5rem; }
+    .calc-hero { padding: 100px 1.5rem 2rem; }
+    .calc-wrap { grid-template-columns: 1fr; padding: 0 1.5rem 4rem; }
+    .calc-result { position: static; }
+    .calc-tips { padding: 0 1.5rem 4rem; }
+    .tips-grid { grid-template-columns: 1fr; }
+    input[type="range"] { width: 90px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">SEOULMATE <span>31</span></a>
+  <a href="index.html" class="nav-back">← 返回首頁</a>
+</nav>
+
+<div class="calc-hero">
+  <div class="calc-label">免費工具</div>
+  <h1 class="calc-title">韓國生活費<br>計算機</h1>
+  <p class="calc-sub">大多數估算表都低估了 30%。<br>這裡用真實數字幫你算清楚。</p>
+  <p class="calc-note">* 以首爾為基準，2026年數據</p>
+</div>
+
+<div class="calc-wrap">
+
+  <!-- FORM -->
+  <div class="calc-form">
+
+    <!-- 住宿 -->
+    <div class="calc-group">
+      <div class="calc-section-title">住宿</div>
+      <div class="calc-row">
+        <div class="calc-row-label">
+          住宿類型
+          <span class="calc-row-sub">格子間 / 套房 / Share House</span>
+        </div>
+        <select id="housingType" onchange="calc()">
+          <option value="350000">格子間（35萬/月）</option>
+          <option value="500000" selected>Share House（50萬/月）</option>
+          <option value="700000">一房套房（70萬/月）</option>
+          <option value="1000000">一房套房·江南（100萬/月）</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 飲食 -->
+    <div class="calc-group">
+      <div class="calc-section-title">飲食</div>
+      <div class="calc-row">
+        <div class="calc-row-label">
+          外食頻率
+          <span class="calc-row-sub">每天幾餐外食</span>
+        </div>
+        <div class="calc-input-wrap">
+          <input type="range" id="eatOut" min="0" max="3" step="1" value="2" oninput="syncVal('eatOut','eatOutVal'); calc()">
+          <span class="calc-val" id="eatOutVal">2 餐/天</span>
+        </div>
+      </div>
+      <div class="calc-row">
+        <div class="calc-row-label">
+          咖啡 / 飲料
+          <span class="calc-row-sub">每週幾次</span>
+        </div>
+        <div class="calc-input-wrap">
+          <input type="range" id="coffee" min="0" max="14" step="1" value="5" oninput="syncVal('coffee','coffeeVal'); calc()">
+          <span class="calc-val" id="coffeeVal">5 次/週</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 交通 -->
+    <div class="calc-group">
+      <div class="calc-section-title">交通</div>
+      <div class="calc-row">
+        <div class="calc-row-label">
+          地鐵 / 公車
+          <span class="calc-row-sub">每天搭幾次</span>
+        </div>
+        <div class="calc-input-wrap">
+          <input type="range" id="transit" min="0" max="6" step="1" value="4" oninput="syncVal('transit','transitVal'); calc()">
+          <span class="calc-val" id="transitVal">4 次/天</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 通訊 -->
+    <div class="calc-group">
+      <div class="calc-section-title">通訊</div>
+      <div class="calc-row">
+        <div class="calc-row-label">
+          手機方案
+        </div>
+        <select id="phone" onchange="calc()">
+          <option value="15000">預付卡（1.5萬/月）</option>
+          <option value="33000" selected>月租方案（3.3萬/月）</option>
+          <option value="55000">無限流量（5.5萬/月）</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 娛樂 / 其他 -->
+    <div class="calc-group">
+      <div class="calc-section-title">娛樂 · 其他</div>
+      <div class="calc-row">
+        <div class="calc-row-label">
+          娛樂 / 購物
+          <span class="calc-row-sub">每月預算</span>
+        </div>
+        <div class="calc-input-wrap">
+          <input type="range" id="fun" min="0" max="500000" step="50000" value="150000" oninput="syncFun(); calc()">
+          <span class="calc-val" id="funVal">15萬</span>
+        </div>
+      </div>
+      <div class="calc-row">
+        <div class="calc-row-label">
+          健康保險
+          <span class="calc-row-sub">外國人強制加入</span>
+        </div>
+        <div class="calc-input-wrap">
+          <span class="calc-val" style="color:var(--mid)">~11萬/月</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RESULT -->
+  <div class="calc-result">
+    <div class="result-label">每月估算</div>
+    <div class="result-total-label">月生活費合計</div>
+    <div class="result-total" id="totalKRW">—</div>
+    <div class="result-total-unit">韓元 / 月</div>
+
+    <div class="result-breakdown">
+      <div class="result-item">
+        <span class="result-item-label">住宿</span>
+        <span class="result-item-val" id="r-housing">—</span>
+      </div>
+      <div class="result-item">
+        <span class="result-item-label">飲食</span>
+        <span class="result-item-val" id="r-food">—</span>
+      </div>
+      <div class="result-item">
+        <span class="result-item-label">交通</span>
+        <span class="result-item-val" id="r-transit">—</span>
+      </div>
+      <div class="result-item">
+        <span class="result-item-label">通訊</span>
+        <span class="result-item-val" id="r-phone">—</span>
+      </div>
+      <div class="result-item">
+        <span class="result-item-label">娛樂 / 購物</span>
+        <span class="result-item-val" id="r-fun">—</span>
+      </div>
+      <div class="result-item">
+        <span class="result-item-label">健康保險</span>
+        <span class="result-item-val">約 110,000</span>
+      </div>
+    </div>
+
+    <div class="result-usd">
+      約 <span id="totalUSD">—</span> USD / 月
+      <div style="font-size:0.65rem; color:rgba(245,240,232,0.3); margin-top:0.3rem;">匯率 1 USD ≈ 1,380 KRW</div>
+    </div>
+
+    <div class="result-warning">
+      ⚠ 此為最低估算。語學堂學費、簽證費、機票、初期押金等一次性費用未計入。
+    </div>
+
+    <a href="https://calendly.com/seoulmate31" target="_blank" rel="noopener" class="result-cta">
+      數字看不懂？直接問我 →
+    </a>
+  </div>
+
+</div>
+
+<!-- TIPS -->
+<div class="calc-tips">
+  <div class="calc-section-title" style="margin-bottom:1.5rem;">大多數人低估的 3 件事</div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">🏠</div>
+      <div class="tip-title">押金（保證金）</div>
+      <div class="tip-body">韓國租房通常需要 100–500 萬韓元押金。這筆錢要先準備好，不是月租費。</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏥</div>
+      <div class="tip-title">健康保險強制加入</div>
+      <div class="tip-body">在韓國住超過 6 個月，外國人必須加入國民健保，每月約 10–13 萬韓元，不能省。</div>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">✈️</div>
+      <div class="tip-title">初期一次性費用</div>
+      <div class="tip-body">機票、簽證費、初期採購（棉被、鍋具等）加起來通常超過 50 萬韓元，很多人忘了算。</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const USD_RATE = 1380;
+
+  function fmt(n) {
+    return n.toLocaleString('ko-KR');
+  }
+
+  function syncVal(id, valId) {
+    const v = parseInt(document.getElementById(id).value);
+    const labels = {
+      eatOut: v + ' 餐/天',
+      coffee: v + ' 次/週',
+      transit: v + ' 次/天',
+    };
+    document.getElementById(valId).textContent = labels[id] || v;
+  }
+
+  function syncFun() {
+    const v = parseInt(document.getElementById('fun').value);
+    document.getElementById('funVal').textContent = (v / 10000) + '萬';
+  }
+
+  function calc() {
+    // Housing
+    const housing = parseInt(document.getElementById('housingType').value);
+
+    // Food: eatOut meals/day × 8,000 KRW avg × 30 days + coffee × 5,500 × 4.3 weeks
+    const eatOut = parseInt(document.getElementById('eatOut').value);
+    const coffee = parseInt(document.getElementById('coffee').value);
+    const food = Math.round(eatOut * 8000 * 30 + coffee * 5500 * 4.3);
+
+    // Transit: rides/day × 1,400 KRW × 30 days
+    const transitRides = parseInt(document.getElementById('transit').value);
+    const transit = transitRides * 1400 * 30;
+
+    // Phone
+    const phone = parseInt(document.getElementById('phone').value);
+
+    // Fun
+    const fun = parseInt(document.getElementById('fun').value);
+
+    // Insurance (fixed)
+    const insurance = 110000;
+
+    const total = housing + food + transit + phone + fun + insurance;
+
+    document.getElementById('totalKRW').textContent = fmt(total);
+    document.getElementById('totalUSD').textContent = Math.round(total / USD_RATE).toLocaleString();
+
+    document.getElementById('r-housing').textContent = fmt(housing);
+    document.getElementById('r-food').textContent = fmt(food);
+    document.getElementById('r-transit').textContent = fmt(transit);
+    document.getElementById('r-phone').textContent = fmt(phone);
+    document.getElementById('r-fun').textContent = fmt(fun);
+  }
+
+  // Init
+  calc();
+</script>
+
+</body>
+</html>
