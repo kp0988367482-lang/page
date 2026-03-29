@@ -367,6 +367,128 @@
     color: rgba(245,240,232,0.5);
     line-height: 1.5;
   }
+  /* HERO SERVICE TAGS */
+  .hero-service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 2.5rem;
+  }
+  .hero-stag {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+    padding: 0.35rem 0.9rem;
+    text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .hero-stag:hover { background: var(--ink); color: var(--cream); }
+
+  /* ADVANTAGE SECTION */
+  .advantage {
+    padding: 7rem 0;
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .advantage-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+  }
+  .advantage-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.5rem;
+  }
+  .advantage-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 5rem;
+  }
+  .advantage-title em {
+    font-style: italic;
+    font-family: 'DM Serif Display', serif;
+    color: var(--red);
+  }
+  .advantage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .adv-card {
+    padding: 3rem 2.5rem 3rem 0;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+  .adv-card:last-child { border-right: none; padding-right: 0; }
+  .adv-card:not(:first-child) { padding-left: 2.5rem; }
+  .adv-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 4.5rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.08);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+  .adv-badge {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 0.2rem 0.7rem;
+    margin-bottom: 1.2rem;
+  }
+  .adv-heading {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--cream);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .adv-desc {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    color: rgba(245,240,232,0.45);
+    line-height: 1.85;
+    margin-bottom: 1.5rem;
+  }
+  .adv-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .adv-tag {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: rgba(245,240,232,0.5);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.2rem 0.6rem;
+  }
+  @media (max-width: 900px) {
+    .advantage-grid { grid-template-columns: 1fr 1fr; }
+    .adv-card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 2.5rem 0; }
+    .adv-card:not(:first-child) { padding-left: 0; }
+  }
+  @media (max-width: 600px) {
+    .advantage-grid { grid-template-columns: 1fr; }
+    .hero-service-tags { gap: 0.4rem; }
+  }
+
   .hero-flags {
     position: absolute;
     top: 3rem;
@@ -1661,9 +1783,15 @@
   <div class="hero-left">
     <div class="hero-flag-badge">🇹🇼 × 🇰🇷 &nbsp;&nbsp; SEOULMATE 31</div>
     <h1 class="hero-title">你有 30 個朋友，<br>但沒有一個<em>在首爾。</em></h1>
-    <p class="hero-sub">我們就是那個缺少的第 31 個。<br>落地 &middot; 商業 &middot; 整形 &middot; 電商 &middot; 諮詢 &mdash;&mdash; 一個都不少。</p>
+    <p class="hero-sub">韓國落地生活 &middot; 文化商業接地 &middot; 韓娛全爆料<br>你在韓國需要知道的，全在這裡。</p>
+    <div class="hero-service-tags">
+      <span class="hero-stag">留學規劃</span>
+      <span class="hero-stag">整形諮詢</span>
+      <span class="hero-stag">電商 · 代購</span>
+      <span class="hero-stag">簽證問題</span>
+    </div>
     <div class="hero-actions">
-      <a href="booking.html" class="btn-primary">立即加入 지금 가입 →</a>
+      <a href="booking.html" class="btn-primary">預約諮詢 →</a>
       <a href="#" class="btn-outline" onclick="event.preventDefault(); openQuiz()">看看裡面有什麼</a>
     </div>
   </div>
@@ -1682,6 +1810,59 @@
       <div class="hero-stat">
         <div class="hero-stat-num">1:1</div>
         <div class="hero-stat-label">真人諮詢<br>非機器人</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGE SECTION -->
+<section class="advantage">
+  <div class="advantage-inner">
+    <div class="advantage-label">Why SEOULMATE31</div>
+    <h2 class="advantage-title">我們的護城河<br>是<em>10年第一手經驗</em></h2>
+    <div class="advantage-grid">
+      <div class="adv-card">
+        <div class="adv-num">01</div>
+        <div class="adv-badge">信息差</div>
+        <div class="adv-heading">找到真正<br>有用的資訊</div>
+        <div class="adv-desc">網路上免費的韓國資訊，通常最貴。我們只分享親身驗證過的第一手情報，不帶跑。</div>
+        <div class="adv-tags">
+          <span class="adv-tag">導遊</span>
+          <span class="adv-tag">東大門</span>
+          <span class="adv-tag">商務對接</span>
+        </div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-num">02</div>
+        <div class="adv-badge">認知差</div>
+        <div class="adv-heading">看懂韓國<br>的規則</div>
+        <div class="adv-desc">韓國有一套外人看不懂的潛規則。住過才知道，踩過才懂得。我們把它翻譯成你能用的語言。</div>
+        <div class="adv-tags">
+          <span class="adv-tag">研究所</span>
+          <span class="adv-tag">韓國職場</span>
+          <span class="adv-tag">在職</span>
+        </div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-num">03</div>
+        <div class="adv-badge">執行差</div>
+        <div class="adv-heading">知道怎麼做<br>還要做得到</div>
+        <div class="adv-desc">知道跟做到之間，差了一個在首爾的人。我們不只給攻略，我們陪你把事情搞定。</div>
+        <div class="adv-tags">
+          <span class="adv-tag">語學堂</span>
+          <span class="adv-tag">打工度假</span>
+          <span class="adv-tag">物流</span>
+        </div>
+      </div>
+      <div class="adv-card">
+        <div class="adv-num">04</div>
+        <div class="adv-badge">競爭差</div>
+        <div class="adv-heading">走在別人<br>前面</div>
+        <div class="adv-desc">10年在地經驗，讓你比其他人早一步看到機會、避開陷阱、在韓國站穩腳步。</div>
+        <div class="adv-tags">
+          <span class="adv-tag">10年</span>
+          <span class="adv-tag">第一手經驗</span>
+        </div>
       </div>
     </div>
   </div>
