@@ -3,7 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEOULMATE 31 — 居韓台灣人的指南</title>
+<title>SEOULMATE 31 — 台灣人去韓國留學、打工度假、生活移居完整指南</title>
+<meta name="description" content="SEOULMATE31 是居韓台灣人打造的韓國生活指南。涵蓋語學堂比較、打工度假申請、E-7 工作簽證、租屋攻略、ARC 辦理——全部第一手實戰資訊，不是官網複製貼上。">
+<meta name="keywords" content="韓國留學,韓國打工度假,語學堂,E-7簽證,韓國租屋,ARC外登證,台灣人去韓國,SEOULMATE31">
+<meta name="author" content="SEOULMATE31">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://page-blond-rho.vercel.app/">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="SEOULMATE 31 — 台灣人去韓國留學、打工度假、生活移居完整指南">
+<meta property="og:description" content="語學堂比較、打工度假申請、E-7工作簽證、租屋攻略——居韓台灣人第一手整理，不是官網複製貼上。">
+<meta property="og:url" content="https://page-blond-rho.vercel.app/">
+<meta property="og:site_name" content="SEOULMATE31">
+<meta property="og:locale" content="zh_TW">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SEOULMATE 31 — 台灣人去韓國完整指南">
+<meta name="twitter:description" content="語學堂、打工度假、E-7簽證、租屋——居韓台灣人第一手整理。">
+<!-- Schema: WebSite + Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://page-blond-rho.vercel.app/#website",
+      "url": "https://page-blond-rho.vercel.app/",
+      "name": "SEOULMATE31",
+      "description": "台灣人去韓國留學、打工度假、生活移居完整指南",
+      "inLanguage": "zh-TW",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://page-blond-rho.vercel.app/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://page-blond-rho.vercel.app/#organization",
+      "name": "SEOULMATE31",
+      "url": "https://page-blond-rho.vercel.app/",
+      "description": "居韓台灣人打造的韓國生活、留學、就業資訊平台，提供語學堂比較、打工度假申請、E-7簽證、租屋攻略等第一手實戰資訊。",
+      "areaServed": ["TW", "HK", "SG", "MY"],
+      "knowsAbout": ["韓國留學", "語學堂", "打工度假", "E-7簽證", "韓國租屋", "ARC外登證"]
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
@@ -1287,16 +1333,100 @@
   .quiz-restart { font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); background: none; border: none; cursor: pointer; margin-top: 1.5rem; display: block; padding: 0; }
   .quiz-restart:hover { color: var(--ink); }
 
+  /* CUSTOM CURSOR */
+  *, *::before, *::after { cursor: none !important; }
+  #cursor-dot {
+    position: fixed; top: 0; left: 0; width: 8px; height: 8px;
+    background: var(--red); border-radius: 50%;
+    pointer-events: none; z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.08s ease, background 0.2s;
+  }
+  #cursor-ring {
+    position: fixed; top: 0; left: 0; width: 36px; height: 36px;
+    border: 1.5px solid var(--ink); border-radius: 50%;
+    pointer-events: none; z-index: 99998;
+    transform: translate(-50%, -50%);
+    transition: transform 0.18s ease, width 0.2s ease, height 0.2s ease, border-color 0.2s, opacity 0.2s;
+    opacity: 0.6;
+  }
+  body:has(a:hover) #cursor-ring,
+  body:has(button:hover) #cursor-ring {
+    width: 52px; height: 52px;
+    border-color: var(--red); opacity: 1;
+  }
+  body:has(a:hover) #cursor-dot,
+  body:has(button:hover) #cursor-dot {
+    transform: translate(-50%, -50%) scale(1.8);
+  }
+
+  /* TICKER / MARQUEE */
+  .ticker-wrap {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+    background: var(--ink); overflow: hidden; height: 32px;
+    display: flex; align-items: center;
+  }
+  .ticker-track {
+    display: flex; gap: 0;
+    animation: tickerScroll 28s linear infinite;
+    white-space: nowrap;
+  }
+  .ticker-track:hover { animation-play-state: paused; }
+  .ticker-item {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream); padding: 0 2.4rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .ticker-item a {
+    color: var(--gold); text-decoration: none;
+    font-weight: 700; transition: color 0.15s;
+  }
+  .ticker-item a:hover { color: white; }
+  .ticker-sep {
+    color: var(--red); font-size: 0.55rem;
+  }
+  @keyframes tickerScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  /* push nav + body down for ticker */
+  nav { top: 32px !important; }
+  .hero { padding-top: calc(64px + 32px) !important; min-height: calc(100vh) !important; }
+
   /* ANIMATIONS */
   @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
+    from { opacity: 0; transform: translateY(28px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  .hero-left > * { animation: fadeUp 0.7s ease both; }
-  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
-  .hero-left > *:nth-child(2) { animation-delay: 0.25s; }
-  .hero-left > *:nth-child(3) { animation-delay: 0.4s; }
-  .hero-left > *:nth-child(4) { animation-delay: 0.55s; }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.94); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  .hero-left > * { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) both; }
+  .hero-left > *:nth-child(1) { animation-delay: 0.05s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.18s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.32s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.46s; }
+  .hero-right { animation: fadeIn 1.1s ease both; animation-delay: 0.3s; }
+  .hero-stat { animation: slideRight 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+  .hero-stat:nth-child(1) { animation-delay: 0.5s; }
+  .hero-stat:nth-child(2) { animation-delay: 0.65s; }
+  .hero-stat:nth-child(3) { animation-delay: 0.8s; }
+  /* section scroll-in */
+  .reveal {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
   @media (max-width: 900px) {
     nav { padding: 0 1.5rem; }
@@ -1316,6 +1446,38 @@
 </style>
 </head>
 <body>
+
+<!-- CUSTOM CURSOR -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <!-- set 1 -->
+    <span class="ticker-item">🔥 <a href="https://paypal.me/HSIANGENTSAI/19" target="_blank" rel="noopener">留學包 $19</a> <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">落地第一週最容易踩的坑 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item"><a href="arrival-visa-e7.html">E-7 申請策略</a> <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">30秒韓國面試流程策略 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item"><a href="study-language-school.html">語學堂比較 2026</a> <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">打工度假薪資拆解：月薪150萬韓元扣完剩多少 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item"><a href="booking.html">1:1 諮詢 $79 → 先聊一次，免費評估</a> <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">ARC 外登證預約攻略 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item"><a href="arrival-rent.html">韓國租屋全攻略</a> <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">你不在首爾，但我們在 <span class="ticker-sep">◆</span></span>
+    <!-- set 2 (duplicate for seamless loop) -->
+    <span class="ticker-item">🔥 <a href="https://paypal.me/HSIANGENTSAI/19" target="_blank" rel="noopener">留學包 $19</a> <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">落地第一週最容易踩的坑 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item"><a href="arrival-visa-e7.html">E-7 申請策略</a> <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">30秒韓國面試流程策略 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item"><a href="study-language-school.html">語學堂比較 2026</a> <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">打工度假薪資拆解：月薪150萬韓元扣完剩多少 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item"><a href="booking.html">1:1 諮詢 $79 → 先聊一次，免費評估</a> <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">ARC 外登證預約攻略 <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item"><a href="arrival-rent.html">韓國租屋全攻略</a> <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">你不在首爾，但我們在 <span class="ticker-sep">◆</span></span>
+  </div>
+</div>
 
 <nav>
   <a href="#" class="nav-logo">SEOULMATE <span>31</span></a>
@@ -2145,6 +2307,45 @@
     </div>
   </div>
 </footer>
+
+<!-- CUSTOM CURSOR JS -->
+<script>
+  (function() {
+    const dot  = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+    let mx = -100, my = -100, rx = -100, ry = -100;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    function loop() {
+      dot.style.left  = mx + 'px';
+      dot.style.top   = my + 'px';
+      rx += (mx - rx) * 0.14;
+      ry += (my - ry) * 0.14;
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(loop);
+    }
+    loop();
+    // hide on leave, show on enter
+    document.addEventListener('mouseleave', () => { dot.style.opacity = '0'; ring.style.opacity = '0'; });
+    document.addEventListener('mouseenter', () => { dot.style.opacity = '1'; ring.style.opacity = '0.6'; });
+  })();
+</script>
+
+<!-- SCROLL REVEAL JS -->
+<script>
+  (function() {
+    const els = document.querySelectorAll(
+      '.trending-header, .trend-card, .path-card, .case-card, .guide-card, .tool-card, .product-card, .consulting-left, .consulting-right'
+    );
+    els.forEach(el => el.classList.add('reveal'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  })();
+</script>
 
 </body>
 </html>
