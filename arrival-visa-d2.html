@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓國留學 D-2 簽證攻略 | SEOULMATE31</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f0e0c;
+            --cream: #f5f0e8;
+            --warm: #f0e8d8;
+            --red: #c0392b;
+            --gold: #c9a84c;
+            --mid: #8a8070;
+            --light-mid: #d4cfc4;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--ink);
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 900;
+        }
+
+        .serif-display {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .mono {
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.85rem;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--cream);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-mid);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            text-decoration: none;
+            font-family: 'DM Serif Display', serif;
+            color: var(--ink);
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--mid);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            color: var(--ink);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 5% 4rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.25rem;
+            color: var(--mid);
+            margin-bottom: 3rem;
+        }
+
+        .judgment-card {
+            background-color: var(--ink);
+            color: var(--cream);
+            padding: 2.5rem;
+            border-radius: 4px;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .judgment-card h3 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .judgment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .judgment-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .judgment-item {
+            border-left: 2px solid var(--mid);
+            padding-left: 1.5rem;
+        }
+
+        .judgment-item span {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--light-mid);
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 4rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .angle-box {
+            background-color: var(--warm);
+            padding: 3rem;
+            margin-bottom: 4rem;
+            border-radius: 2px;
+        }
+
+        .angle-box h2 {
+            margin-bottom: 1.5rem;
+            color: var(--red);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 3rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 1.25rem;
+            text-align: left;
+            border: 1px solid var(--light-mid);
+        }
+
+        th {
+            background-color: var(--ink);
+            color: var(--cream);
+            font-family: 'Space Mono', monospace;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--warm);
+        }
+
+        /* FAQ Accordion */
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--light-mid);
+            padding: 1.5rem 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            padding-top: 1rem;
+            color: var(--mid);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Case Quote */
+        .case-quote {
+            border-left: 4px solid var(--red);
+            padding: 2rem;
+            background: white;
+            margin: 4rem 0;
+            font-style: italic;
+        }
+
+        .case-quote p {
+            font-size: 1.2rem;
+            color: var(--ink);
+        }
+
+        /* CTA Section */
+        .cta-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 5rem 0;
+        }
+
+        @media (max-width: 600px) {
+            .cta-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cta-button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .cta-primary {
+            background-color: var(--red);
+            color: white;
+        }
+
+        .cta-secondary {
+            background-color: var(--ink);
+            color: var(--gold);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px);
+            filter: brightness(1.1);
+        }
+
+        .cta-price {
+            font-family: 'Space Mono', monospace;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .urgency {
+            color: var(--red);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--light-mid);
+            color: var(--mid);
+        }
+
+        footer a {
+            color: var(--ink);
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SEOULMATE <span>31</span></a>
+        <a href="index.html" class="nav-link">← 返回首頁</a>
+    </nav>
+
+    <header class="hero">
+        <p class="mono">Visa Guide / D-2</p>
+        <h1>韓國留學 D-2 簽證攻略</h1>
+        <p class="subtitle">語學堂、大學、研究所——D-2 簽證怎麼辦？</p>
+
+        <div class="judgment-card">
+            <p class="mono" style="color: var(--gold); margin-bottom: 1rem;">3-Second Judgment</p>
+            <h3>你真的需要辦 D-2 簽證嗎？</h3>
+            <div class="judgment-grid">
+                <div class="judgment-item">
+                    <span class="mono">Case A</span>
+                    <p>只讀一期（3個月內）語學堂，且不打算打工？<br><strong>→ 觀光入境 (K-ETA) 即可。</strong></p>
+                </div>
+                <div class="judgment-item">
+                    <span class="mono">Case B</span>
+                    <p>要讀兩期以上，或想在韓國合法打工賺生活費？<br><strong>→ 必須申請 D-2 簽證。</strong></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-section">
+        <div class="angle-box">
+            <h2>同樣學韓文，費用差 3 倍的原因</h2>
+            <p>很多台灣學生為了省事，選擇用觀光簽去讀語學堂。表面上省了簽證費，但實際上你損失的是<strong>「合法打工的權利」</strong>。在韓國，便利商店時薪約 9,860 韓幣，D-2 學生每週可打工 20-30 小時。用觀光簽去，你只能純燒錢，三個月下來，生活成本加上錯失的薪資，差距高達 3 倍以上。</p>
+        </div>
+
+        <div class="table-container">
+            <p class="mono" style="margin-bottom: 1rem;">Comparison Table</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>比較項目</th>
+                        <th>D-2 留學簽證</th>
+                        <th>觀光入境 (K-ETA)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>申請費用</td>
+                        <td>約 $60 USD (視地區而定)</td>
+                        <td>10,000 韓幣</td>
+                    </tr>
+                    <tr>
+                        <td>所需文件</td>
+                        <td>入學許可、財力證明、學歷證明</td>
+                        <td>線上申請表</td>
+                    </tr>
+                    <tr>
+                        <td>等待時間</td>
+                        <td>2 - 4 週</td>
+                        <td>24 - 72 小時</td>
+                    </tr>
+                    <tr>
+                        <td>可打工時數</td>
+                        <td>每週 20 - 30 小時 (需申請)</td>
+                        <td><strong>嚴禁打工</strong></td>
+                    </tr>
+                    <tr>
+                        <td>健保福利</td>
+                        <td>可加入國民健康保險</td>
+                        <td>無，需自費醫療</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="faq-section">
+            <p class="mono" style="margin-bottom: 1.5rem;">Common Questions</p>
+            <div class="faq-item">
+                <div class="faq-question">語學堂一定要辦 D-2 嗎？ <span>+</span></div>
+                <div class="faq-answer">
+                    不一定。如果你只讀一期（10週），觀光簽是可以的。但如果你打算續讀，或想在韓國開戶、辦手機門號（需要 ARC），D-2 是唯一的穩定選擇。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">申請 D-2 要多久？ <span>+</span></div>
+                <div class="faq-answer">
+                    從拿到學校的「標準入學許可書」到領取簽證，通常需要 14 到 21 個工作天。建議開學前 2 個月就開始準備文件，避免卡在財力證明的公證環節。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">拿到 D-2 就可以立刻打工嗎？ <span>+</span></div>
+                <div class="faq-answer">
+                    不行。你必須入境韓國滿 6 個月（一學期），且出勤率達標，才能向出入境管理局申請「時間制就業許可」。非法打工被抓到會直接撤銷簽證。
+                </div>
+            </div>
+        </div>
+
+        <div class="case-quote">
+            <p>「當初為了省麻煩用觀光簽去語學堂，結果在餐廳打工被檢舉，移民局直接找上門。最後被罰款 200 萬韓幣並驅逐出境，五年內不得入境韓國。原本的留學夢直接碎掉。」</p>
+        </div>
+
+        <p class="urgency">⚠️ 2026 年韓國出入境審查趨嚴，非法打工罰款已調升 20%。不要拿你的未來冒險。</p>
+
+        <div class="cta-container">
+            <a href="https://paypal.me/HSIANGENTSAI/19" class="cta-button cta-secondary">
+                <span class="cta-price">$19</span>
+                <span class="cta-text">下載完整攻略 PDF →</span>
+                <span style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.8;">含文件清單與公證範本</span>
+            </a>
+            <a href="booking.html" class="cta-button cta-primary">
+                <span class="cta-price">$79</span>
+                <span class="cta-text">直接問我（1對1諮詢） →</span>
+                <span style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.9;">幫你避開所有簽證坑位</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 SEOULMATE31. All rights reserved.</p>
+        <p style="margin-top: 1rem;"><a href="index.html">返回首頁</a></p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+                const span = question.querySelector('span');
+                span.textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

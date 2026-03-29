@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓國生活必備 APP | SEOULMATE31</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f0e0c;
+            --cream: #f5f0e8;
+            --warm: #f0e8d8;
+            --red: #c0392b;
+            --gold: #c9a84c;
+            --mid: #8a8070;
+            --light-mid: #d4cfc4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--ink);
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'DM Serif Display', 'Noto Serif TC', serif;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Nav */
+        nav {
+            background-color: var(--cream);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--light-mid);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--mid);
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--ink);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 72px);
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero p.subtitle {
+            font-size: 20px;
+            color: var(--mid);
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        /* 3-sec Judgment Card */
+        .judgment-card {
+            background-color: var(--warm);
+            padding: 40px;
+            border-radius: 4px;
+            max-width: 700px;
+            margin: 0 auto;
+            border: 1px solid var(--light-mid);
+            text-align: left;
+        }
+
+        .judgment-card h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .judgment-card h3::before {
+            content: '⚡';
+            margin-right: 10px;
+        }
+
+        .judgment-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .judgment-item {
+            padding: 20px;
+            background: var(--white);
+            border-left: 4px solid var(--gold);
+        }
+
+        .judgment-item.no {
+            border-left-color: var(--red);
+        }
+
+        .judgment-item h4 {
+            font-family: 'Space Mono', monospace;
+            font-size: 14px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--mid);
+        }
+
+        .judgment-item p {
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Table */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: 60px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            min-width: 800px;
+        }
+
+        th {
+            background-color: var(--ink);
+            color: var(--cream);
+            text-align: left;
+            padding: 20px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+        }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid var(--light-mid);
+            vertical-align: top;
+        }
+
+        .tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 2px;
+            font-weight: bold;
+        }
+
+        .tag-yes { background: #e8f5e9; color: #2e7d32; }
+        .tag-no { background: #ffebee; color: #c62828; }
+        .tag-partial { background: #fff8e1; color: #f57f17; }
+
+        .app-name {
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .app-desc {
+            font-size: 14px;
+            color: var(--mid);
+        }
+
+        /* FAQ */
+        .faq {
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid var(--light-mid);
+            border-radius: 4px;
+            background: var(--white);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-family: 'Space Mono', monospace;
+            font-size: 20px;
+            color: var(--gold);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--mid);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Real Case */
+        .real-case {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: var(--warm);
+            border-radius: 4px;
+            margin-bottom: 80px;
+        }
+
+        blockquote {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 24px;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: '"';
+            font-size: 80px;
+            color: var(--gold);
+            opacity: 0.3;
+            position: absolute;
+            top: -40px;
+            left: -20px;
+        }
+
+        /* CTA */
+        .cta-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .cta-card {
+            padding: 40px;
+            text-align: center;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .cta-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cta-primary {
+            background-color: var(--ink);
+            color: var(--cream);
+        }
+
+        .cta-secondary {
+            background-color: var(--red);
+            color: var(--white);
+        }
+
+        .cta-price {
+            font-family: 'Space Mono', monospace;
+            font-size: 32px;
+            margin: 10px 0;
+        }
+
+        .cta-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .cta-urgency {
+            font-size: 13px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--light-mid);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: block;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .footer-logo span { color: var(--red); }
+
+        .back-home {
+            color: var(--mid);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-home:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .judgment-grid, .cta-box {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 { font-size: 48px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">SEOULMATE <span>31</span></a>
+            <a href="index.html" class="nav-link">← 返回首頁</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>韓國生活必備 APP</h1>
+            <p class="subtitle">沒有這幾個 APP，在韓國寸步難行</p>
+            
+            <div class="judgment-card">
+                <h3>3秒判斷你的韓國生活等級</h3>
+                <div class="judgment-grid">
+                    <div class="judgment-item">
+                        <h4>你有韓國手機門號嗎？</h4>
+                        <p>有：恭喜你，解鎖 99% 數位生活服務</p>
+                    </div>
+                    <div class="judgment-item no">
+                        <h4>你還在用漫遊/eSIM？</h4>
+                        <p>沒有：你將面臨「有錢也買不到飯」的窘境</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="content-section">
+            <h2 class="section-title">韓國人用什麼 APP 叫車、訂餐、買票、找工作？</h2>
+            
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>分類</th>
+                            <th>推薦 APP</th>
+                            <th>韓國手機號</th>
+                            <th>台灣人視角實測</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Transport -->
+                        <tr>
+                            <td rowspan="2"><strong>交通 / 地圖</strong><br><small>移動必備</small></td>
+                            <td>
+                                <span class="app-name">Naver Map / Kakao Map</span>
+                                <span class="app-desc">絕對不要用 Google Maps，在韓國它會讓你迷路。</span>
+                            </td>
+                            <td><span class="tag tag-no">不需要</span></td>
+                            <td>必裝。Naver Map 支援繁體中文，公車到站時間準確度 99%。</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="app-name">TABA / K-ride</span>
+                                <span class="app-desc">專為外國人設計的叫車系統。</span>
+                            </td>
+                            <td><span class="tag tag-no">不需要</span></td>
+                            <td>剛落地沒門號時的救星，支援台灣信用卡，不用怕跟司機溝通。</td>
+                        </tr>
+                        
+                        <!-- Food -->
+                        <tr>
+                            <td rowspan="2"><strong>美食 / 外送</strong><br><small>生存核心</small></td>
+                            <td>
+                                <span class="app-name">Shuttle Delivery</span>
+                                <span class="app-desc">全英文介面，支援國際信用卡。</span>
+                            </td>
+                            <td><span class="tag tag-no">不需要</span></td>
+                            <td>雖然運費貴個 2000 韓元，但不用 ARC 也能點炸雞，這錢值得花。</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="app-name">Baemin (外送的民族)</span>
+                                <span class="app-desc">韓國市佔第一，選擇最多。</span>
+                            </td>
+                            <td><span class="tag tag-yes">強制需要</span></td>
+                            <td>拿到 ARC 後的第一件事就是綁定它，凌晨三點想吃豬腳全靠它。</td>
+                        </tr>
+
+                        <!-- Shopping -->
+                        <tr>
+                            <td rowspan="2"><strong>購物 / 生活</strong><br><small>便利至上</small></td>
+                            <td>
+                                <span class="app-name">Coupang</span>
+                                <span class="app-desc">韓國版的 Amazon，半夜下單早上到。</span>
+                            </td>
+                            <td><span class="tag tag-yes">強制需要</span></td>
+                            <td>火箭配送是會上癮的。沒它，你得自己去超市搬 2 公升的水。</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="app-name">Gmarket Global</span>
+                                <span class="app-desc">老牌購物平台，外國人友善。</span>
+                            </td>
+                            <td><span class="tag tag-no">不需要</span></td>
+                            <td>介面雖然有點舊，但支援台灣信用卡，大件家具可以先在這裡買。</td>
+                        </tr>
+
+                        <!-- Jobs -->
+                        <tr>
+                            <td rowspan="2"><strong>求職 / 兼職</strong><br><small>賺錢管道</small></td>
+                            <td>
+                                <span class="app-name">Albamon / Albaheaven</span>
+                                <span class="app-desc">韓國最大的打工(Alba)平台。</span>
+                            </td>
+                            <td><span class="tag tag-partial">部分功能需要</span></td>
+                            <td>找兼職必看。雖然能瀏覽，但要聯絡老闆通常需要手機驗證。</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="app-name">LinkedIn / Wanted</span>
+                                <span class="app-desc">正職求職與科技業首選。</span>
+                            </td>
+                            <td><span class="tag tag-no">不需要</span></td>
+                            <td>外國人友善，LinkedIn 甚至不用韓國手機號就能投履歷。</td>
+                        </tr>
+
+                        <!-- Admin -->
+                        <tr>
+                            <td rowspan="2"><strong>行政 / 銀行</strong><br><small>長期居留</small></td>
+                            <td>
+                                <span class="app-name">Toss / KakaoBank</span>
+                                <span class="app-desc">極致簡便的轉帳與理財。</span>
+                            </td>
+                            <td><span class="tag tag-yes">強制需要</span></td>
+                            <td>韓國轉帳不用帳號，用 KakaoTalk 就能轉。沒這兩個，你會覺得自己活在古代。</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span class="app-name">Government24 / HiKorea</span>
+                                <span class="app-desc">簽證預約與公文申請。</span>
+                            </td>
+                            <td><span class="tag tag-partial">部分功能需要</span></td>
+                            <td>HiKorea 預約 ARC 不需要驗證，但下載公文就要數位憑證。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="faq">
+                <h2 class="section-title">常見問題 FAQ</h2>
+                <div class="faq-item">
+                    <div class="faq-question">為什麼我用台灣手機號碼收不到 Kakao T 的驗證碼？</div>
+                    <div class="faq-answer">
+                        因為 Kakao T 的某些版本對海外門號支援度不穩。建議直接下載「K-ride」或「TABA」，這兩款是官方針對外國遊客/新住民優化的，收簡訊跟綁台灣信用卡都順暢很多。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">沒有韓國手機門號，真的沒辦法點外送嗎？</div>
+                    <div class="faq-answer">
+                        兩大主流 App (Baemin, Yogiyo) 都需要實名認證。沒門號前，請用「Shuttle Delivery」或找有門號的朋友幫忙代訂。別想著現場付現，現在韓國很多外送員不收現金了。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">一定要辦 ARC 才能下載這些 App 嗎？</div>
+                    <div class="faq-answer">
+                        App 本身都能下載，但「功能」會被閹割。例如 Coupang 沒實名認證就不能用火箭配送。所以落地第一週最重要的不是找餐廳，是去辦手機門號跟 ARC。
+                    </div>
+                </div>
+            </div>
+
+            <div class="real-case">
+                <blockquote>「沒有 Kakao T 的第一週，我因為在路邊攔不到車，最後多花了 3 倍的計程車費叫了高級黑車。」</blockquote>
+            </div>
+
+            <div class="cta-box">
+                <a href="https://paypal.me/HSIANGENTSAI/19" class="cta-card cta-primary">
+                    <div class="cta-urgency">限時優惠 $19</div>
+                    <div class="cta-title">下載完整攻略 PDF</div>
+                    <div class="cta-price">$19</div>
+                    <div class="cta-urgency">包含所有 App 隱藏設定教學</div>
+                </a>
+                <a href="booking.html" class="cta-card cta-secondary">
+                    <div class="cta-urgency">省下 10+ 小時摸索</div>
+                    <div class="cta-title">直接問我（1對1諮詢）</div>
+                    <div class="cta-price">$79</div>
+                    <div class="cta-urgency">名額有限，本週僅剩 2 位</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <a href="index.html" class="footer-logo">SEOULMATE <span>31</span></a>
+            <p style="color: var(--mid); font-size: 13px; margin-bottom: 20px;">© 2026 SEOULMATE31. All rights reserved.</p>
+            <a href="index.html" class="back-home">← 返回首頁</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓國 90 天生存指南 | SEOULMATE31</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f0e0c;
+            --cream: #f5f0e8;
+            --warm: #f0e8d8;
+            --red: #c0392b;
+            --gold: #c9a84c;
+            --mid: #8a8070;
+            --light-mid: #d4cfc4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--ink);
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 900;
+        }
+
+        .serif-display {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .mono {
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--cream);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-mid);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--ink);
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .back-home {
+            text-decoration: none;
+            color: var(--mid);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .back-home:hover {
+            color: var(--ink);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 5% 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-tag {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.25rem;
+            color: var(--mid);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .decision-card {
+            background-color: var(--warm);
+            padding: 2.5rem;
+            border-radius: 4px;
+            display: inline-block;
+            text-align: left;
+            max-width: 500px;
+            border: 1px solid var(--light-mid);
+            box-shadow: 10px 10px 0px var(--light-mid);
+        }
+
+        .decision-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .decision-card ul {
+            list-style: none;
+        }
+
+        .decision-card li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .decision-card li::before {
+            content: "→";
+            margin-right: 10px;
+            color: var(--red);
+            font-weight: bold;
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 4rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--red);
+            margin: 10px auto 0;
+        }
+
+        /* Comparison Table */
+        .comparison-container {
+            overflow-x: auto;
+            margin: 3rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border: 1px solid var(--light-mid);
+        }
+
+        th, td {
+            padding: 1.5rem;
+            text-align: left;
+            border: 1px solid var(--light-mid);
+        }
+
+        th {
+            background-color: var(--warm);
+            font-family: 'Space Mono', monospace;
+            color: var(--mid);
+        }
+
+        td strong {
+            display: block;
+            color: var(--red);
+            margin-bottom: 5px;
+        }
+
+        /* Case Quote */
+        .case-quote {
+            background-color: var(--ink);
+            color: var(--cream);
+            padding: 3rem;
+            margin: 4rem 0;
+            border-left: 8px solid var(--gold);
+            position: relative;
+        }
+
+        .case-quote blockquote {
+            font-size: 1.5rem;
+            font-family: 'Noto Serif TC', serif;
+            font-style: italic;
+        }
+
+        .case-quote cite {
+            display: block;
+            margin-top: 1rem;
+            color: var(--gold);
+            font-family: 'Space Mono', monospace;
+            font-style: normal;
+        }
+
+        /* FAQ Accordion */
+        .faq-container {
+            margin: 4rem 0;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--light-mid);
+        }
+
+        .faq-question {
+            padding: 1.5rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--mid);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--mid);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "−";
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--warm);
+            padding: 5rem 5%;
+            text-align: center;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+        }
+
+        .cta-card {
+            background: white;
+            padding: 3rem;
+            border: 1px solid var(--light-mid);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s;
+        }
+
+        .cta-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cta-price {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.5rem;
+            color: var(--red);
+            margin: 1rem 0;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--ink);
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--red);
+        }
+
+        .urgency {
+            color: var(--red);
+            font-weight: 700;
+            margin-top: 2rem;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            border-top: 1px solid var(--light-mid);
+            text-align: center;
+            color: var(--mid);
+        }
+
+        footer a {
+            color: var(--ink);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .cta-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo serif-display">SEOULMATE <span>31</span></a>
+        <a href="index.html" class="back-home mono">← 返回首頁</a>
+    </nav>
+
+    <section class="hero">
+        <span class="hero-tag mono">Arrival Series: 01</span>
+        <h1>韓國 90 天<br>生存指南</h1>
+        <p class="subtitle">來韓國第一個月，最多人踩的坑全在這。行政程序不是「有辦就好」，而是「時間就是金錢」。</p>
+        
+        <div class="decision-card">
+            <h3 class="mono">3秒判斷卡：你剩幾天？</h3>
+            <ul>
+                <li><strong>外登證 (ARC)：</strong> 入境 90 天內必須申請，但預約通常要排 4 週。</li>
+                <li><strong>銀行開戶：</strong> 拿到 ARC 後才能辦「完整版」帳戶。</li>
+                <li><strong>手機門號：</strong> 沒 ARC 只能辦預付卡，實名認證卡在這一關。</li>
+                <li><strong>租房簽約：</strong> 沒 ARC 不能辦網路，沒銀行帳戶不能付大額保證金。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">90天行政時程表</h2>
+        <p>很多台灣人落地後想說先玩一週再說，結果發現 ARC 預約已經排到下個月底。在韓國，沒有 ARC 你就是「數位隱形人」，連點外送、網購、認證門號都做不到。</p>
+
+        <div class="comparison-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="mono">階段</th>
+                        <th class="mono">必辦事項</th>
+                        <th class="mono">台灣人視角建議</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>第 1 週</strong></td>
+                        <td>
+                            • 領取預訂的 SIM 卡<br>
+                            • 確定租屋處並拿到合約<br>
+                            • <strong>最重要：</strong>上網預約 ARC
+                        </td>
+                        <td>別等落地！出發前拿到簽證就先試著預約 HiKorea，不然現場等 3 小時起跳。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>第 1 個月</strong></td>
+                        <td>
+                            • 前往出入境管理局辦理 ARC<br>
+                            • 辦理銀行臨時帳戶<br>
+                            • 處理垃圾分類（這比你想的難）
+                        </td>
+                        <td>ARC 辦理當天要帶 3 萬韓幣現金。照片記得選「漂亮一點的」，這張卡要跟著你很久。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>第 3 個月</strong></td>
+                        <td>
+                            • 領取實體 ARC 卡<br>
+                            • 升級銀行正式帳戶<br>
+                            • 門號實名認證轉月租型
+                        </td>
+                        <td>拿到卡後第一件事是去銀行解除轉帳限制，不然你連付房租都會被卡額度。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="case-quote">
+            <blockquote>「我是台灣女生，到韓國第 3 天才知道 ARC 預約已經排到三週後，差點因為簽證效期逾期而無法如期開戶，那幾天真的急到哭。」</blockquote>
+            <cite>— 真實案例：2025 語學堂留學生 A小姐</cite>
+        </div>
+
+        <div class="faq-container">
+            <h2 class="section-title">常見問題 FAQ</h2>
+            <div class="faq-item">
+                <div class="faq-question">一定要等 ARC 拿到才能辦手機嗎？</div>
+                <div class="faq-answer">
+                    是的，如果你需要「實名認證」（韓國所有 App 註冊都需要）。在那之前你只能用護照辦臨時預付卡，但無法註冊 Coupang 或外送平台。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">銀行開戶可以選哪一家？</div>
+                <div class="faq-answer">
+                    推薦 Woori (友利) 或 Hana (韓亞)，對外國人相對友善。但注意，拿到 ARC 前開的帳戶通常有每日 30 萬韓幣的提領/轉帳限制。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">外登證預約不到怎麼辦？</div>
+                <div class="faq-answer">
+                    每天早上 9:00 刷 HiKorea 網頁看有沒有人取消，或是找我們這種專業代辦協助監控名額。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2 class="serif-display">別讓行政程序毀了你的首爾生活</h2>
+        <div class="cta-grid">
+            <div class="cta-card">
+                <div>
+                    <h3 class="mono">SELF-HELP</h3>
+                    <p>下載完整 90 天生存攻略 PDF<br>含所有表格範例與地圖</p>
+                    <div class="cta-price">$19</div>
+                </div>
+                <a href="https://paypal.me/HSIANGENTSAI/19" class="cta-btn">立即下載攻略</a>
+            </div>
+            <div class="cta-card">
+                <div>
+                    <h3 class="mono">VIP SERVICE</h3>
+                    <p>1對1 線上諮詢 + 代預約<br>直接解決你的疑難雜症</p>
+                    <div class="cta-price">$79</div>
+                </div>
+                <a href="booking.html" class="cta-btn">直接問我（剩餘名額 3）</a>
+            </div>
+        </div>
+        <span class="urgency">※ 4月出入境預約名額已釋出 80%，建議本週完成預約。</span>
+    </section>
+
+    <footer>
+        <p class="serif-display">SEOULMATE 31</p>
+        <p class="mono" style="margin-top: 1rem;">© 2026 SEOULMATE31. All Rights Reserved.</p>
+        <div style="margin-top: 1rem;">
+            <a href="index.html">返回首頁</a> | 
+            <a href="mailto:hi@seoulmate31.com">聯繫我們</a>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

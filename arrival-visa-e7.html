@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓國工作簽 E-7 申請攻略 | SEOULMATE31</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f0e0c;
+            --cream: #f5f0e8;
+            --warm: #f0e8d8;
+            --red: #c0392b;
+            --gold: #c9a84c;
+            --mid: #8a8070;
+            --light-mid: #d4cfc4;
+            --font-display: 'DM Serif Display', 'Noto Serif TC', serif;
+            --font-sans: 'Outfit', 'Noto Sans KR', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--ink);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        nav {
+            background-color: var(--cream);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-mid);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 24px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--mid);
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--ink);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 56px);
+            margin-bottom: 16px;
+            color: var(--ink);
+        }
+
+        .hero p.subtitle {
+            font-size: clamp(18px, 2vw, 22px);
+            color: var(--mid);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .decision-card {
+            background-color: var(--warm);
+            padding: 30px;
+            border-radius: 4px;
+            display: inline-block;
+            text-align: left;
+            max-width: 500px;
+            border: 1px solid var(--light-mid);
+            box-shadow: 10px 10px 0px var(--light-mid);
+        }
+
+        .decision-card h3 {
+            font-family: var(--font-mono);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .decision-card ul {
+            list-style: none;
+        }
+
+        .decision-card li {
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .decision-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--red);
+        }
+
+        /* Core Content */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .content-section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .content-section h2::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--red);
+        }
+
+        .text-block {
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        .text-block p {
+            margin-bottom: 20px;
+            font-size: 17px;
+        }
+
+        .highlight {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+            margin: 40px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            border: 1px solid var(--light-mid);
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border: 1px solid var(--light-mid);
+        }
+
+        th {
+            background-color: var(--warm);
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--mid);
+            text-transform: uppercase;
+        }
+
+        td {
+            font-size: 15px;
+        }
+
+        .best-tag {
+            background-color: var(--gold);
+            color: white;
+            padding: 2px 6px;
+            font-size: 10px;
+            border-radius: 2px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        /* FAQ Accordion */
+        .faq-section {
+            padding: 60px 0;
+            background-color: var(--warm);
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 10px;
+            border: 1px solid var(--light-mid);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            user-select: none;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-family: var(--font-mono);
+            color: var(--red);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-size: 15px;
+            color: var(--mid);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        /* Quote */
+        .quote-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        blockquote {
+            font-family: var(--font-display);
+            font-size: clamp(20px, 3vw, 28px);
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        blockquote::before, blockquote::after {
+            content: '"';
+            font-size: 60px;
+            color: var(--light-mid);
+            position: absolute;
+            font-family: serif;
+        }
+
+        blockquote::before { left: 0; top: -20px; }
+        blockquote::after { right: 0; bottom: -40px; }
+
+        .quote-author {
+            margin-top: 20px;
+            font-family: var(--font-mono);
+            font-size: 14px;
+            color: var(--gold);
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 80px 0;
+            text-align: center;
+            border-top: 1px solid var(--light-mid);
+        }
+
+        .cta-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-btn {
+            width: 100%;
+            padding: 20px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cta-btn.primary {
+            background-color: var(--ink);
+            color: white;
+        }
+
+        .cta-btn.secondary {
+            background-color: white;
+            color: var(--ink);
+            border: 2px solid var(--ink);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .urgency {
+            font-size: 13px;
+            color: var(--red);
+            font-weight: 600;
+            margin-top: 10px;
+            font-family: var(--font-mono);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background-color: var(--ink);
+            color: var(--light-mid);
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 12px;
+        }
+
+        @media (min-width: 768px) {
+            .cta-container {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">SEOULMATE<span>31</span></a>
+            <a href="index.html" class="nav-link">← 返回首頁</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>韓國工作簽 E-7 申請攻略</h1>
+            <p class="subtitle">台灣人拿 E-7 的真實成功率，沒人告訴你的事</p>
+            
+            <div class="decision-card">
+                <h3>3秒判斷你的資格</h3>
+                <ul>
+                    <li>大學畢業且有 1 年相關工作經驗</li>
+                    <li>公司願意提供擔保（Sponsorship）</li>
+                    <li>公司韓國員工與外國人比例超過 5:1</li>
+                    <li>年薪高於 <span class="highlight">31,120,000 KRW</span></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <h2>E-7 需要雇主擔保嗎？</h2>
+            <div class="text-block">
+                <p>
+                    答案是：<span class="highlight">絕對需要</span>。E-7 簽證（特定活動）的核心就是「公司需要你」。這不是那種你可以先拿到簽證再去慢慢找工作的類別。
+                </p>
+                <p>
+                    台灣人的成功率其實不低，只要你符合「年薪門檻」。2026 年最新的標準是年薪必須達到 <span class="highlight">3,112 萬韓元</span> 以上。很多台灣人在申請時被拒絕，不是因為學歷不夠，而是因為公司給的薪水太低，或者公司內部的韓國員工太少（低於 5 人），導致無法幫外國人申請。
+                </p>
+            </div>
+
+            <h2>簽證類別大比拼</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>特點</th>
+                            <th>E-7 (專業工作) <span class="best-tag">長期推薦</span></th>
+                            <th>H-1 (打工度假)</th>
+                            <th>D-10 (求職簽)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>**效期**</td>
+                            <td>1 - 2 年 (可續簽)</td>
+                            <td>1 年 (一生一次)</td>
+                            <td>6 個月 (可延期)</td>
+                        </tr>
+                        <tr>
+                            <td>**工作限制**</td>
+                            <td>全職 (限合約職種)</td>
+                            <td>兼職 / 短期</td>
+                            <td>禁止工作 (僅限實習)</td>
+                        </tr>
+                        <tr>
+                            <td>**雇主擔保**</td>
+                            <td>強制要求</td>
+                            <td>不需要</td>
+                            <td>不需要</td>
+                        </tr>
+                        <tr>
+                            <td>**薪資要求**</td>
+                            <td>高 (GNI 80% 或 31M+)</td>
+                            <td>最低時薪</td>
+                            <td>無</td>
+                        </tr>
+                        <tr>
+                            <td>**難度**</td>
+                            <td>★★★★★ (極高)</td>
+                            <td>★ (低 / 抽籤)</td>
+                            <td>★★★ (中)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 style="margin-bottom: 40px;">常見問題 FAQ</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">從 H-1 怎麼升級到 E-7？</div>
+                <div class="faq-answer">
+                    最常見的路徑是在 H-1 期間找到願意擔保的公司，在簽證到期前 2 個月開始準備合約與公司資料。如果時間來不及，建議先轉 D-10 求職簽過渡，再轉 E-7。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">台灣人成功率多少？</div>
+                <div class="faq-answer">
+                    只要資料齊全且薪資達標，成功率約 85% 以上。失敗通常是因為「職位說明」與「大學科系」不符，這需要專業的撰寫技巧來規避。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">公司太小可以申請嗎？</div>
+                <div class="faq-answer">
+                    原則上公司必須有 5 名以上的韓國正職勞保（4大保險）加入者。如果公司太小，除非是特定高科技產業，否則極難獲批。
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <blockquote>
+                在韓國工作 2 年，申請 E-7 被拒 2 次，第 3 次成功的關鍵是「重新定義職位」並說服老闆加薪 100 萬韓元。
+            </blockquote>
+            <p class="quote-author">— 台灣人在首爾的真實血淚史</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-container">
+                <a href="https://paypal.me/HSIANGENTSAI/19" class="cta-btn primary">
+                    下載完整攻略 PDF ($19) <span>→</span>
+                </a>
+                <a href="booking.html" class="cta-btn secondary">
+                    直接問我 ($79) <span>→</span>
+                </a>
+            </div>
+            <p class="urgency">⚠️ 2026 政策隨時變動，現在不辦，明年門檻再升 500 萬。</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="index.html">SEOULMATE31 - YOUR TRUSTED PARTNER IN SEOUL</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

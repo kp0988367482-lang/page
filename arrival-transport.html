@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓國交通攻略 | SEOULMATE 31</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f0e0c;
+            --cream: #f5f0e8;
+            --warm: #f0e8d8;
+            --red: #c0392b;
+            --gold: #c9a84c;
+            --mid: #8a8070;
+            --light-mid: #d4cfc4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--ink);
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 900;
+        }
+
+        .logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--cream);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-mid);
+        }
+
+        nav a.back-home {
+            font-family: 'Space Mono', monospace;
+            text-decoration: none;
+            color: var(--mid);
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a.back-home:hover {
+            color: var(--ink);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 5% 4rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.2rem;
+            color: var(--mid);
+            margin-bottom: 3rem;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .decision-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border: 1px solid var(--light-mid);
+            text-align: left;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card .tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            background: var(--warm);
+            padding: 0.2rem 0.6rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            color: var(--mid);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--mid);
+        }
+
+        /* Core Content */
+        .content-section {
+            padding: 4rem 5%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--red);
+            padding-left: 1rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 2rem 0;
+            border: 1px solid var(--light-mid);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--light-mid);
+        }
+
+        th {
+            background: var(--warm);
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            color: var(--mid);
+        }
+
+        .highlight-text {
+            color: var(--red);
+            font-weight: 700;
+        }
+
+        /* FAQ Accordion */
+        .faq {
+            margin: 4rem 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--light-mid);
+        }
+
+        .faq-question {
+            padding: 1.5rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--mid);
+            padding-bottom: 0;
+        }
+
+        .faq-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .faq-item input[type="checkbox"]:checked ~ .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .faq-item input[type="checkbox"]:checked ~ .faq-question::after {
+            content: '-';
+        }
+
+        /* Real Case Quote */
+        .quote-box {
+            background: var(--warm);
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-box blockquote {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--ink);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-box cite {
+            display: block;
+            margin-top: 1.5rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--mid);
+            font-style: normal;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: var(--ink);
+            color: var(--cream);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--cream);
+        }
+
+        .cta-section p {
+            margin-bottom: 3rem;
+            color: var(--light-mid);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+            border-radius: 0;
+        }
+
+        .btn-primary {
+            background: var(--red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #a02e22;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--cream);
+            color: var(--cream);
+        }
+
+        .btn-secondary:hover {
+            background: var(--cream);
+            color: var(--ink);
+            transform: translateY(-2px);
+        }
+
+        .urgency {
+            margin-top: 2rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--gold);
+            text-transform: uppercase;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--light-mid);
+        }
+
+        footer a {
+            color: var(--mid);
+            text-decoration: none;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .cta-section h2 { font-size: 2rem; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">SEOULMATE <span>31</span></a>
+        <a href="index.html" class="back-home">← 返回首頁</a>
+    </nav>
+
+    <header class="hero">
+        <h1>韓國交通攻略</h1>
+        <p class="subtitle">T-money、地鐵、KTX——外國人最容易搞錯的地方</p>
+        
+        <div class="decision-cards">
+            <div class="card">
+                <span class="tag">SPEED</span>
+                <h3>追求速度？</h3>
+                <p>選 AREX 直達車。43 分鐘從機場直達首爾站，準時到令人安心。</p>
+            </div>
+            <div class="card">
+                <span class="tag">COMFORT</span>
+                <h3>行李太多？</h3>
+                <p>選 機場巴士。不用在車站搬行李、找電梯，直達飯店門口最省力。</p>
+            </div>
+            <div class="card">
+                <span class="tag">BUDGET</span>
+                <h3>預算充足？</h3>
+                <p>選 計程車。3-4 人同行最划算，直接送到門口，免去所有步行體力活。</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="content-section">
+        <h2>機場 → 市區：哪種方式最划算？</h2>
+        <p>很多台灣人落地第一件事就是衝地鐵，但其實根據你的行李數量和住宿地點，地鐵不一定是最好選擇。以下是我們整理的真實數據對比：</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>交通方式</th>
+                        <th>費用 (KRW)</th>
+                        <th>時間 (MIN)</th>
+                        <th>方便度</th>
+                        <th>真實評價</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>AREX 直達車</strong></td>
+                        <td>9,500</td>
+                        <td>43</td>
+                        <td>★★★★☆</td>
+                        <td>準時，但需在首爾站轉乘</td>
+                    </tr>
+                    <tr>
+                        <td><strong>機場巴士</strong></td>
+                        <td>17,000</td>
+                        <td>60-90</td>
+                        <td>★★★★★</td>
+                        <td>貴一點，但免搬行李大勝</td>
+                    </tr>
+                    <tr>
+                        <td><strong>一般地鐵</strong></td>
+                        <td>4,150</td>
+                        <td>59</td>
+                        <td>★★★☆☆</td>
+                        <td>最省錢，但尖峰時段會擠瘋</td>
+                    </tr>
+                    <tr>
+                        <td><strong>計程車 (模範)</strong></td>
+                        <td>70,000+</td>
+                        <td>60</td>
+                        <td>★★★★★</td>
+                        <td>3人以上攤提費用很合理</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><strong>專業建議：</strong> 如果你住在弘大，搭一般地鐵（機場鐵路）其實最快也最便宜；如果你住在明洞或東大門，機場巴士會是你最好的朋友。</p>
+
+        <div class="faq">
+            <h2>交通實戰 FAQ</h2>
+            
+            <div class="faq-item">
+                <input type="checkbox" id="faq1">
+                <label class="faq-question" for="faq1">T-money 儲值金額怎麼抓？</label>
+                <div class="faq-answer">
+                    落地第一件事請在機場超商買卡（4,000 KRW）。建議先儲值 20,000 KRW，這足夠你應付前三天的地鐵與公車。餘額 2 萬以下隨時可以在超商退款，手續費僅 500 KRW。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq2">
+                <label class="faq-question" for="faq2">地鐵坐錯方向要重新扣錢嗎？</label>
+                <div class="faq-answer">
+                    這是最常被問的問題！在韓國，如果你進站後發現走錯月台，只要在 10 分鐘內出站並從對向閘門進入，系統是不會重複扣款的（限一次）。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <input type="checkbox" id="faq3">
+                <label class="faq-question" for="faq3">KTX 票要現場買還是提早訂？</label>
+                <div class="faq-answer">
+                    強烈建議提早訂！韓國 KTX 票價不便宜，但只要提前 1 個月在 Korail 官網或 App 訂購，常有 10%~50% 的早鳥優惠，熱門時段（週末）現場幾乎買不到座位。
+                </div>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <span style="font-size: 3rem; color: var(--gold); font-family: 'DM Serif Display', serif; position: absolute; top: 1rem; left: 2rem; opacity: 0.3;">“</span>
+            <blockquote>
+                「第一次去釜山，買了全票 KTX，後來才知道有早鳥票便宜一半，現省 3 萬韓幣！這筆錢拿去吃炸雞還有剩。」
+            </blockquote>
+            <cite>— 台灣留學生 H 小姐的真實慘痛經驗</cite>
+        </div>
+    </main>
+
+    <section class="cta-section">
+        <h2>別讓交通費吃掉你的炸雞預算</h2>
+        <p>韓國交通雖然便利，但轉乘邏輯和優惠規則如果不清楚，一趟旅行下來多花 2-3 萬韓幣是常態。我們把所有隱藏規則都整理好了。</p>
+        
+        <div class="cta-buttons">
+            <a href="https://paypal.me/HSIANGENTSAI/19" class="btn btn-primary">下載完整攻略 PDF ($19)</a>
+            <a href="booking.html" class="btn btn-secondary">直接問我：客製交通規劃 ($79)</a>
+        </div>
+        
+        <div class="urgency">
+            限時優惠：PDF 攻略包含 2026 最新地鐵加價規則
+        </div>
+    </section>
+
+    <footer>
+        <a href="index.html">SEOULMATE 31 - 你在首爾最信任的那個人</a>
+    </footer>
+
+</body>
+</html>

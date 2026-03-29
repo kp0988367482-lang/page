@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓國租屋保證金完整說明 | SEOULMATE 31</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f0e0c;
+            --cream: #f5f0e8;
+            --warm: #f0e8d8;
+            --red: #c0392b;
+            --gold: #c9a84c;
+            --mid: #8a8070;
+            --light-mid: #d4cfc4;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--ink);
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'DM Serif Display', 'Noto Serif TC', serif;
+        }
+
+        .mono {
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Nav */
+        nav {
+            background-color: var(--cream);
+            border-bottom: 1px solid var(--light-mid);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--mid);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 0 4rem;
+            text-align: center;
+            background-color: var(--warm);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.25rem;
+            color: var(--mid);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .judgment-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: left;
+            border-top: 4px solid var(--gold);
+        }
+
+        .card .num {
+            font-family: 'Space Mono', monospace;
+            color: var(--gold);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--ink);
+        }
+
+        /* Core Content */
+        .content-section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--red);
+        }
+
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .risk-item {
+            padding: 1.5rem;
+            background: var(--warm);
+            border-left: 4px solid var(--red);
+        }
+
+        .risk-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--red);
+        }
+
+        .sop-list {
+            list-style: none;
+            counter-reset: sop-counter;
+        }
+
+        .sop-list li {
+            position: relative;
+            padding-left: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .sop-list li::before {
+            counter-increment: sop-counter;
+            content: counter(sop-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3rem;
+            height: 3rem;
+            background: var(--ink);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 1.2rem;
+            border-radius: 50%;
+        }
+
+        .sop-list h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Table */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 3rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border: 1px solid var(--light-mid);
+        }
+
+        th {
+            background-color: var(--ink);
+            color: white;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--cream);
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 4rem 0;
+            background-color: var(--warm);
+        }
+
+        details {
+            background: white;
+            margin-bottom: 1rem;
+            border: 1px solid var(--light-mid);
+            border-radius: 4px;
+        }
+
+        summary {
+            padding: 1.5rem;
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::after {
+            content: '+';
+            font-family: 'Space Mono', monospace;
+            font-size: 1.5rem;
+            color: var(--mid);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--mid);
+        }
+
+        /* Real Case */
+        .case-quote {
+            margin: 4rem 0;
+            padding: 3rem;
+            background: var(--ink);
+            color: var(--cream);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .case-quote blockquote {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.8;
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        .case-quote::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 5rem;
+            color: var(--gold);
+            opacity: 0.3;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 5rem 0;
+            text-align: center;
+            background: white;
+            border-top: 1px solid var(--light-mid);
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #a02d22;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(192, 57, 43, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: var(--ink);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .urgency {
+            margin-top: 2rem;
+            color: var(--red);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--light-mid);
+            color: var(--mid);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--ink);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .case-quote { padding: 2rem; }
+            .btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">SEOULMATE <span>31</span></a>
+            <a href="index.html" class="back-link">← 返回首頁</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <span class="mono">Housing Deposit Guide</span>
+            <h1>韓國租屋保證金完整說明</h1>
+            <p class="subtitle">全租保證金動輒千萬韓元，你的錢安全嗎？</p>
+            
+            <div class="judgment-cards">
+                <div class="card">
+                    <span class="num">01</span>
+                    <h3>房貸比例</h3>
+                    <p>房貸 + 總保證金 > 房價 70%？這就是俗稱的「罐頭房」，危險等級最高！</p>
+                </div>
+                <div class="card">
+                    <span class="num">02</span>
+                    <h3>HUG 保險</h3>
+                    <p>這間房能不能保 HUG？簽約前先問房仲，不能保的房子，連看都不用看。</p>
+                </div>
+                <div class="card">
+                    <span class="num">03</span>
+                    <h3>房東稅收</h3>
+                    <p>房東有沒有欠稅？欠稅的話政府優先拿錢，你排最後。別讓國庫搶走你的押金。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <h2 class="section-title">保證金風險 3 大來源</h2>
+            <div class="risk-grid">
+                <div class="risk-item">
+                    <h4>惡意「Gap 投資」</h4>
+                    <p>房東用你的押金去買下一間房，手頭根本沒現金。一旦房價跌，他就直接消失，讓你拿不回錢。</p>
+                </div>
+                <div class="risk-item">
+                    <h4>高額抵押權（根抵當權）</h4>
+                    <p>房子早就抵押給銀行。萬一法拍，銀行拿完剩下的才輪到你，通常一毛都不剩。</p>
+                </div>
+                <div class="risk-item">
+                    <h4>「影子房東」詐騙</h4>
+                    <p>簽約後房東立刻換成一個沒錢的遊民或紙上公司。合約到期找誰要錢？這是目前最無解的手段。</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">自保 SOP：台灣人專屬檢查清單</h2>
+            <ul class="sop-list">
+                <li>
+                    <h4>簽約前：讀懂登記簿謄本</h4>
+                    <p>親自去讀《登記簿謄本》，確認「乙區」沒有奇怪的抵押，且房東身分證與本人一致。不要只聽房仲說。</p>
+                </li>
+                <li>
+                    <h4>簽約當天：加註特約條款</h4>
+                    <p>合約必須加註「至入住隔日為止，房東不得設定新的抵押權」。這能防止房東在你辦遷入前偷去貸款。</p>
+                </li>
+                <li>
+                    <h4>入住後：黃金 24 小時</h4>
+                    <p>搬家當天立刻辦理「確定日期 (Hwak-jeong-il-ja)」與「遷入申報 (Jeon-ip-sin-go)」，這才是你的法律護身符。</p>
+                </li>
+            </ul>
+
+            <h2 class="section-title">有保險 vs 沒保險 的風險差異</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>有 HUG 保險 (全租返還保證)</th>
+                            <th>沒保險 (裸奔)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>出事時誰賠？</strong></td>
+                            <td>保險公司直接賠給你</td>
+                            <td>你得自己告房東，耗時 1-2 年</td>
+                        </tr>
+                        <tr>
+                            <td><strong>拿回錢的速度</strong></td>
+                            <td>約 1 個月內</td>
+                            <td>遙遙無期，甚至要等法拍結束</td>
+                        </tr>
+                        <tr>
+                            <td><strong>心理壓力</strong></td>
+                            <td>晚上睡得著，有國家背書</td>
+                            <td>每天擔心房東不接電話</td>
+                        </tr>
+                        <tr>
+                            <td><strong>成本</strong></td>
+                            <td>每年約保證金의 0.1% - 0.2%</td>
+                            <td>$0 (但風險價值千萬韓元)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">常見問題 FAQ</h2>
+            <details>
+                <summary>外國人可以保 HUG 嗎？</summary>
+                <div class="faq-content">
+                    可以！只要你有外國人登錄證 (ARC) 並且完成遷入申報，就可以申請。這是外國人在韓國最重要的一筆投資，千萬不要省。
+                </div>
+            </details>
+            <details>
+                <summary>保費很貴嗎？</summary>
+                <div class="faq-content">
+                    不貴。以 1 億韓元的保證金為例，一年保費大約 10-20 萬韓元。比起損失 1 億，這點錢是必須花的「保命錢」。
+                </div>
+            </details>
+            <details>
+                <summary>房東如果不配合怎麼辦？</summary>
+                <div class="faq-content">
+                    現在法律規定，房東「不能拒絕」租客投保。如果房東反應很大或百般刁難，這間房絕對有問題，快跑！
+                </div>
+            </details>
+
+            <div class="case-quote">
+                <blockquote>
+                    「2023 年仁川全租詐騙案中，有台灣留學生因為房東失聯、房子被法拍，幾千萬韓元的保證金差點歸零。外國人常因為『看不懂謄本』或『不知道要辦遷入申報』成為詐騙集團的首選目標。」
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title">別讓你的千萬韓元打水漂</h2>
+            <p>韓國租屋詐騙手法天天更新，今天省下的諮詢費，可能是明天拿不回來的血汗錢。</p>
+            <div class="cta-buttons">
+                <a href="https://paypal.me/HSIANGENTSAI/19" class="btn btn-primary">下載完整攻略 PDF ($19) →</a>
+                <a href="booking.html" class="btn btn-secondary">直接問我 ($79) →</a>
+            </div>
+            <p class="urgency">⚠️ 提醒：近期全租詐騙頻發，簽約前請務必核對清單！</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SEOULMATE31. All Rights Reserved.</p>
+            <div style="margin-top: 1rem;">
+                <a href="index.html">返回首頁</a>
+                <a href="about.html">關於我們</a>
+                <a href="contact.html">聯絡諮詢</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

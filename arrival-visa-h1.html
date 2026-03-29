@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓國打工度假 H-1 簽證攻略 | SEOULMATE 31</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f0e0c;
+            --cream: #f5f0e8;
+            --warm: #f0e8d8;
+            --red: #c0392b;
+            --gold: #c9a84c;
+            --mid: #8a8070;
+            --light-mid: #d4cfc4;
+            --font-serif: 'DM Serif Display', 'Noto Serif TC', serif;
+            --font-sans: 'Outfit', 'Noto Sans KR', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--ink);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-serif);
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        nav {
+            background-color: var(--cream);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--light-mid);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 24px;
+            text-decoration: none;
+            color: var(--ink);
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .back-link {
+            font-family: var(--font-sans);
+            font-weight: 500;
+            text-decoration: none;
+            color: var(--mid);
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 72px);
+            margin-bottom: 16px;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            color: var(--mid);
+            margin-bottom: 40px;
+        }
+
+        .judgment-card {
+            background-color: var(--warm);
+            padding: 32px;
+            border: 1px solid var(--light-mid);
+            display: inline-grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            text-align: left;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .judgment-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .judgment-label {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .judgment-value {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        /* Content Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .judgment-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .content-body h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+            border-left: 4px solid var(--red);
+            padding-left: 16px;
+        }
+
+        .content-body p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            color: #333;
+        }
+
+        /* Table */
+        .table-container {
+            margin: 40px 0;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--font-sans);
+        }
+
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-mid);
+        }
+
+        th {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--mid);
+            background-color: var(--warm);
+        }
+
+        td:first-child {
+            font-weight: 600;
+            width: 40%;
+        }
+
+        /* FAQ Accordion */
+        .faq-section {
+            background-color: var(--warm);
+            padding: 80px 0;
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 16px;
+            border: 1px solid var(--light-mid);
+            background: white;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            user-select: none;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-family: var(--font-mono);
+            font-size: 20px;
+            color: var(--gold);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            font-size: 15px;
+            color: var(--mid);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '−';
+        }
+
+        /* Real Case Quote */
+        .quote-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        blockquote {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 40px;
+        }
+
+        blockquote::before {
+            content: '“';
+            font-size: 80px;
+            color: var(--gold);
+            position: absolute;
+            top: -20px;
+            left: 0;
+            opacity: 0.3;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 100px 0;
+            background-color: var(--ink);
+            color: var(--cream);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .cta-section p {
+            color: var(--light-mid);
+            margin-bottom: 48px;
+            font-size: 18px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 32px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: transform 0.2s, opacity 0.2s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background-color: var(--red);
+            color: white;
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--cream);
+            color: var(--cream);
+        }
+
+        .urgency {
+            margin-top: 32px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--gold);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--light-mid);
+            font-size: 14px;
+            color: var(--mid);
+        }
+
+        footer a {
+            color: var(--ink);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        /* Salary Calculator Visual */
+        .salary-calc {
+            background: white;
+            padding: 30px;
+            border: 1px solid var(--light-mid);
+            box-shadow: 10px 10px 0 var(--warm);
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--light-mid);
+        }
+
+        .calc-row.total {
+            border-bottom: 2px solid var(--ink);
+            margin-top: 20px;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--red);
+        }
+
+        .calc-label { font-family: var(--font-sans); }
+        .calc-value { font-family: var(--font-mono); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">SEOULMATE <span>31</span></a>
+            <a href="index.html" class="back-link">← 返回首頁</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>韓國打工度假<br>H-1 簽證攻略</h1>
+            <p>台灣人申請 H-1，條件、費用、流程一次搞清楚</p>
+            
+            <div class="judgment-card">
+                <div class="judgment-item">
+                    <span class="judgment-label">AGE LIMIT</span>
+                    <span class="judgment-value">18 - 34 歲台灣青年</span>
+                </div>
+                <div class="judgment-item">
+                    <span class="judgment-label">FINANCE</span>
+                    <span class="judgment-value">$3,000 USD 存款證明</span>
+                </div>
+                <div class="judgment-item">
+                    <span class="judgment-label">PURPOSE</span>
+                    <span class="judgment-value">旅遊為主，打工為輔</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-body">
+                    <h2>你能賺多少？<br>扣完剩多少？</h2>
+                    <p>很多台灣人去韓國打工度假，最擔心的就是「薪水夠不夠生活」。2025 年韓國法定基本時薪已調升至 <strong>KRW 10,030</strong>。雖然 H-1 簽證規定每週工時上限為 25 小時，但如果你能找到高時薪的專業工作（如翻譯、企劃、或是具備韓檢高標的服務業），月收依然可觀。</p>
+                    <p>最真實的挑戰不在於「賺多少」，而是「住哪裡」。首爾的月租通常佔據薪水的 30% 以上，加上 3.3% 的預扣稅金，落地前你必須算清楚這筆帳。</p>
+                    
+                    <div class="salary-calc">
+                        <div class="judgment-label">MONTHLY ESTIMATE (KRW)</div>
+                        <div class="calc-row">
+                            <span class="calc-label">預估月薪 (2.5M)</span>
+                            <span class="calc-value">+ 2,500,000</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="calc-label">預扣稅金 (3.3%)</span>
+                            <span class="calc-value">- 82,500</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="calc-label">首爾月租 (One-room)</span>
+                            <span class="calc-value">- 650,000</span>
+                        </div>
+                        <div class="calc-row">
+                            <span class="calc-label">伙食與生活雜支</span>
+                            <span class="calc-value">- 900,000</span>
+                        </div>
+                        <div class="calc-row total">
+                            <span class="calc-label">實拿餘額</span>
+                            <span class="calc-value">≈ 867,500</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-body">
+                    <h2>H-1 申請核心資訊</h2>
+                    <p>台灣人申請 H-1 簽證不需要支付申請費，但文件準備過程中的公證費用與體檢費約需 NT$ 3,000 - 5,000。以下是 2025 最新版本對比表：</p>
+                    
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>項目</th>
+                                    <th>詳細細節</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>申請費用</td>
+                                    <td>0 元 (台灣籍專屬優惠)</td>
+                                </tr>
+                                <tr>
+                                    <td>等待時間</td>
+                                    <td>約 10-14 個工作天</td>
+                                </tr>
+                                <tr>
+                                    <td>簽證效期</td>
+                                    <td>12 個月 (自入境日起算)</td>
+                                </tr>
+                                <tr>
+                                    <td>打工時數</td>
+                                    <td>每週上限 25 小時</td>
+                                </tr>
+                                <tr>
+                                    <td>名額限制</td>
+                                    <td>每年 800 名 (建議年初申請)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><strong>注意：</strong>H-1 簽證一生只能申請一次。如果你曾經獲得過該簽證（不論是否入境），都無法再次申請。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">常見問題 FAQ</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">一定要會韓文才能申請嗎？</div>
+                    <div class="faq-answer">
+                        法律上沒有規定申請 H-1 必須通過韓檢 (TOPIK)。但現實是：如果你不會韓文，只能找勞動力密集的免洗工作。建議至少具備 TOPIK 3 級以上，找工作的選擇會多出 5 倍，薪資談判空間也更大。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">存款證明的 $3,000 USD 可以用台幣嗎？</div>
+                    <div class="faq-answer">
+                        可以，但銀行開出的證明必須標註「等值美金金額」。建議帳戶內多放一點（例如 NT$ 120,000），避免匯率波動導致審核不通過。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">H-1 結束後可以換成工作簽證嗎？</div>
+                    <div class="faq-answer">
+                        H-1 簽證性質屬於「度假」，根據韓國法律，持有者不能在韓國境內直接轉換為 E-7 工作簽證或 D-2 留學簽證。通常需要回台灣重新向駐台北韓國代表部遞件申請。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <blockquote>
+                「26歲台灣女生，3週拿到H-1，首爾月薪KRW 2,500,000，扣掉稅金、房租、飯錢，每個月還能存下 80 萬韓元出國玩！」
+            </blockquote>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>別讓繁瑣文件，擋住你的首爾夢</h2>
+            <p>每年 800 個名額，晚一步就要再等一年。我們幫你搞定最痛苦的公證與計畫書。</p>
+            <div class="cta-buttons">
+                <a href="https://paypal.me/HSIANGENTSAI/19" class="btn btn-primary">下載完整攻略 PDF ($19) →</a>
+                <a href="booking.html" class="btn btn-secondary">直接問我 ($79) →</a>
+            </div>
+            <p class="urgency">⚠️ 2026 年第一季名額已開放，目前僅剩最後 15% 餘額</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SEOULMATE31. All rights reserved.</p>
+            <p>
+                <a href="index.html">返回首頁</a> | 
+                <a href="about.html">關於我們</a> | 
+                <a href="contact.html">聯絡諮詢</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

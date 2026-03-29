@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韓國銀行開戶完整攻略 - SEOULMATE31</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0f0e0c;
+            --cream: #f5f0e8;
+            --warm: #f0e8d8;
+            --red: #c0392b;
+            --gold: #c9a84c;
+            --mid: #8a8070;
+            --light-mid: #d4cfc4;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--ink);
+            font-family: 'Outfit', 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 900;
+        }
+
+        .serif-display {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .mono {
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--cream);
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--light-mid);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: var(--ink);
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: var(--red);
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--mid);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            color: var(--ink);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 5% 2rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.25rem;
+            color: var(--mid);
+            margin-bottom: 3rem;
+        }
+
+        /* Decision Cards */
+        .decision-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .decision-card {
+            background-color: var(--warm);
+            padding: 2rem;
+            border-radius: 4px;
+            text-align: left;
+            border-left: 4px solid var(--gold);
+            transition: var(--transition);
+        }
+
+        .decision-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .decision-card .tag {
+            display: inline-block;
+            background: var(--gold);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            border-radius: 2px;
+        }
+
+        .decision-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .decision-card ul {
+            list-style: none;
+        }
+
+        .decision-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .decision-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+        }
+
+        /* Core Content */
+        .section-padding {
+            padding: 4rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .content-area h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .content-area p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        /* Comparison Table */
+        .table-container {
+            overflow-x: auto;
+            margin: 3rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 1.2rem;
+            text-align: left;
+            border-bottom: 1px solid var(--light-mid);
+        }
+
+        th {
+            background-color: var(--ink);
+            color: var(--cream);
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .difficulty {
+            color: var(--red);
+            font-weight: bold;
+        }
+
+        /* FAQ Accordion */
+        .faq-container {
+            margin-top: 3rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            background: var(--warm);
+            border-radius: 4px;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: "-";
+        }
+
+        /* Real Case Quote */
+        .quote-section {
+            background-color: var(--ink);
+            color: var(--cream);
+            padding: 4rem 5%;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        blockquote {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        blockquote::before {
+            content: "“";
+            font-size: 5rem;
+            position: absolute;
+            top: -2rem;
+            left: -2rem;
+            color: var(--gold);
+            opacity: 0.3;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding-bottom: 6rem;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .cta-primary {
+            background-color: var(--red);
+            color: white;
+        }
+
+        .cta-primary:hover {
+            background-color: #a02d22;
+            transform: scale(1.02);
+        }
+
+        .cta-secondary {
+            background-color: var(--ink);
+            color: white;
+        }
+
+        .cta-secondary:hover {
+            background-color: #222;
+            transform: scale(1.02);
+        }
+
+        .urgency {
+            color: var(--red);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--light-mid);
+            color: var(--mid);
+        }
+
+        footer a {
+            color: var(--ink);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .decision-container { grid-template-columns: 1fr; }
+            blockquote { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo serif-display">SEOULMATE <span>31</span></a>
+        <a href="index.html" class="back-link mono">← 返回首頁</a>
+    </nav>
+
+    <header class="hero">
+        <span class="mono" style="color: var(--gold); margin-bottom: 1rem; display: block;">Arrival Guide 05</span>
+        <h1>韓國銀行開戶完整攻略</h1>
+        <p class="subtitle">外國人在韓國開戶，要準備什麼？哪家銀行最好辦？</p>
+
+        <div class="decision-container">
+            <div class="decision-card">
+                <span class="tag mono">方案 A</span>
+                <h3>剛落地，還沒拿到 ARC</h3>
+                <ul>
+                    <li>成功率：約 40% (極度看櫃檯心情)</li>
+                    <li>限制：每日轉帳限額 30-100 萬韓幣</li>
+                    <li>必備：護照 + 在學證明/租屋合約</li>
+                </ul>
+            </div>
+            <div class="decision-card" style="border-left-color: var(--red);">
+                <span class="tag mono" style="background: var(--red);">方案 B</span>
+                <h3>已經拿到 ARC</h3>
+                <ul>
+                    <li>成功率：約 95% (幾乎保證成功)</li>
+                    <li>限制：無 (全功能帳戶)</li>
+                    <li>必備：外國人登錄證 + 韓國手機門號</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-padding content-area">
+        <h2>外登證前 vs 外登證後</h2>
+        <p>在韓國，沒有銀行帳號幾乎寸步難行。但在拿到外國人登錄證（ARC）之前的這一個月，是開戶的「黑暗期」。銀行為了防止洗錢，對沒有 ARC 的外國人審核極嚴。</p>
+        <p><strong>真實的建議是：</strong> 不要隨便找一家分行就衝進去。學校附近的銀行分行，因為長期處理留學生業務，對「護照開戶」的容忍度最高。如果被拒絕了，不要灰心，換一家分行可能就過了。</p>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>銀行名稱</th>
+                        <th>開戶難度</th>
+                        <th>英文/中文服務</th>
+                        <th>APP 體驗</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>KEB Hana (韓亞)</strong></td>
+                        <td class="difficulty">★☆☆ (最易)</td>
+                        <td>優 (有專門外籍櫃檯)</td>
+                        <td>★★★★☆</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shinhan (新韓)</strong></td>
+                        <td class="difficulty">★★☆ (中等)</td>
+                        <td>中 (視分行而定)</td>
+                        <td>★★★☆☆</td>
+                    </tr>
+                    <tr>
+                        <td><strong>KakaoBank</strong></td>
+                        <td class="difficulty">★★★ (需 ARC)</td>
+                        <td>無 (僅限韓文)</td>
+                        <td>★★★★★</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>常見問題 FAQ</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">沒有 ARC 真的能開戶嗎？</div>
+                <div class="faq-answer">可以，但你必須證明「你為什麼要在韓國待著」。一份最新的「在學證明 (재학증명서)」或「租屋合約」是必備的。且通常會被設為限制帳戶，直到你補交 ARC 為止。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">網路銀行怎麼辦？</div>
+                <div class="faq-answer">強烈建議在櫃檯開戶時，直接請行員幫你開通「Internet Banking」。韓國的銀行認證系統非常複雜，自己在家操作失敗率極高。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">哪家銀行對台灣人最友善？</div>
+                <div class="faq-answer">首推 KEB Hana。他們在弘大、梨大、慶熙大附近的分行，對台灣留學生非常熟悉，甚至有會說中文的行員。</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <blockquote>
+            「沒有外登證跑了 3 家銀行被拒，第 4 家才成功，原來要帶這份文件：在學證明。銀行要的不是你的護照，而是你留在韓國的理由。」
+        </blockquote>
+    </section>
+
+    <section class="section-padding cta-section">
+        <h2 style="border: none;">別再浪費時間碰壁</h2>
+        <p>我們整理了首爾 10 間「沒 ARC 也能過」的神祕分行清單，讓你落地第一天就領到卡。</p>
+        
+        <div class="cta-group">
+            <a href="https://paypal.me/HSIANGENTSAI/19" class="cta-btn cta-primary">下載完整攻略 PDF ($19)</a>
+            <a href="booking.html" class="cta-btn cta-secondary">直接問我：落地陪同諮詢 ($79)</a>
+        </div>
+        <p class="urgency">⚠️ 銀行政策隨時在變，下週可能就改嚴，建議提早規劃。</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 SEOULMATE31. All Rights Reserved.</p>
+        <div style="margin-top: 1rem;">
+            <a href="index.html">返回首頁</a>
+            <a href="booking.html">預約服務</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
