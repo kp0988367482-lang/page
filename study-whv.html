@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>韓國打工度假攻略 · SEOULMATE31</title>
+  <meta name="description" content="台灣人申請韓國WHV完整流程、薪資行情、找工作管道——居韓10年第一手整理。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f0e0c; --cream: #f5f0e8; --warm: #f0e8d8;
+      --red: #c0392b; --blue: #1a3a5c; --gold: #c9a84c;
+      --mid: #8a8070; --light-mid: #d4cfc4;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: 'Outfit', 'Noto Sans KR', 'Noto Serif TC', sans-serif; overflow-x: hidden; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem; height: 64px;
+      background: var(--ink); border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.3rem; color: var(--cream); text-decoration: none; display: flex; align-items: baseline; gap: 0.4rem; }
+    .nav-logo span { font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 400; color: var(--red); font-style: normal; letter-spacing: 0.05em; }
+    .nav-back { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.6); text-decoration: none; border-bottom: 1px solid rgba(245,240,232,0.2); padding-bottom: 0.1rem; transition: color 0.2s; }
+    .nav-back:hover { color: var(--cream); }
+
+    .hero { background: var(--blue); color: var(--cream); padding: 4rem 3rem 3.5rem; }
+    .hero-tag { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+    .hero h1 { font-family: 'Noto Serif TC', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 1rem; }
+    .hero-sub { font-family: 'Noto Sans KR', sans-serif; font-size: 0.95rem; font-weight: 300; color: rgba(245,240,232,0.75); max-width: 560px; line-height: 1.7; }
+
+    .content { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .section-label { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Noto Serif TC', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+
+    /* STEP TIMELINE */
+    .timeline { margin-bottom: 3rem; }
+    .step { display: flex; gap: 1.5rem; margin-bottom: 1.8rem; }
+    .step-num { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--red); letter-spacing: 0.1em; min-width: 40px; padding-top: 0.2rem; }
+    .step-content {}
+    .step-title { font-family: 'Outfit', sans-serif; font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .step-body { font-family: 'Noto Sans KR', sans-serif; font-size: 0.85rem; font-weight: 300; color: #444; line-height: 1.65; }
+
+    /* SALARY TABLE */
+    .salary-table { width: 100%; border-collapse: collapse; margin-bottom: 3rem; font-size: 0.87rem; }
+    .salary-table th { background: var(--blue); color: var(--cream); font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 0.05em; padding: 0.75rem 1rem; text-align: left; }
+    .salary-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--light-mid); font-family: 'Noto Sans KR', sans-serif; font-weight: 300; }
+    .salary-table tr:nth-child(even) td { background: var(--warm); }
+    .salary-highlight { font-weight: 700; color: var(--blue); }
+
+    .warn-box { background: #fff3f3; border-left: 3px solid var(--red); padding: 1.2rem 1.5rem; margin-bottom: 3rem; border-radius: 0 2px 2px 0; }
+    .warn-box .warn-title { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--red); margin-bottom: 0.5rem; }
+    .warn-box p { font-family: 'Noto Sans KR', sans-serif; font-size: 0.85rem; font-weight: 300; line-height: 1.65; color: #333; }
+
+    .cta-block { background: var(--ink); color: var(--cream); padding: 3rem; text-align: center; margin-top: 2rem; }
+    .cta-block h2 { font-family: 'Noto Serif TC', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem; }
+    .cta-block p { font-family: 'Noto Sans KR', sans-serif; font-size: 0.88rem; font-weight: 300; color: rgba(245,240,232,0.7); margin-bottom: 1.8rem; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: var(--red); color: #fff; font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.9rem 2rem; text-decoration: none; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.85; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.2rem; }
+      .hero { padding: 3rem 1.2rem 2.5rem; }
+      .content { padding: 2rem 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">SEOULMATE <span>31</span></a>
+    <a href="index.html" class="nav-back">← 返回首頁</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-tag">STUDY · 打工度假</div>
+    <h1>韓國打工度假<br>完整攻略</h1>
+    <p class="hero-sub">WHV 申請流程、薪資行情、找工作管道——台灣人在韓國打工的第一手整理。</p>
+  </div>
+
+  <div class="content">
+
+    <!-- 申請流程 -->
+    <div class="section-label">01 · 申請流程</div>
+    <div class="section-title">WHV 申請 Step by Step</div>
+
+    <div class="timeline">
+      <div class="step">
+        <div class="step-num">STEP 01</div>
+        <div class="step-content">
+          <div class="step-title">確認資格</div>
+          <div class="step-body">台灣護照持有者，年齡 18–30 歲（申請當天未滿 31 歲）。每人一生只能申請一次，請確認你還沒用過。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 02</div>
+        <div class="step-content">
+          <div class="step-title">準備文件</div>
+          <div class="step-body">護照（有效期 1 年以上）、身分證、戶籍謄本、財力證明（銀行存款約 TWD 30,000 以上）、無犯罪紀錄證明、大頭照 2 張。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 03</div>
+        <div class="step-content">
+          <div class="step-title">向韓國辦事處申請</div>
+          <div class="step-body">前往台北的韓國辦事處（KOTRA 或韓國文化院）提交申請。目前採配額制，建議提早確認當年度開放時間。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 04</div>
+        <div class="step-content">
+          <div class="step-title">取得簽證，入境</div>
+          <div class="step-body">拿到 H-1 簽證後，在有效期內入境韓國。入境後需在 90 天內辦理外國人登錄證（外登證）。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">STEP 05</div>
+        <div class="step-content">
+          <div class="step-title">找工作</div>
+          <div class="step-body">WHV 持有者可合法打工，但有限制：同一雇主最多工作 6 個月。主要管道：WorknHoliday 網站、韓國 JobKorea、台灣人社群（FB 社團）。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 薪資行情 -->
+    <div class="section-label">02 · 薪資行情</div>
+    <div class="section-title">2024 年韓國打工薪資參考</div>
+
+    <table class="salary-table">
+      <thead>
+        <tr>
+          <th>工作類型</th>
+          <th>時薪（KRW）</th>
+          <th>月薪估算（KRW）</th>
+          <th>備註</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>便利商店 / 超市</td>
+          <td>9,860（最低工資）</td>
+          <td>約 160萬 – 180萬</td>
+          <td>入門最容易，語言要求低</td>
+        </tr>
+        <tr>
+          <td>餐廳 / 咖啡廳</td>
+          <td>9,860 – 12,000</td>
+          <td>約 170萬 – 200萬</td>
+          <td>韓語溝通能力要求較高</td>
+        </tr>
+        <tr>
+          <td>中文導遊 / 翻譯</td>
+          <td>15,000 – 25,000</td>
+          <td>約 200萬 – 350萬</td>
+          <td>台灣人優勢，需要相關執照</td>
+        </tr>
+        <tr>
+          <td>工廠 / 農場</td>
+          <td>10,000 – 13,000</td>
+          <td>約 180萬 – 230萬</td>
+          <td>體力要求高，提供住宿</td>
+        </tr>
+        <tr>
+          <td><strong>實際到手（扣稅後）</strong></td>
+          <td colspan="2" class="salary-highlight">約 85% – 90% 的稅前薪資</td>
+          <td>視雇主與工時而異</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 注意事項 -->
+    <div class="warn-box">
+      <div class="warn-title">⚠ 沒人說的現實</div>
+      <p>月薪 150萬韓元聽起來不少，但扣掉首爾的房租（40–70萬）、餐費（30–50萬）、交通（10萬），實際每月能存下來的不到 50萬韓元（約 TWD 1,200）。如果你的目標是存錢，首爾不是最好的選擇——考慮釜山或農場工作，生活成本低很多。</p>
+    </div>
+
+    <div class="cta-block">
+      <h2>你的情況比較特殊？<br>直接問我。</h2>
+      <p>WHV 申請時間點、工作類型選擇、語言程度夠不夠——<br>30 分鐘，針對你的情況給建議。</p>
+      <a href="https://www.paypal.com/paypalme/HSIANGENTSAI/79" class="cta-btn" target="_blank">預約 1:1 諮詢 · USD $79 →</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

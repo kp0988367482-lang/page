@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>韓國語學堂比較 · SEOULMATE31</title>
+  <meta name="description" content="首爾、釜山、濟州——哪間語學堂最適合你？費用、師資、生活環境完整比較。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f0e0c;
+      --cream: #f5f0e8;
+      --warm: #f0e8d8;
+      --red: #c0392b;
+      --blue: #1a3a5c;
+      --gold: #c9a84c;
+      --mid: #8a8070;
+      --light-mid: #d4cfc4;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Outfit', 'Noto Sans KR', 'Noto Serif TC', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem; height: 64px;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic; font-size: 1.3rem;
+      color: var(--cream); text-decoration: none;
+      display: flex; align-items: baseline; gap: 0.4rem;
+    }
+    .nav-logo span {
+      font-family: 'Space Mono', monospace; font-size: 0.75rem;
+      font-weight: 400; color: var(--red); font-style: normal; letter-spacing: 0.05em;
+    }
+    .nav-back {
+      font-family: 'Space Mono', monospace; font-size: 0.72rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(245,240,232,0.6); text-decoration: none;
+      border-bottom: 1px solid rgba(245,240,232,0.2); padding-bottom: 0.1rem;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--cream); }
+
+    /* HERO */
+    .hero {
+      background: var(--ink); color: var(--cream);
+      padding: 4rem 3rem 3.5rem;
+    }
+    .hero-tag {
+      font-family: 'Space Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif TC', serif; font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900; line-height: 1.2; margin-bottom: 1rem;
+    }
+    .hero-sub {
+      font-family: 'Noto Sans KR', sans-serif; font-size: 0.95rem;
+      font-weight: 300; color: rgba(245,240,232,0.7); max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* CONTENT */
+    .content { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+    .section-label {
+      font-family: 'Space Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-family: 'Noto Serif TC', serif; font-size: 1.5rem;
+      font-weight: 700; margin-bottom: 1.5rem; color: var(--ink);
+    }
+
+    /* COMPARISON TABLE */
+    .compare-table {
+      width: 100%; border-collapse: collapse; margin-bottom: 3rem;
+      font-size: 0.88rem;
+    }
+    .compare-table th {
+      background: var(--ink); color: var(--cream);
+      font-family: 'Space Mono', monospace; font-size: 0.7rem;
+      letter-spacing: 0.05em; padding: 0.8rem 1rem; text-align: left;
+    }
+    .compare-table td {
+      padding: 0.85rem 1rem; border-bottom: 1px solid var(--light-mid);
+      font-family: 'Noto Sans KR', sans-serif; font-weight: 300;
+      vertical-align: top; line-height: 1.5;
+    }
+    .compare-table tr:nth-child(even) td { background: var(--warm); }
+    .compare-table .school-name {
+      font-family: 'Outfit', sans-serif; font-weight: 600; color: var(--ink);
+    }
+    .tag-best {
+      display: inline-block;
+      background: var(--red); color: #fff;
+      font-family: 'Space Mono', monospace; font-size: 0.55rem;
+      letter-spacing: 0.08em; padding: 0.15rem 0.4rem;
+      border-radius: 2px; margin-left: 0.4rem; vertical-align: middle;
+    }
+
+    /* INFO CARDS */
+    .card-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.2rem; margin-bottom: 3rem;
+    }
+    .card {
+      background: #fff; border: 1px solid var(--light-mid);
+      padding: 1.5rem; border-radius: 2px;
+    }
+    .card-num {
+      font-family: 'Space Mono', monospace; font-size: 0.6rem;
+      letter-spacing: 0.1em; color: var(--red); margin-bottom: 0.5rem;
+    }
+    .card-title {
+      font-family: 'Noto Serif TC', serif; font-size: 1rem;
+      font-weight: 700; margin-bottom: 0.6rem;
+    }
+    .card-body {
+      font-family: 'Noto Sans KR', sans-serif; font-size: 0.82rem;
+      font-weight: 300; color: #444; line-height: 1.65;
+    }
+
+    /* COST TABLE */
+    .cost-table {
+      width: 100%; border-collapse: collapse; margin-bottom: 3rem;
+      font-size: 0.87rem;
+    }
+    .cost-table th {
+      background: var(--blue); color: var(--cream);
+      font-family: 'Space Mono', monospace; font-size: 0.68rem;
+      letter-spacing: 0.05em; padding: 0.75rem 1rem; text-align: left;
+    }
+    .cost-table td {
+      padding: 0.8rem 1rem; border-bottom: 1px solid var(--light-mid);
+      font-family: 'Noto Sans KR', sans-serif; font-weight: 300;
+    }
+    .cost-table tr:nth-child(even) td { background: var(--warm); }
+    .cost-highlight { font-weight: 700; color: var(--red); }
+
+    /* WARNING BOX */
+    .warn-box {
+      background: #fff3f3; border-left: 3px solid var(--red);
+      padding: 1.2rem 1.5rem; margin-bottom: 3rem; border-radius: 0 2px 2px 0;
+    }
+    .warn-box .warn-title {
+      font-family: 'Space Mono', monospace; font-size: 0.65rem;
+      letter-spacing: 0.1em; color: var(--red); margin-bottom: 0.5rem;
+    }
+    .warn-box p {
+      font-family: 'Noto Sans KR', sans-serif; font-size: 0.85rem;
+      font-weight: 300; line-height: 1.65; color: #333;
+    }
+
+    /* CTA */
+    .cta-block {
+      background: var(--ink); color: var(--cream);
+      padding: 3rem; text-align: center; margin-top: 2rem;
+    }
+    .cta-block h2 {
+      font-family: 'Noto Serif TC', serif; font-size: 1.5rem;
+      font-weight: 700; margin-bottom: 0.8rem;
+    }
+    .cta-block p {
+      font-family: 'Noto Sans KR', sans-serif; font-size: 0.88rem;
+      font-weight: 300; color: rgba(245,240,232,0.7);
+      margin-bottom: 1.8rem; line-height: 1.7;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--red); color: #fff;
+      font-family: 'Space Mono', monospace; font-size: 0.75rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.9rem 2rem; text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.85; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.2rem; }
+      .hero { padding: 3rem 1.2rem 2.5rem; }
+      .content { padding: 2rem 1.2rem 4rem; }
+      .compare-table, .cost-table { font-size: 0.78rem; }
+      .compare-table th, .compare-table td,
+      .cost-table th, .cost-table td { padding: 0.6rem 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">SEOULMATE <span>31</span></a>
+    <a href="index.html" class="nav-back">← 返回首頁</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">STUDY · 語學堂</div>
+    <h1>韓國語學堂<br>怎麼選？</h1>
+    <p class="hero-sub">首爾、釜山、濟州——地點不同，費用不同，生活節奏也不同。選錯了，浪費的不只是學費。</p>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- 主要大學語學堂比較 -->
+    <div class="section-label">01 · 主要語學堂比較</div>
+    <div class="section-title">首爾五大語學堂一覽</div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>語學堂</th>
+          <th>地點</th>
+          <th>學費（10週）</th>
+          <th>特色</th>
+          <th>適合對象</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="school-name">延世大學<span class="tag-best">熱門</span></span></td>
+          <td>新村</td>
+          <td>約 KRW 170萬</td>
+          <td>教材完整，師資穩定，外國人多</td>
+          <td>想要正規學習環境</td>
+        </tr>
+        <tr>
+          <td><span class="school-name">梨花女子大學</span></td>
+          <td>新村</td>
+          <td>約 KRW 160萬</td>
+          <td>女性友善，校園環境優美</td>
+          <td>女性留學生</td>
+        </tr>
+        <tr>
+          <td><span class="school-name">首爾大學</span></td>
+          <td>冠岳</td>
+          <td>約 KRW 155萬</td>
+          <td>名校光環，學術氛圍重</td>
+          <td>志在升學者</td>
+        </tr>
+        <tr>
+          <td><span class="school-name">高麗大學</span></td>
+          <td>安岩</td>
+          <td>約 KRW 165萬</td>
+          <td>韓國人比例高，沉浸感強</td>
+          <td>想快速融入韓國文化</td>
+        </tr>
+        <tr>
+          <td><span class="school-name">成均館大學</span></td>
+          <td>惠化</td>
+          <td>約 KRW 158萬</td>
+          <td>傳統文化氛圍，位置安靜</td>
+          <td>喜歡安靜學習環境</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 選擇重點 -->
+    <div class="section-label">02 · 選擇重點</div>
+    <div class="section-title">4 個決定前必確認的問題</div>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-num">01</div>
+        <div class="card-title">你的目的是什麼？</div>
+        <div class="card-body">純學語言、準備升學、還是打工度假期間順便學？目的不同，選校邏輯完全不同。升學導向選首爾大或延世，生活體驗導向選高麗或成均館。</div>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <div class="card-title">你能待多久？</div>
+        <div class="card-body">語學堂通常以 10 週為一學期。短期（1 學期）建議選地點方便的延世或梨花；長期（2 學期以上）可以考慮學費較低的學校。</div>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <div class="card-title">宿舍還是自租？</div>
+        <div class="card-body">大部分語學堂提供宿舍，但名額有限且要提早申請。自租房子自由度高，但首爾租房需要押金（保證金），資金壓力較大。</div>
+      </div>
+      <div class="card">
+        <div class="card-num">04</div>
+        <div class="card-title">班級人數與國籍比例</div>
+        <div class="card-body">台灣人、中國人比例高的班級，容易在課外用中文溝通，影響學習效果。建議入學前詢問各班的國籍分布情況。</div>
+      </div>
+    </div>
+
+    <!-- 費用試算 -->
+    <div class="section-label">03 · 費用試算</div>
+    <div class="section-title">一學期（10週）實際花費</div>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>金額（KRW）</th>
+          <th>備註</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>語學堂學費</td>
+          <td>155萬 – 170萬</td>
+          <td>依學校而異</td>
+        </tr>
+        <tr>
+          <td>住宿（宿舍）</td>
+          <td>50萬 – 80萬</td>
+          <td>學校宿舍，含水電</td>
+        </tr>
+        <tr>
+          <td>住宿（自租套房）</td>
+          <td>40萬 – 70萬/月</td>
+          <td>需另付保證金 100–500萬</td>
+        </tr>
+        <tr>
+          <td>生活費（餐飲 + 交通）</td>
+          <td>50萬 – 80萬/月</td>
+          <td>首爾物價，自炊可省</td>
+        </tr>
+        <tr>
+          <td>簽證費</td>
+          <td>約 6萬</td>
+          <td>D-4 語學研修簽證</td>
+        </tr>
+        <tr>
+          <td><strong>10週總費用（估算）</strong></td>
+          <td class="cost-highlight">約 450萬 – 650萬</td>
+          <td>不含機票、保證金</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 注意事項 -->
+    <div class="warn-box">
+      <div class="warn-title">⚠ 常見陷阱</div>
+      <p>許多人只看學費，忽略了房租保證金（通常 100–500萬韓元）和首月生活費的資金壓力。建議出發前至少準備 800萬韓元（約 TWD 19,000）的備用資金，才不會在頭一個月就陷入財務緊張。</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <h2>情況比較特殊？<br>直接問我。</h2>
+      <p>語學堂選擇、費用規劃、宿舍申請時間點——<br>30 分鐘，針對你的情況給建議。</p>
+      <a href="https://www.paypal.com/paypalme/HSIANGENTSAI/79" class="cta-btn" target="_blank">預約 1:1 諮詢 · USD $79 →</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

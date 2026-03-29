@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>韓國留學費用試算 · SEOULMATE31</title>
+  <meta name="description" content="語學堂、大學、研究所——韓國留學一年到底要花多少錢？完整費用試算表。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #0f0e0c; --cream: #f5f0e8; --warm: #f0e8d8;
+      --red: #c0392b; --blue: #1a3a5c; --gold: #c9a84c;
+      --mid: #8a8070; --light-mid: #d4cfc4;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: 'Outfit', 'Noto Sans KR', 'Noto Serif TC', sans-serif; overflow-x: hidden; }
+
+    nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 64px; background: var(--ink); border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.3rem; color: var(--cream); text-decoration: none; display: flex; align-items: baseline; gap: 0.4rem; }
+    .nav-logo span { font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 400; color: var(--red); font-style: normal; letter-spacing: 0.05em; }
+    .nav-back { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,240,232,0.6); text-decoration: none; border-bottom: 1px solid rgba(245,240,232,0.2); padding-bottom: 0.1rem; transition: color 0.2s; }
+    .nav-back:hover { color: var(--cream); }
+
+    .hero { background: var(--ink); color: var(--cream); padding: 4rem 3rem 3.5rem; }
+    .hero-tag { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 1.2rem; }
+    .hero h1 { font-family: 'Noto Serif TC', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; line-height: 1.2; margin-bottom: 1rem; }
+    .hero-sub { font-family: 'Noto Sans KR', sans-serif; font-size: 0.95rem; font-weight: 300; color: rgba(245,240,232,0.7); max-width: 560px; line-height: 1.7; }
+
+    .content { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+    .section-label { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 0.6rem; }
+    .section-title { font-family: 'Noto Serif TC', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+
+    /* COST TABLES */
+    .cost-table { width: 100%; border-collapse: collapse; margin-bottom: 3rem; font-size: 0.87rem; }
+    .cost-table th { background: var(--ink); color: var(--cream); font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 0.05em; padding: 0.75rem 1rem; text-align: left; }
+    .cost-table td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--light-mid); font-family: 'Noto Sans KR', sans-serif; font-weight: 300; }
+    .cost-table tr:nth-child(even) td { background: var(--warm); }
+    .cost-total td { background: var(--blue) !important; color: var(--cream); font-weight: 700; }
+    .cost-total td:first-child { font-family: 'Outfit', sans-serif; }
+
+    /* SCENARIO CARDS */
+    .scenario-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; margin-bottom: 3rem; }
+    .scenario-card { border: 1px solid var(--light-mid); padding: 1.5rem; background: #fff; }
+    .scenario-tag { font-family: 'Space Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mid); margin-bottom: 0.5rem; }
+    .scenario-name { font-family: 'Noto Serif TC', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .scenario-price { font-family: 'Space Mono', monospace; font-size: 1.3rem; color: var(--red); margin-bottom: 0.6rem; }
+    .scenario-price small { font-size: 0.65rem; color: var(--mid); }
+    .scenario-body { font-family: 'Noto Sans KR', sans-serif; font-size: 0.8rem; font-weight: 300; color: #555; line-height: 1.6; }
+
+    .info-box { background: var(--warm); border: 1px solid var(--light-mid); padding: 1.5rem; margin-bottom: 3rem; }
+    .info-box-title { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: var(--blue); margin-bottom: 0.6rem; }
+    .info-box p { font-family: 'Noto Sans KR', sans-serif; font-size: 0.85rem; font-weight: 300; line-height: 1.65; color: #333; }
+
+    .cta-block { background: var(--ink); color: var(--cream); padding: 3rem; text-align: center; margin-top: 2rem; }
+    .cta-block h2 { font-family: 'Noto Serif TC', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem; }
+    .cta-block p { font-family: 'Noto Sans KR', sans-serif; font-size: 0.88rem; font-weight: 300; color: rgba(245,240,232,0.7); margin-bottom: 1.8rem; line-height: 1.7; }
+    .cta-btn { display: inline-block; background: var(--red); color: #fff; font-family: 'Space Mono', monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.9rem 2rem; text-decoration: none; transition: opacity 0.2s; }
+    .cta-btn:hover { opacity: 0.85; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1.2rem; }
+      .hero { padding: 3rem 1.2rem 2.5rem; }
+      .content { padding: 2rem 1.2rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">SEOULMATE <span>31</span></a>
+    <a href="index.html" class="nav-back">← 返回首頁</a>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-tag">STUDY · 費用試算</div>
+    <h1>韓國留學<br>一年要花多少錢？</h1>
+    <p class="hero-sub">學費、房租、生活費、簽證——全部加起來，你準備好了嗎？</p>
+  </div>
+
+  <div class="content">
+
+    <!-- 3種情境 -->
+    <div class="section-label">01 · 三種情境</div>
+    <div class="section-title">你是哪種留學生？</div>
+
+    <div class="scenario-grid">
+      <div class="scenario-card">
+        <div class="scenario-tag">情境 A</div>
+        <div class="scenario-name">語學堂 1 學期（10週）</div>
+        <div class="scenario-price">KRW 450萬 – 650萬<small> / 10週</small></div>
+        <div class="scenario-body">純語言學習，短期體驗。學費 + 宿舍 + 生活費的基本組合。不含機票與保證金。</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-tag">情境 B</div>
+        <div class="scenario-name">語學堂 1 年（4 學期）</div>
+        <div class="scenario-price">KRW 1,500萬 – 2,200萬<small> / 年</small></div>
+        <div class="scenario-body">長期語言留學，準備升學或工作。含學費、租房、生活費，不含保證金。</div>
+      </div>
+      <div class="scenario-card">
+        <div class="scenario-tag">情境 C</div>
+        <div class="scenario-name">大學本科（1 年）</div>
+        <div class="scenario-price">KRW 1,800萬 – 2,800萬<small> / 年</small></div>
+        <div class="scenario-body">正式大學學籍，學費依科系差異大。理工科較貴，文科相對便宜。</div>
+      </div>
+    </div>
+
+    <!-- 費用細項 -->
+    <div class="section-label">02 · 費用細項</div>
+    <div class="section-title">語學堂 1 學期（10週）詳細試算</div>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>費用項目</th>
+          <th>最低（KRW）</th>
+          <th>最高（KRW）</th>
+          <th>說明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>語學堂學費</td>
+          <td>155萬</td>
+          <td>175萬</td>
+          <td>依學校而異，10週一學期</td>
+        </tr>
+        <tr>
+          <td>住宿（宿舍）</td>
+          <td>50萬</td>
+          <td>80萬</td>
+          <td>10週，含水電</td>
+        </tr>
+        <tr>
+          <td>住宿（自租，月租）</td>
+          <td>40萬/月</td>
+          <td>70萬/月</td>
+          <td>需另付保證金 100–500萬</td>
+        </tr>
+        <tr>
+          <td>餐費</td>
+          <td>30萬/月</td>
+          <td>50萬/月</td>
+          <td>自炊可省，外食貴</td>
+        </tr>
+        <tr>
+          <td>交通費</td>
+          <td>8萬/月</td>
+          <td>12萬/月</td>
+          <td>首爾地鐵月票約 6.5萬</td>
+        </tr>
+        <tr>
+          <td>簽證費（D-4）</td>
+          <td>6萬</td>
+          <td>6萬</td>
+          <td>一次性費用</td>
+        </tr>
+        <tr>
+          <td>外登證辦理</td>
+          <td>3萬</td>
+          <td>3萬</td>
+          <td>入境後 90 天內辦理</td>
+        </tr>
+        <tr>
+          <td>雜費（教材、電話等）</td>
+          <td>10萬</td>
+          <td>20萬</td>
+          <td>手機門號約 3–5萬/月</td>
+        </tr>
+        <tr class="cost-total">
+          <td><strong>10週總計（住宿舍）</strong></td>
+          <td colspan="2"><strong>約 450萬 – 630萬</strong></td>
+          <td>不含機票、保證金</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 注意事項 -->
+    <div class="info-box">
+      <div class="info-box-title">💡 保證金是最常被忽略的費用</div>
+      <p>在首爾自租房子，通常需要支付「保證金」（전세 / 월세 보증금），金額從 100萬到 1,000萬韓元不等。這筆錢在退租時會退還，但需要提前準備。很多人只算了學費和生活費，忘了保證金，導致抵達首爾後資金不足。建議出發前準備至少 KRW 1,000萬（約 TWD 24,000）的備用資金。</p>
+    </div>
+
+    <div class="cta-block">
+      <h2>費用算不清楚？<br>直接問我。</h2>
+      <p>根據你的情況（學校選擇、住宿方式、停留時間）<br>幫你算出最接近現實的預算。</p>
+      <a href="https://www.paypal.com/paypalme/HSIANGENTSAI/79" class="cta-btn" target="_blank">預約 1:1 諮詢 · USD $79 →</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
