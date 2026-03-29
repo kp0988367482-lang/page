@@ -6,267 +6,119 @@
   <title>預約 1:1 諮詢 · SEOULMATE31</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@700;900&family=Space+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+KR:wght@300;400;700&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <style>
     :root {
       --ink: #0f0e0c;
       --cream: #f5f0e8;
+      --warm: #f0e8d8;
       --gold: #c9a84c;
       --red: #c0392b;
+      --blue: #1a3a5c;
       --mid: #6b6560;
+      --light-mid: #d4cfc4;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: var(--cream);
-      font-family: 'Outfit', sans-serif;
-      color: var(--ink);
-      min-height: 100vh;
-    }
+    body { background: var(--cream); font-family: 'Outfit', sans-serif; color: var(--ink); min-height: 100vh; }
 
     /* NAV */
-    nav {
-      background: var(--ink);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .nav-logo {
-      font-family: 'DM Serif Display', serif;
-      font-style: italic;
-      font-size: 1.3rem;
-      color: var(--cream);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-      display: flex;
-      align-items: baseline;
-      gap: 0.4rem;
-    }
-    .nav-logo span {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: var(--red);
-      font-style: normal;
-      letter-spacing: 0.05em;
-    }
-    .nav-back {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.8rem;
-      color: rgba(245,240,232,0.6);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: color 0.2s;
-    }
+    nav { background: var(--ink); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.3rem; color: var(--cream); text-decoration: none; display: flex; align-items: baseline; gap: 0.4rem; }
+    .nav-logo span { font-family: 'Space Mono', monospace; font-size: 0.75rem; font-weight: 400; color: var(--red); font-style: normal; letter-spacing: 0.05em; }
+    .nav-back { font-family: 'Outfit', sans-serif; font-size: 0.8rem; color: rgba(245,240,232,0.6); text-decoration: none; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
     .nav-back:hover { color: var(--cream); }
 
     /* HERO */
-    .booking-hero {
-      background: var(--ink);
-      padding: 3rem 2rem 2.5rem;
-      text-align: center;
-    }
-    .booking-tag {
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .booking-title {
-      font-family: 'Noto Serif TC', serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      font-weight: 900;
-      color: var(--cream);
-      line-height: 1.2;
-      margin-bottom: 0.8rem;
-    }
-    .booking-subtitle {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.9rem;
-      color: rgba(245,240,232,0.55);
-      max-width: 480px;
-      margin: 0 auto 1.5rem;
-      line-height: 1.7;
-    }
-    .booking-price-badge {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--ink);
-      font-family: 'DM Serif Display', serif;
-      font-style: italic;
-      font-size: 1.6rem;
-      padding: 0.4rem 1.2rem;
-      border-radius: 2px;
-      margin-bottom: 0.5rem;
-    }
-    .booking-price-note {
-      font-size: 0.72rem;
-      color: rgba(245,240,232,0.45);
-    }
+    .booking-hero { background: var(--ink); padding: 3rem 2rem 2.5rem; text-align: center; }
+    .booking-tag { font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .booking-title { font-family: 'Noto Serif TC', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900; color: var(--cream); line-height: 1.2; margin-bottom: 0.8rem; }
+    .booking-subtitle { font-family: 'Outfit', sans-serif; font-size: 0.9rem; color: rgba(245,240,232,0.55); max-width: 480px; margin: 0 auto 1.5rem; line-height: 1.7; }
+    .booking-price-badge { display: inline-block; background: var(--gold); color: var(--ink); font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.6rem; padding: 0.4rem 1.2rem; border-radius: 2px; margin-bottom: 0.5rem; }
+    .booking-price-note { font-size: 0.72rem; color: rgba(245,240,232,0.45); }
 
     /* STEPS */
-    .steps-bar {
-      background: #1a1a18;
-      padding: 1.2rem 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 0;
-      flex-wrap: wrap;
-    }
-    .step {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.4rem 1rem;
-    }
-    .step-num {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .step-num.done {
-      background: var(--gold);
-      color: var(--ink);
-    }
-    .step-text {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.75rem;
-      color: rgba(245,240,232,0.5);
-    }
+    .steps-bar { background: #1a1a18; padding: 1.2rem 2rem; display: flex; justify-content: center; gap: 0; flex-wrap: wrap; }
+    .step { display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; }
+    .step-num { width: 22px; height: 22px; border-radius: 50%; background: rgba(201,168,76,0.15); border: 1px solid var(--gold); color: var(--gold); font-family: 'Space Mono', monospace; font-size: 0.6rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-num.done { background: var(--gold); color: var(--ink); }
+    .step-text { font-family: 'Outfit', sans-serif; font-size: 0.75rem; color: rgba(245,240,232,0.5); }
     .step.active .step-text { color: var(--cream); }
-    .step-arrow {
-      color: rgba(245,240,232,0.2);
-      font-size: 0.7rem;
-      padding: 0 0.3rem;
-    }
+    .step-arrow { color: rgba(245,240,232,0.2); font-size: 0.7rem; padding: 0 0.3rem; }
 
     /* PAYMENT NOTICE */
-    .payment-notice {
-      max-width: 700px;
-      margin: 2rem auto 0;
-      padding: 0 1.5rem;
-    }
-    .notice-card {
-      background: white;
-      border: 1px solid rgba(15,14,12,0.1);
-      border-left: 3px solid var(--gold);
-      padding: 1.2rem 1.5rem;
-      border-radius: 2px;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-    .notice-icon {
-      font-size: 1.2rem;
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-    .notice-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin-bottom: 0.3rem;
-    }
-    .notice-text {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.78rem;
-      color: var(--mid);
-      line-height: 1.6;
-    }
-    .notice-text a {
-      color: var(--red);
-      font-weight: 600;
-      text-decoration: none;
-    }
+    .payment-notice { max-width: 700px; margin: 2rem auto 0; padding: 0 1.5rem; }
+    .notice-card { background: white; border: 1px solid rgba(15,14,12,0.1); border-left: 3px solid var(--gold); padding: 1.2rem 1.5rem; border-radius: 2px; display: flex; gap: 1rem; align-items: flex-start; }
+    .notice-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .notice-title { font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
+    .notice-text { font-family: 'Outfit', sans-serif; font-size: 0.78rem; color: var(--mid); line-height: 1.6; }
+    .notice-text a { color: var(--red); font-weight: 600; text-decoration: none; }
     .notice-text a:hover { text-decoration: underline; }
 
+    /* TOPIC SELECTOR */
+    .topic-selector { max-width: 700px; margin: 2rem auto 0; padding: 0 1.5rem; }
+    .topic-label { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); margin-bottom: 1rem; }
+    .topic-label strong { color: var(--ink); }
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.7rem; margin-bottom: 1rem; }
+    .topic-btn {
+      border: 1.5px solid var(--light-mid);
+      background: white;
+      padding: 0.85rem 1rem;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 2px;
+      transition: all 0.18s;
+      font-family: 'Outfit', sans-serif;
+    }
+    .topic-btn:hover { border-color: var(--gold); background: #fffdf7; }
+    .topic-btn.selected { border-color: var(--red); background: #fff5f5; }
+    .topic-btn .topic-icon { font-size: 1.3rem; display: block; margin-bottom: 0.35rem; }
+    .topic-btn .topic-name { font-size: 0.82rem; font-weight: 600; color: var(--ink); display: block; }
+    .topic-btn .topic-desc { font-size: 0.7rem; color: var(--mid); display: block; margin-top: 0.2rem; line-height: 1.4; }
+    .topic-btn.selected .topic-name { color: var(--red); }
+
+    .topic-other { margin-top: 0.5rem; }
+    .topic-other input {
+      width: 100%;
+      border: 1.5px solid var(--light-mid);
+      background: white;
+      padding: 0.75rem 1rem;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      color: var(--ink);
+      border-radius: 2px;
+      outline: none;
+      transition: border-color 0.18s;
+    }
+    .topic-other input:focus { border-color: var(--gold); }
+    .topic-other input::placeholder { color: var(--mid); }
+
+    .topic-confirm { display: none; margin-top: 1rem; background: var(--ink); color: var(--cream); font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.85rem 1.5rem; border: none; cursor: pointer; width: 100%; transition: opacity 0.2s; }
+    .topic-confirm:hover { opacity: 0.85; }
+    .topic-confirm.visible { display: block; }
+
+    .topic-selected-badge { display: none; background: var(--warm); border: 1px solid var(--light-mid); border-left: 3px solid var(--red); padding: 0.8rem 1.2rem; margin-top: 1rem; border-radius: 2px; }
+    .topic-selected-badge.visible { display: flex; align-items: center; gap: 0.8rem; }
+    .topic-selected-badge span { font-size: 0.82rem; color: var(--ink); }
+    .topic-selected-badge .change-link { font-size: 0.72rem; color: var(--red); cursor: pointer; text-decoration: underline; margin-left: auto; white-space: nowrap; }
+
     /* CALENDLY EMBED */
-    .calendly-wrap {
-      max-width: 900px;
-      margin: 2rem auto 3rem;
-      padding: 0 1.5rem;
-    }
-    .calendly-inline-widget {
-      min-width: 320px;
-      height: 700px;
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    }
+    .calendly-wrap { max-width: 900px; margin: 2rem auto 3rem; padding: 0 1.5rem; }
+    .calendly-inline-widget { min-width: 320px; height: 700px; border-radius: 4px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
 
     /* WHAT TO EXPECT */
-    .expect-section {
-      background: var(--ink);
-      padding: 3rem 2rem;
-    }
-    .expect-inner {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .expect-title {
-      font-family: 'Noto Serif TC', serif;
-      font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--cream);
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-    .expect-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-    .expect-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      padding: 1.2rem;
-      border-radius: 2px;
-    }
-    .expect-card-icon {
-      font-size: 1.3rem;
-      margin-bottom: 0.6rem;
-    }
-    .expect-card-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--cream);
-      margin-bottom: 0.3rem;
-    }
-    .expect-card-text {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.74rem;
-      color: rgba(245,240,232,0.45);
-      line-height: 1.6;
-    }
+    .expect-section { background: var(--ink); padding: 3rem 2rem; }
+    .expect-inner { max-width: 700px; margin: 0 auto; }
+    .expect-title { font-family: 'Noto Serif TC', serif; font-size: 1.4rem; font-weight: 900; color: var(--cream); margin-bottom: 1.5rem; text-align: center; }
+    .expect-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .expect-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 1.2rem; border-radius: 2px; }
+    .expect-card-icon { font-size: 1.3rem; margin-bottom: 0.6rem; }
+    .expect-card-title { font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 600; color: var(--cream); margin-bottom: 0.3rem; }
+    .expect-card-text { font-family: 'Outfit', sans-serif; font-size: 0.74rem; color: rgba(245,240,232,0.45); line-height: 1.6; }
 
     /* FOOTER */
-    footer {
-      background: #0a0908;
-      padding: 1.5rem 2rem;
-      text-align: center;
-    }
-    footer a {
-      font-family: 'Outfit', sans-serif;
-      font-size: 0.75rem;
-      color: rgba(245,240,232,0.3);
-      text-decoration: none;
-    }
+    footer { background: #0a0908; padding: 1.5rem 2rem; text-align: center; }
+    footer a { font-family: 'Outfit', sans-serif; font-size: 0.75rem; color: rgba(245,240,232,0.3); text-decoration: none; }
     footer a:hover { color: var(--cream); }
 
     @media (max-width: 600px) {
@@ -274,6 +126,7 @@
       .step { padding: 0.3rem 0.5rem; }
       .step-text { font-size: 0.65rem; }
       .calendly-inline-widget { height: 800px; }
+      .topic-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -303,16 +156,21 @@
     <div class="step-arrow">→</div>
     <div class="step active">
       <div class="step-num">2</div>
-      <span class="step-text">選擇時間</span>
+      <span class="step-text">選擇主題</span>
     </div>
     <div class="step-arrow">→</div>
     <div class="step">
       <div class="step-num">3</div>
-      <span class="step-text">收到確認信</span>
+      <span class="step-text">選擇時間</span>
     </div>
     <div class="step-arrow">→</div>
     <div class="step">
       <div class="step-num">4</div>
+      <span class="step-text">收到確認信</span>
+    </div>
+    <div class="step-arrow">→</div>
+    <div class="step">
+      <div class="step-num">5</div>
       <span class="step-text">諮詢開始</span>
     </div>
   </div>
@@ -330,10 +188,55 @@
     </div>
   </div>
 
-  <!-- CALENDLY EMBED -->
-  <div class="calendly-wrap">
+  <!-- TOPIC SELECTOR -->
+  <div class="topic-selector" id="topicSelector">
+    <div class="topic-label"><strong>選擇你的諮詢主題</strong>（選完後才能選時間）</div>
+
+    <div class="topic-grid">
+      <button class="topic-btn" data-topic="留學諮詢" onclick="selectTopic(this)">
+        <span class="topic-icon">📚</span>
+        <span class="topic-name">留學諮詢</span>
+        <span class="topic-desc">語學堂 / 大學 / 費用規劃</span>
+      </button>
+      <button class="topic-btn" data-topic="整形諮詢" onclick="selectTopic(this)">
+        <span class="topic-icon">✨</span>
+        <span class="topic-name">整形諮詢</span>
+        <span class="topic-desc">診所選擇 / 費用 / 術後安排</span>
+      </button>
+      <button class="topic-btn" data-topic="電商諮詢" onclick="selectTopic(this)">
+        <span class="topic-icon">📦</span>
+        <span class="topic-name">電商諮詢</span>
+        <span class="topic-desc">韓貨 / 代購 / 物流 / 創業</span>
+      </button>
+      <button class="topic-btn" data-topic="落地諮詢" onclick="selectTopic(this)">
+        <span class="topic-icon">🏠</span>
+        <span class="topic-name">落地諮詢</span>
+        <span class="topic-desc">租房 / 銀行 / 外登證 / 生活</span>
+      </button>
+      <button class="topic-btn" data-topic="其他" onclick="selectTopic(this, true)">
+        <span class="topic-icon">💬</span>
+        <span class="topic-name">其他</span>
+        <span class="topic-desc">自行填寫說明</span>
+      </button>
+    </div>
+
+    <div class="topic-other" id="topicOther" style="display:none;">
+      <input type="text" id="topicOtherInput" placeholder="請簡單說明你的問題（例如：韓國工作簽證規劃）" oninput="onOtherInput()" />
+    </div>
+
+    <button class="topic-confirm" id="topicConfirm" onclick="confirmTopic()">確認主題，選擇時間 →</button>
+
+    <div class="topic-selected-badge" id="topicBadge">
+      <span id="topicBadgeText">✅ 諮詢主題：留學諮詢</span>
+      <span class="change-link" onclick="changeTopic()">更改</span>
+    </div>
+  </div>
+
+  <!-- CALENDLY EMBED (hidden until topic selected) -->
+  <div class="calendly-wrap" id="calendlyWrap" style="display:none;">
     <div
       class="calendly-inline-widget"
+      id="calendlyWidget"
       data-url="https://calendly.com/kp0988367482/30min?hide_gdpr_banner=1&primary_color=c9a84c"
     ></div>
   </div>
@@ -373,5 +276,87 @@
   </footer>
 
   <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script>
+    let selectedTopic = '';
+    let isOther = false;
+
+    function selectTopic(btn, other) {
+      // Remove selected from all
+      document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      isOther = !!other;
+
+      if (isOther) {
+        document.getElementById('topicOther').style.display = 'block';
+        selectedTopic = document.getElementById('topicOtherInput').value.trim();
+      } else {
+        document.getElementById('topicOther').style.display = 'none';
+        selectedTopic = btn.getAttribute('data-topic');
+      }
+
+      updateConfirmBtn();
+    }
+
+    function onOtherInput() {
+      selectedTopic = document.getElementById('topicOtherInput').value.trim();
+      updateConfirmBtn();
+    }
+
+    function updateConfirmBtn() {
+      const btn = document.getElementById('topicConfirm');
+      if (selectedTopic && selectedTopic.length > 0) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }
+
+    function confirmTopic() {
+      if (!selectedTopic) return;
+
+      // Show badge
+      document.getElementById('topicBadgeText').textContent = '✅ 諮詢主題：' + selectedTopic;
+      document.getElementById('topicBadge').classList.add('visible');
+      document.getElementById('topicConfirm').classList.remove('visible');
+
+      // Hide selector buttons
+      document.querySelector('.topic-grid').style.display = 'none';
+      document.getElementById('topicOther').style.display = 'none';
+
+      // Build Calendly URL with prefilled notes
+      const notes = encodeURIComponent('諮詢主題：' + selectedTopic);
+      const calendlyUrl = 'https://calendly.com/kp0988367482/30min?hide_gdpr_banner=1&primary_color=c9a84c&a2=' + notes;
+
+      // Show and init Calendly
+      const wrap = document.getElementById('calendlyWrap');
+      wrap.style.display = 'block';
+      const widget = document.getElementById('calendlyWidget');
+      widget.setAttribute('data-url', calendlyUrl);
+
+      // Reinit Calendly widget
+      if (window.Calendly) {
+        window.Calendly.initInlineWidget({
+          url: calendlyUrl,
+          parentElement: widget,
+        });
+      }
+
+      // Scroll to calendar
+      setTimeout(() => {
+        wrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+
+    function changeTopic() {
+      document.getElementById('topicBadge').classList.remove('visible');
+      document.querySelector('.topic-grid').style.display = 'grid';
+      document.getElementById('calendlyWrap').style.display = 'none';
+      document.querySelectorAll('.topic-btn').forEach(b => b.classList.remove('selected'));
+      selectedTopic = '';
+      isOther = false;
+      document.getElementById('topicOther').style.display = 'none';
+      document.getElementById('topicOtherInput').value = '';
+    }
+  </script>
 </body>
 </html>
