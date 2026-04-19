@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEOULMATE 31 — 在韓做生意，不只賣貨</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f0e0c;--cream:#f5f0e8;--warm:#ede7da;--red:#c0392b;--gold:#c9a84c;--blue:#1a3a5c;--mid:#7a7468;--border:#d4cfc4;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 1.2rem;height:52px;background:rgba(245,240,232,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.05rem;color:var(--ink);text-decoration:none;}
+.nav-logo b{font-family:'Space Mono',monospace;font-style:normal;font-size:.6rem;color:var(--red);margin-left:.2rem;font-weight:400;}
+.nav-back{font-size:.72rem;color:var(--mid);text-decoration:none;}
+.nav-cta{font-size:.75rem;font-weight:700;background:var(--red);color:#fff;padding:.45rem 1rem;text-decoration:none;border-radius:3px;}
+
+.hero{background:var(--ink);color:var(--cream);padding:2.8rem 1.2rem 2.2rem;text-align:center;}
+.hero-tag{font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;}
+.hero h1{font-family:'Noto Serif TC',serif;font-size:clamp(1.9rem,7vw,3.2rem);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:.8rem;}
+.hero h1 em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);}
+.hero-sub{font-size:.88rem;color:rgba(245,240,232,.55);line-height:1.75;max-width:380px;margin:0 auto 1.5rem;}
+.hero-stats{display:flex;justify-content:center;gap:0;border-top:1px solid rgba(255,255,255,.08);margin-top:1.5rem;}
+.h-stat{flex:1;padding:1rem .5rem;border-right:1px solid rgba(255,255,255,.08);}
+.h-stat:last-child{border-right:none;}
+.h-stat-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.5rem;color:var(--cream);line-height:1;margin-bottom:.25rem;}
+.h-stat-label{font-size:.62rem;color:rgba(245,240,232,.38);line-height:1.4;font-family:'Space Mono',monospace;letter-spacing:.04em;}
+
+.hook{padding:2rem 1.2rem;max-width:500px;margin:0 auto;}
+.hook-q{font-family:'Noto Serif TC',serif;font-size:1.25rem;font-weight:900;line-height:1.35;margin-bottom:.7rem;}
+.hook-q em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+.hook-a{font-size:.88rem;color:var(--mid);line-height:1.8;}
+.hook-a strong{color:var(--ink);font-weight:600;}
+
+/* === 四大具體服務需求 === */
+.needs{background:var(--warm);padding:2.5rem 1.2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.needs-inner{max-width:600px;margin:0 auto;}
+.needs-tag{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:.8rem;}
+.needs h2{font-family:'Noto Serif TC',serif;font-size:clamp(1.4rem,4.5vw,2rem);font-weight:900;line-height:1.3;letter-spacing:-.02em;margin-bottom:.5rem;}
+.needs h2 em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+.needs-sub{font-size:.82rem;color:var(--mid);line-height:1.7;margin-bottom:1.5rem;}
+.needs-sub strong{color:var(--ink);}
+
+.need-cards{display:flex;flex-direction:column;gap:.7rem;}
+.need-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:1.1rem 1.2rem;cursor:pointer;transition:all .18s;}
+.need-card:hover{border-color:var(--red);transform:translateY(-2px);}
+.need-card.active{border-color:var(--red);border-width:2px;box-shadow:0 0 0 3px rgba(192,57,43,.08);}
+.need-head{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem;}
+.need-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.6rem;color:var(--gold);line-height:1;flex-shrink:0;min-width:1.6rem;}
+.need-title{font-family:'Noto Serif TC',serif;font-size:1.02rem;font-weight:900;line-height:1.3;}
+.need-desc{font-size:.78rem;color:var(--mid);line-height:1.7;padding-left:2.3rem;}
+.need-desc strong{color:var(--ink);font-weight:600;}
+.need-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.7rem;padding-left:2.3rem;}
+.need-tag{font-size:.66rem;background:var(--warm);color:var(--mid);padding:.22rem .65rem;border-radius:20px;font-family:'Space Mono',monospace;letter-spacing:.04em;}
+
+.needs-bottom{margin-top:1.5rem;text-align:center;font-size:.78rem;color:var(--mid);line-height:1.7;}
+.needs-bottom strong{color:var(--ink);}
+
+/* === 五步流程 === */
+.what{background:var(--ink);padding:2.5rem 1.2rem;}
+.what-inner{max-width:600px;margin:0 auto;}
+.what .needs-tag{color:rgba(245,240,232,.4);}
+.what h2{color:var(--cream);font-family:'Noto Serif TC',serif;font-size:clamp(1.4rem,4.5vw,2rem);font-weight:900;line-height:1.3;letter-spacing:-.02em;margin-bottom:1.5rem;}
+.what h2 em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);}
+.steps{display:flex;flex-direction:column;gap:.7rem;}
+.step{display:flex;gap:.9rem;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:1rem 1.1rem;}
+.step-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.6rem;color:var(--gold);line-height:1;flex-shrink:0;min-width:1.8rem;}
+.step-title{font-size:.88rem;font-weight:700;margin-bottom:.25rem;color:var(--cream);}
+.step-desc{font-size:.76rem;color:rgba(245,240,232,.5);line-height:1.65;}
+
+/* === 三個方案 === */
+.pkgs{padding:2.5rem 1.2rem;max-width:600px;margin:0 auto;}
+.pkgs h2{font-family:'Noto Serif TC',serif;font-size:clamp(1.3rem,4vw,1.8rem);font-weight:900;margin-bottom:1.3rem;line-height:1.3;}
+.pkgs h2 em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+.pkg{border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:1rem;}
+.pkg-head{padding:1.1rem 1.2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border);}
+.pkg.featured .pkg-head{background:var(--ink);}
+.pkg-name{font-family:'Noto Serif TC',serif;font-size:1rem;font-weight:900;}
+.pkg.featured .pkg-name{color:var(--cream);}
+.pkg-price{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.4rem;color:var(--ink);}
+.pkg.featured .pkg-price{color:var(--gold);}
+.pkg-body{padding:1rem 1.2rem;}
+.pkg-desc{font-size:.8rem;color:var(--mid);line-height:1.7;margin-bottom:.9rem;}
+.pkg-list{list-style:none;}
+.pkg-list li{font-size:.8rem;color:var(--ink);padding:.35rem 0;border-bottom:1px solid rgba(212,207,196,.4);display:flex;gap:.6rem;align-items:flex-start;line-height:1.4;}
+.pkg-list li:last-child{border:none;}
+.pkg-list li::before{content:'→';color:var(--gold);font-size:.75rem;flex-shrink:0;margin-top:1px;}
+.pkg-foot{padding:.9rem 1.2rem;border-top:1px solid var(--border);}
+.pkg-btn{display:block;width:100%;text-align:center;font-weight:700;font-size:.82rem;padding:.8rem;border-radius:6px;text-decoration:none;transition:all .18s;}
+.btn-gold{background:var(--gold);color:var(--ink);}
+.btn-ink{background:var(--ink);color:var(--cream);}
+.btn-red{background:var(--red);color:#fff;}
+.badge-hot{display:inline-block;font-family:'Space Mono',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;background:var(--red);color:#fff;padding:.2rem .55rem;border-radius:20px;margin-bottom:.5rem;}
+
+/* === 補助專區 === */
+.subsidy{background:var(--gold);padding:2.5rem 1.2rem;text-align:center;}
+.subsidy h2{font-family:'Noto Serif TC',serif;font-size:1.3rem;font-weight:900;color:var(--ink);line-height:1.3;margin-bottom:.7rem;}
+.subsidy p{font-size:.82rem;color:rgba(15,14,12,.7);line-height:1.75;max-width:380px;margin:0 auto 1.2rem;}
+.subsidy-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:2.8rem;color:var(--ink);line-height:1;margin-bottom:.3rem;}
+.subsidy-note{font-size:.7rem;color:rgba(15,14,12,.55);font-family:'Space Mono',monospace;letter-spacing:.06em;}
+
+/* === 真實案例 === */
+.case{padding:2.5rem 1.2rem;max-width:600px;margin:0 auto;}
+.case h2{font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:900;margin-bottom:1rem;}
+.case-card{background:var(--ink);border-radius:12px;padding:1.5rem 1.3rem;color:var(--cream);}
+.case-tag{font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;}
+.case-q{font-family:'Noto Serif TC',serif;font-size:1.05rem;font-weight:700;line-height:1.4;margin-bottom:.6rem;}
+.case-q em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);}
+.case-body{font-size:.8rem;color:rgba(245,240,232,.5);line-height:1.75;margin-bottom:1.2rem;}
+.case-nums{display:flex;gap:0;border-top:1px solid rgba(255,255,255,.08);padding-top:1rem;}
+.case-num-item{flex:1;padding-right:1rem;}
+.case-num-item:last-child{padding-right:0;}
+.cn-val{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.6rem;color:var(--cream);line-height:1;}
+.cn-label{font-size:.65rem;color:rgba(245,240,232,.38);margin-top:.2rem;}
+
+/* === Bottom CTA === */
+.bottom-cta{background:var(--red);padding:2.5rem 1.2rem;text-align:center;}
+.bottom-cta h2{font-family:'Noto Serif TC',serif;font-size:1.4rem;font-weight:900;color:#fff;line-height:1.25;margin-bottom:.6rem;}
+.bottom-cta h2 em{font-family:'DM Serif Display',serif;font-style:italic;}
+.bottom-cta p{font-size:.8rem;color:rgba(255,255,255,.6);margin-bottom:1.5rem;line-height:1.7;}
+.cta-acts{display:flex;flex-direction:column;gap:.7rem;max-width:280px;margin:0 auto;}
+.btn-line{display:flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;font-size:.88rem;background:#06c755;color:#fff;padding:.85rem 1rem;border-radius:8px;text-decoration:none;}
+.btn-light{font-weight:700;font-size:.88rem;background:rgba(255,255,255,.15);color:#fff;padding:.85rem 1rem;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.25);text-align:center;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+.hero{animation:fadeUp .6s cubic-bezier(.22,1,.36,1) both;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(min-width:640px){
+  .hero{padding:3.5rem 2.5rem;}
+  .hook,.what-inner,.pkgs,.case,.needs-inner{max-width:700px;}
+  .cta-acts{flex-direction:row;max-width:none;justify-content:center;}
+  nav{padding:0 2.5rem;}
+  .hero-stats{max-width:500px;margin:1.5rem auto 0;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">SEOULMATE<b>31</b></a>
+  <a href="index.html" class="nav-back">← 回首頁</a>
+  <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="nav-cta">先聊聊</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">B2B · 在韓創業 · 商務落地</div>
+  <h1>想在韓國做生意，<br>你缺的不是資訊，<br>是<em>一個在首爾的人</em></h1>
+  <p class="hero-sub">投資申報、事業者登錄、店面選址、裝潢監工、稅務法務——這些事，沒住在這裡的人搞不定。</p>
+  <div class="hero-stats">
+    <div class="h-stat">
+      <div class="h-stat-num">1,000萬</div>
+      <div class="h-stat-label">韓幣政府補助<br>外國人可申請</div>
+    </div>
+    <div class="h-stat">
+      <div class="h-stat-num">8年</div>
+      <div class="h-stat-label">首爾在地<br>東大門+商務人脈</div>
+    </div>
+    <div class="h-stat">
+      <div class="h-stat-num">4大</div>
+      <div class="h-stat-label">服務範圍<br>商務+陪跑+落地+教育</div>
+    </div>
+  </div>
+</div>
+
+<div class="hook reveal">
+  <div class="hook-q">韓國的事，<br><em>問首爾的人就好。</em></div>
+  <div class="hook-a">
+    Google 三小時搞不清楚的事，住在這裡 8 年的我，一句話幫你看完。<br><br>
+    <strong>不是仲介、不是顧問機構——就是一個願意接電話的台灣人，在首爾。</strong>
+  </div>
+</div>
+
+<!-- ===== 四大具體服務需求 ===== -->
+<div class="needs">
+  <div class="needs-inner reveal">
+    <div class="needs-tag">具體服務範圍</div>
+    <h2>你想做哪一塊？<br><em>選一個，我陪你走。</em></h2>
+    <p class="needs-sub">不用全包，<strong>選你需要的那一塊就好。</strong>每一塊都是真實在做、真實有客戶在跑的服務。</p>
+
+    <div class="need-cards">
+
+      <div class="need-card" onclick="this.classList.toggle('active')">
+        <div class="need-head">
+          <div class="need-num">4</div>
+          <div class="need-title">商務開發</div>
+        </div>
+        <div class="need-desc">
+          <strong>外國人投資申報、韓國事業者登錄證申辦、區域選址評估。</strong><br>
+          想正式在韓國設立公司、開店、做投資——這些政府文件流程繁瑣，跑錯一步就要重來。我熟。
+        </div>
+        <div class="need-tags">
+          <span class="need-tag">投資申報</span>
+          <span class="need-tag">事業者登錄</span>
+          <span class="need-tag">店面選址</span>
+        </div>
+      </div>
+
+      <div class="need-card" onclick="this.classList.toggle('active')">
+        <div class="need-head">
+          <div class="need-num">5</div>
+          <div class="need-title">實戰陪跑</div>
+        </div>
+        <div class="need-desc">
+          <strong>裝潢設計監工、預算合約審核、稅務/法務事務所對接。</strong><br>
+          開店裝潢被加價、合約看不懂條款、稅務不知道找誰——我幫你對接信得過的人，現場盯現場。
+        </div>
+        <div class="need-tags">
+          <span class="need-tag">裝潢監工</span>
+          <span class="need-tag">合約審核</span>
+          <span class="need-tag">稅務法務</span>
+        </div>
+      </div>
+
+      <div class="need-card" onclick="this.classList.toggle('active')">
+        <div class="need-head">
+          <div class="need-num">6</div>
+          <div class="need-title">落地配套</div>
+        </div>
+        <div class="need-desc">
+          <strong>店面 / 住宅租賃、法人或個人開戶、辦手機+居留證。</strong><br>
+          人來韓國第一週要解決的瑣事一大堆，全部交給我搞定，你專心做生意。
+        </div>
+        <div class="need-tags">
+          <span class="need-tag">房產租賃</span>
+          <span class="need-tag">法人開戶</span>
+          <span class="need-tag">手機+居留證</span>
+        </div>
+      </div>
+
+      <div class="need-card" onclick="this.classList.toggle('active')">
+        <div class="need-head">
+          <div class="need-num">7</div>
+          <div class="need-title">教育 + 醫美</div>
+        </div>
+        <div class="need-desc">
+          <strong>大學獎學金診斷、合法打工許可指導、高端醫美對接。</strong><br>
+          家人小孩想來唸書、想合法打工不踩紅線、想做整形不被當盤子——這塊我接。
+        </div>
+        <div class="need-tags">
+          <span class="need-tag">大學獎學金</span>
+          <span class="need-tag">合法打工</span>
+          <span class="need-tag">高端醫美</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="needs-bottom">
+      點一下展開看細節。<strong>需要哪一塊？加 LINE 直接說。</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 五步流程 ===== -->
+<div class="what">
+  <div class="what-inner reveal">
+    <div class="needs-tag">合作流程</div>
+    <h2>從第一通訊息<br>到<em>你公司開張</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <div class="step-title">說你的情況</div>
+          <div class="step-desc">加 LINE 一段話講你想做什麼、預算多少、時間表大概。我看完 24 小時內回你。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <div class="step-title">免費需求初判</div>
+          <div class="step-desc">我幫你判斷你需要的是哪一塊（商務 / 陪跑 / 落地 / 教育醫美），給你一個粗估的時程跟預算。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <div class="step-title">確認方案 + 簽約</div>
+          <div class="step-desc">你確認要做哪幾項，我給你一份書面方案，含時程、金額、交付項目。雙方簽完開始。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <div class="step-title">執行 + 即時回報</div>
+          <div class="step-desc">我在首爾現場跑流程、對接、盯進度。每週一次進度更新，重要決定點即時通知。</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>
+          <div class="step-title">交付 + 後續支援</div>
+          <div class="step-desc">完成後正式交付，6 個月內相關問題免費回答。需要持續服務可月費續約。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 三個方案 ===== -->
+<div class="pkgs reveal">
+  <h2>選一個方案<em>開始</em></h2>
+
+  <div class="pkg">
+    <div class="pkg-head">
+      <div class="pkg-name">入門包 — 先評估</div>
+      <div class="pkg-price">NT$4,800</div>
+    </div>
+    <div class="pkg-body">
+      <div class="pkg-desc">還在評估要不要做？這個包幫你把基礎搞清楚——市場分析、可行性評估、補助資格初判。</div>
+      <ul class="pkg-list">
+        <li>針對你目標的市場分析報告</li>
+        <li>事業者登錄 / 投資申報資格判斷</li>
+        <li>政府補助申請資格初判</li>
+        <li>1次線上諮詢（60分鐘）</li>
+      </ul>
+    </div>
+    <div class="pkg-foot">
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="pkg-btn btn-ink">加 LINE 了解 →</a>
+    </div>
+  </div>
+
+  <div class="pkg featured">
+    <div class="pkg-head">
+      <div>
+        <div class="badge-hot">主推</div>
+        <div class="pkg-name">建立包 — 落地實戰</div>
+      </div>
+      <div class="pkg-price">NT$28,000</div>
+    </div>
+    <div class="pkg-body">
+      <div class="pkg-desc" style="color:rgba(245,240,232,.55);">決定要做了，需要有人帶著走。從事業者登錄、選址、開戶到第一筆生意，全程陪跑。</div>
+      <ul class="pkg-list" style="color:rgba(245,240,232,.78);">
+        <li>外國人投資申報 + 事業者登錄</li>
+        <li>店面或辦公室選址陪同</li>
+        <li>法人 / 個人開戶協助</li>
+        <li>稅務 / 法務事務所對接</li>
+        <li>3次深度諮詢 · 30天 LINE 追問</li>
+      </ul>
+    </div>
+    <div class="pkg-foot" style="border-color:rgba(255,255,255,.08);">
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="pkg-btn btn-gold">加 LINE 了解 →</a>
+    </div>
+  </div>
+
+  <div class="pkg">
+    <div class="pkg-head">
+      <div class="pkg-name">落地包 — 全程承包</div>
+      <div class="pkg-price">NT$68,000起</div>
+    </div>
+    <div class="pkg-body">
+      <div class="pkg-desc">想全程交給我、自己只看結果。從投資申報、選址、裝潢監工、政府補助申請、開戶到開張，6個月在地支援。</div>
+      <ul class="pkg-list">
+        <li>建立包全部內容</li>
+        <li>裝潢設計監工 + 預算合約審核</li>
+        <li>政府補助申請陪跑（最高1,000萬韓幣）</li>
+        <li>創業簽證 D-8-4 規劃</li>
+        <li>6個月在地全程支援</li>
+      </ul>
+    </div>
+    <div class="pkg-foot">
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="pkg-btn btn-red">加 LINE 了解 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 補助專區 ===== -->
+<div class="subsidy reveal">
+  <div class="subsidy-num">1,000萬 KRW</div>
+  <div class="subsidy-note">≈ NT$22萬 · 韓國政府外國人創業補助</div>
+  <h2 style="margin-top:1rem;">這筆錢，<br>很多人不知道能拿</h2>
+  <p>韓國政府有針對在韓創業外國人的補助計畫，條件符合就能申請。我幫你確認資格、準備資料、協助遞件。</p>
+</div>
+
+<!-- ===== 真實案例 ===== -->
+<div class="case reveal">
+  <h2>真實發生的事</h2>
+  <div class="case-card">
+    <div class="case-tag">📦 電商 · 韓貨</div>
+    <div class="case-q">「同一款韓貨，<br>我比她<em>便宜 40%。</em>」</div>
+    <div class="case-body">台灣做韓貨代購的客戶，靠網路採購一年，後來找我對接東大門直接進貨管道。一次諮詢，改變了她整個採購策略。中間人少了，利潤就回來了。</div>
+    <div class="case-nums">
+      <div class="case-num-item">
+        <div class="cn-val">40%</div>
+        <div class="cn-label">採購成本下降</div>
+      </div>
+      <div class="case-num-item">
+        <div class="cn-val">1次</div>
+        <div class="cn-label">諮詢完成方向</div>
+      </div>
+      <div class="case-num-item">
+        <div class="cn-val">直接</div>
+        <div class="cn-label">首爾現場對接</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-cta">
+  <h2>不確定從哪開始？<br><em>加 LINE 說你的情況。</em></h2>
+  <p>告訴我你想做什麼、預算大概多少，<br>我直接告訴你哪個方案最適合。</p>
+  <div class="cta-acts">
+    <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="btn-line">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;flex-shrink:0"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      加 LINE 先聊聊
+    </a>
+    <a href="shop.html" class="btn-light">看數位商品 →</a>
+  </div>
+</div>
+
+<script>
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
