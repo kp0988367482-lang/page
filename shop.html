@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEOULMATE 31 — 完整商品 · 直接拿答案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f0e0c;--cream:#f5f0e8;--warm:#ede7da;--red:#c0392b;--gold:#c9a84c;--blue:#1a3a5c;--mid:#7a7468;--border:#d4cfc4;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 1.2rem;height:52px;background:rgba(245,240,232,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.05rem;color:var(--ink);text-decoration:none;}
+.nav-logo b{font-family:'Space Mono',monospace;font-style:normal;font-size:.6rem;color:var(--red);margin-left:.2rem;font-weight:400;}
+.nav-back{font-size:.72rem;color:var(--mid);text-decoration:none;}
+.nav-cta{font-size:.75rem;font-weight:700;background:var(--red);color:#fff;padding:.45rem 1rem;text-decoration:none;border-radius:3px;}
+
+/* HERO */
+.hero{background:var(--ink);color:var(--cream);padding:3rem 1.2rem 2.5rem;text-align:center;}
+.hero-tag{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.hero h1{font-family:'Noto Serif TC',serif;font-size:clamp(1.9rem,7vw,3rem);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:.8rem;}
+.hero h1 em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);}
+.hero p{font-size:.88rem;color:rgba(245,240,232,.55);line-height:1.75;max-width:380px;margin:0 auto;}
+
+/* TRUST */
+.trust{display:flex;overflow-x:auto;gap:.6rem;padding:.9rem 1.2rem;background:rgba(255,255,255,.04);scrollbar-width:none;border-top:1px solid rgba(255,255,255,.07);}
+.trust::-webkit-scrollbar{display:none;}
+.trust-pill{flex-shrink:0;font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,240,232,.45);background:rgba(255,255,255,.06);padding:.3rem .75rem;border-radius:20px;white-space:nowrap;}
+
+/* ===== 完整服務膠囊區 ===== */
+.service-map{padding:2.5rem 0 2rem;background:var(--warm);border-bottom:1px solid var(--border);}
+.service-map-head{padding:0 1.2rem;max-width:600px;margin:0 auto 1.5rem;}
+.sm-tag{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:.7rem;}
+.sm-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.4rem,4.5vw,2.2rem);font-weight:900;line-height:1.3;letter-spacing:-.02em;margin-bottom:.5rem;}
+.sm-title em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+.sm-sub{font-size:.82rem;color:var(--mid);line-height:1.7;}
+
+/* 膠囊滑動橫條 */
+.cap-row{padding:.4rem 1.2rem .6rem;}
+.cap-row-label{font-size:.7rem;color:var(--mid);font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem;}
+.cap-row-label .cap-emoji{font-size:.95rem;}
+.cap-scroll{display:flex;gap:.55rem;overflow-x:auto;padding:.3rem 0 .8rem;scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:x proximity;}
+.cap-scroll::-webkit-scrollbar{display:none;}
+.cap{flex-shrink:0;display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1.5px solid var(--border);border-radius:30px;padding:.5rem 1rem;cursor:pointer;transition:all .15s;text-decoration:none;color:var(--ink);scroll-snap-align:start;}
+.cap:hover{border-color:var(--red);transform:translateY(-2px);}
+.cap-name{font-size:.78rem;font-weight:600;white-space:nowrap;}
+.cap-price{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--red);font-weight:700;letter-spacing:.04em;}
+.cap-price.free{color:#0a8854;}
+.cap.hot{background:var(--ink);border-color:var(--ink);}
+.cap.hot .cap-name{color:var(--cream);}
+.cap.hot .cap-price{color:var(--gold);}
+.cap.hot:hover{background:var(--red);border-color:var(--red);}
+
+.sm-bottom{padding:1.2rem 1.2rem 0;text-align:center;}
+.sm-bottom p{font-size:.78rem;color:var(--mid);line-height:1.7;}
+.sm-bottom strong{color:var(--ink);}
+
+/* ===== 主推商品卡片區 ===== */
+.cards-section{padding:2.5rem 1.2rem 1rem;max-width:500px;margin:0 auto;}
+.cs-head{margin-bottom:1.3rem;text-align:center;}
+.cs-tag{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:.6rem;}
+.cs-title{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;line-height:1.3;}
+.cs-title em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+
+.cards{display:flex;flex-direction:column;gap:1rem;}
+
+.card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--border);}
+.card-accent{height:4px;}
+.card.c1 .card-accent{background:var(--red);}
+.card.c2 .card-accent{background:var(--gold);}
+.card.c3 .card-accent{background:var(--blue);}
+.card.c4 .card-accent{background:linear-gradient(90deg,var(--red),var(--gold));}
+.card-inner{padding:1.4rem 1.3rem 0;}
+.card-hook{font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:900;line-height:1.35;margin-bottom:.5rem;letter-spacing:-.01em;}
+.card.c1 .card-hook em,.card.c3 .card-hook em,.card.c4 .card-hook em{color:var(--red);}
+.card.c2 .card-hook em{color:#8a6f1e;}
+.card-hook em{font-family:'DM Serif Display',serif;font-style:italic;}
+.card-sub{font-size:.78rem;color:var(--mid);line-height:1.65;margin-bottom:1.1rem;}
+.checklist{list-style:none;margin-bottom:1.2rem;}
+.checklist li{display:flex;align-items:flex-start;gap:.6rem;font-size:.8rem;padding:.38rem 0;border-bottom:1px solid rgba(212,207,196,.5);line-height:1.4;}
+.checklist li:last-child{border:none;}
+.cl-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+.c1 .cl-dot{background:var(--red);}
+.c2 .cl-dot{background:var(--gold);}
+.c3 .cl-dot{background:var(--blue);}
+.c4 .cl-dot{background:var(--red);}
+.card-foot{padding:1.1rem 1.3rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:.8rem;}
+.price-main{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.9rem;line-height:1;}
+.price-note{font-size:.65rem;color:var(--mid);margin-top:.15rem;}
+.card-btn{flex-shrink:0;font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:700;padding:.65rem 1.3rem;border-radius:6px;text-decoration:none;transition:all .18s;white-space:nowrap;}
+.c1 .card-btn{background:var(--red);color:#fff;}
+.c2 .card-btn{background:var(--gold);color:var(--ink);}
+.c3 .card-btn{background:var(--blue);color:#fff;}
+.c4 .card-btn{background:var(--ink);color:var(--cream);}
+.card-after{font-size:.65rem;color:var(--mid);text-align:center;padding:.5rem 1.3rem .9rem;line-height:1.5;}
+.card-after a{color:var(--red);}
+.hot-badge{display:inline-block;font-family:'Space Mono',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;background:var(--red);color:#fff;padding:.22rem .6rem;border-radius:20px;margin-bottom:.6rem;}
+
+/* ===== 免費引流區 ===== */
+.lead-magnet{margin:1.5rem 1.2rem;background:var(--ink);border-radius:14px;padding:1.8rem 1.4rem;text-align:center;color:var(--cream);max-width:500px;margin-left:auto;margin-right:auto;}
+.lm-tag{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem;}
+.lm-title{font-family:'Noto Serif TC',serif;font-size:1.2rem;font-weight:900;line-height:1.3;margin-bottom:.5rem;}
+.lm-title em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);}
+.lm-sub{font-size:.8rem;color:rgba(245,240,232,.5);line-height:1.7;margin-bottom:1.3rem;}
+.lm-btn{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.85rem;background:var(--gold);color:var(--ink);padding:.8rem 1.6rem;border-radius:8px;text-decoration:none;transition:opacity .18s;}
+.lm-btn:hover{opacity:.85;}
+
+/* FAQ */
+.faq-section{max-width:500px;margin:0 auto;padding:1.5rem 1.2rem 2rem;}
+.faq-title{font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:900;margin-bottom:1.2rem;}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:.8rem;padding:.9rem 0;font-size:.85rem;font-weight:600;cursor:pointer;line-height:1.4;}
+.faq-q::after{content:'+';font-size:1.1rem;color:var(--mid);flex-shrink:0;transition:transform .2s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{font-size:.8rem;color:var(--mid);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s;}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:.9rem;}
+
+/* BOTTOM CTA */
+.bottom-cta{background:var(--red);padding:2.5rem 1.2rem;text-align:center;}
+.bottom-cta h2{font-family:'Noto Serif TC',serif;font-size:1.5rem;font-weight:900;color:#fff;line-height:1.25;margin-bottom:.6rem;}
+.bottom-cta h2 em{font-family:'DM Serif Display',serif;font-style:italic;}
+.bottom-cta p{font-size:.8rem;color:rgba(255,255,255,.65);margin-bottom:1.5rem;line-height:1.7;}
+.cta-acts{display:flex;flex-direction:column;gap:.7rem;max-width:280px;margin:0 auto;}
+.btn-line{display:flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;font-size:.88rem;background:#06c755;color:#fff;padding:.85rem 1rem;border-radius:8px;text-decoration:none;}
+.btn-light{font-weight:700;font-size:.88rem;background:rgba(255,255,255,.15);color:#fff;padding:.85rem 1rem;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.25);}
+
+@media(min-width:640px){
+  nav{padding:0 2.5rem;}
+  .hero{padding:3.5rem 2.5rem;}
+  .cards{flex-direction:row;flex-wrap:wrap;max-width:900px;margin:0 auto;}
+  .cards .card{flex:1 1 calc(50% - .5rem);}
+  .cards-section,.faq-section{max-width:900px;}
+  .lead-magnet{max-width:700px;}
+  .cta-acts{flex-direction:row;max-width:none;justify-content:center;}
+  .service-map-head{max-width:900px;}
+}
+@media(min-width:1024px){.cards{flex-wrap:nowrap;max-width:1100px;}.cards .card{flex:1;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">SEOULMATE<b>31</b></a>
+  <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="nav-cta">先聊一次，免費</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-tag">數位商品 · 即買即用 · 18 個服務</div>
+  <h1>在韓國踩坑，<br>比買這份<em>貴多了</em></h1>
+  <p>8 年在地整理，全部變成可下載的檔案。<br>你會遇到的坑，我都踩過了。</p>
+  <div class="trust">
+    <span class="trust-pill">✓ 即買即下載</span>
+    <span class="trust-pill">✓ 繁體中文</span>
+    <span class="trust-pill">✓ Gumroad 自動寄送</span>
+    <span class="trust-pill">✓ 永久使用</span>
+    <span class="trust-pill">✓ 有問題 LINE 補問</span>
+  </div>
+</div>
+
+<!-- ===== 完整服務膠囊區 ===== -->
+<section class="service-map">
+  <div class="service-map-head">
+    <div class="sm-tag">完整商品地圖</div>
+    <h2 class="sm-title">把 8 年經驗，<em>全部變成你能下載的檔案</em></h2>
+    <p class="sm-sub">每一個都是真實踩過的坑、實戰整理出來的。橫向滑動，看看我能給你什麼。</p>
+  </div>
+
+  <div class="cap-row">
+    <div class="cap-row-label"><span class="cap-emoji">🏠</span> 落地生活</div>
+    <div class="cap-scroll">
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap hot"><span class="cap-name">租房合約查檢清單</span><span class="cap-price">$19</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">居留證辦理 SOP</span><span class="cap-price">$9</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">銀行開戶懶人包</span><span class="cap-price">$9</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">手機門號比較表</span><span class="cap-price">$9</span></a>
+      <a href="#leadmagnet" class="cap"><span class="cap-name">90天落地時程表</span><span class="cap-price free">免費</span></a>
+    </div>
+  </div>
+
+  <div class="cap-row">
+    <div class="cap-row-label"><span class="cap-emoji">📚</span> 留學 · 打工度假</div>
+    <div class="cap-scroll">
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap hot"><span class="cap-name">語學堂選校比較表</span><span class="cap-price">$19</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">留學一年費用試算</span><span class="cap-price">$9</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">打工度假薪資拆解</span><span class="cap-price">$9</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">D-2 / D-4 簽證流程</span><span class="cap-price">$9</span></a>
+    </div>
+  </div>
+
+  <div class="cap-row">
+    <div class="cap-row-label"><span class="cap-emoji">✨</span> 整形 · 醫美</div>
+    <div class="cap-scroll">
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap hot"><span class="cap-name">江南診所評估清單</span><span class="cap-price">$29</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">外國人報價解讀指南</span><span class="cap-price">$19</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">術後恢復 + 行程規劃</span><span class="cap-price">$19</span></a>
+    </div>
+  </div>
+
+  <div class="cap-row">
+    <div class="cap-row-label"><span class="cap-emoji">📦</span> 電商 · 韓貨</div>
+    <div class="cap-scroll">
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap hot"><span class="cap-name">電商起步包</span><span class="cap-price">$29</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">東大門批市實戰指南</span><span class="cap-price">$49</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">物流管道比較</span><span class="cap-price">$19</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">代購 SOP 完整版</span><span class="cap-price">$29</span></a>
+    </div>
+  </div>
+
+  <div class="cap-row">
+    <div class="cap-row-label"><span class="cap-emoji">🌐</span> 創業 · B2B</div>
+    <div class="cap-scroll">
+      <a href="b2b.html" class="cap hot"><span class="cap-name">韓國政府補助申請指南</span><span class="cap-price">$99</span></a>
+      <a href="b2b.html" class="cap"><span class="cap-name">韓貨流建立包 1:1</span><span class="cap-price">NT$28k 起</span></a>
+    </div>
+  </div>
+
+  <div class="cap-row">
+    <div class="cap-row-label"><span class="cap-emoji">💬</span> 1:1 真人服務</div>
+    <div class="cap-scroll">
+      <a href="booking.html" class="cap hot"><span class="cap-name">30 分鐘 1:1 諮詢</span><span class="cap-price">$79</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">江南陪同看診</span><span class="cap-price">$199</span></a>
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cap"><span class="cap-name">租房現場陪同</span><span class="cap-price">$149</span></a>
+    </div>
+  </div>
+
+  <div class="sm-bottom">
+    <p><strong>不確定要買哪個？</strong>滑下去看主推 4 大組合，或加 LINE 直接問。</p>
+  </div>
+</section>
+
+<!-- ===== 主推 4 大商品 ===== -->
+<section class="cards-section">
+  <div class="cs-head">
+    <div class="cs-tag">主推商品</div>
+    <h2 class="cs-title">最多人買的<em>四個包</em></h2>
+  </div>
+
+  <div class="cards">
+
+    <div class="card c1">
+      <div class="card-accent"></div>
+      <div class="card-inner">
+        <div class="card-hook">來韓國第一個月，<br><em>最容易燒錢的坑</em>全在這</div>
+        <div class="card-sub">租房保證金、銀行戶頭、居留證——三件事搞不定，什麼都卡死。</div>
+        <ul class="checklist">
+          <li><span class="cl-dot"></span>租房合約 10 個必查項目</li>
+          <li><span class="cl-dot"></span>銀行開戶 SOP（哪家 · 帶什麼）</li>
+          <li><span class="cl-dot"></span>居留證辦理步驟</li>
+          <li><span class="cl-dot"></span>90 天行政時程表</li>
+        </ul>
+      </div>
+      <div class="card-foot">
+        <div>
+          <div class="price-main">$19 <span style="font-size:.8rem;font-family:'Outfit';font-style:normal;color:var(--mid);">USD</span></div>
+          <div class="price-note">永久使用</div>
+        </div>
+        <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="card-btn">購買 →</a>
+      </div>
+      <div class="card-after">付款後 24hr 內寄到 Email</div>
+    </div>
+
+    <div class="card c2">
+      <div class="card-accent"></div>
+      <div class="card-inner">
+        <div class="hot-badge">最多人買</div>
+        <div class="card-hook">語學堂花了半年，<br><em>值不值得？</em>老實說</div>
+        <div class="card-sub">哪間語學堂適合你、一年要花多少、打工度假能不能同時申請。</div>
+        <ul class="checklist">
+          <li><span class="cl-dot"></span>首爾主要語學堂比較表</li>
+          <li><span class="cl-dot"></span>留學一年費用真實試算</li>
+          <li><span class="cl-dot"></span>打工度假薪資扣完剩多少</li>
+          <li><span class="cl-dot"></span>留學簽證申請重點</li>
+        </ul>
+      </div>
+      <div class="card-foot">
+        <div>
+          <div class="price-main">$19 <span style="font-size:.8rem;font-family:'Outfit';font-style:normal;color:var(--mid);">USD</span></div>
+          <div class="price-note">永久使用</div>
+        </div>
+        <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="card-btn">購買 →</a>
+      </div>
+      <div class="card-after">付款後 24hr 內寄到 Email</div>
+    </div>
+
+    <div class="card c3">
+      <div class="card-accent"></div>
+      <div class="card-inner">
+        <div class="card-hook">你多付的那筆錢，<br>都進了<em>中間人口袋</em></div>
+        <div class="card-sub">韓貨怎麼直接拿、物流哪家不坑、台韓之間的價差在哪。</div>
+        <ul class="checklist">
+          <li><span class="cl-dot"></span>物流管道比較</li>
+          <li><span class="cl-dot"></span>台韓採購真實價差</li>
+          <li><span class="cl-dot"></span>代購 SOP 流程</li>
+          <li><span class="cl-dot"></span>東大門批市入門</li>
+        </ul>
+      </div>
+      <div class="card-foot">
+        <div>
+          <div class="price-main">$29 <span style="font-size:.8rem;font-family:'Outfit';font-style:normal;color:var(--mid);">USD</span></div>
+          <div class="price-note">永久使用</div>
+        </div>
+        <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="card-btn">購買 →</a>
+      </div>
+      <div class="card-after">付款後 24hr 內寄到 Email</div>
+    </div>
+
+    <div class="card c4">
+      <div class="card-accent"></div>
+      <div class="card-inner">
+        <div class="card-hook">情況太特殊？<br><em>直接問我</em>就好</div>
+        <div class="card-sub">攻略解決不了的，30 分鐘 1:1，針對你的情況給建議。</div>
+        <ul class="checklist">
+          <li><span class="cl-dot"></span>租房 / 搬家問題</li>
+          <li><span class="cl-dot"></span>留學路線規劃</li>
+          <li><span class="cl-dot"></span>電商 / 韓貨商務</li>
+          <li><span class="cl-dot"></span>整形諮詢建議</li>
+          <li><span class="cl-dot"></span>韓國創業路徑</li>
+        </ul>
+      </div>
+      <div class="card-foot">
+        <div>
+          <div class="price-main">$79 <span style="font-size:.8rem;font-family:'Outfit';font-style:normal;color:var(--mid);">USD</span></div>
+          <div class="price-note">30 分鐘 1:1</div>
+        </div>
+        <a href="booking.html" class="card-btn">預約 →</a>
+      </div>
+      <div class="card-after">付款後 <a href="booking.html">點此預約時間</a></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 免費引流 ===== -->
+<section class="lead-magnet" id="leadmagnet">
+  <div class="lm-tag">免費下載</div>
+  <h2 class="lm-title">先給你<em>90 天落地時程表</em></h2>
+  <p class="lm-sub">免費 PDF。從入境第一天到第 90 天，每件事該在什麼時候做完，一目了然。<br>加 LINE 留下 Email，我直接寄給你。</p>
+  <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="lm-btn">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;flex-shrink:0"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    加 LINE 領免費 PDF
+  </a>
+</section>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <div class="faq-title">買之前想知道的</div>
+  <div class="faq-item">
+    <div class="faq-q">怎麼下載？多久收到？</div>
+    <div class="faq-a">付款完成截圖傳 LINE，我 24 小時內把 PDF 寄到你的 Email。未來會接 Gumroad 自動寄送，付完款立刻收到下載連結。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">裡面是什麼語言？</div>
+    <div class="faq-a">全部繁體中文。韓文表格欄位會附上對照，方便現場用。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">不確定買哪個？</div>
+    <div class="faq-a">加 LINE 說你的情況，我直接告訴你哪個最適合。初次諮詢免費，不需要猜。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">為什麼有 18 個商品？</div>
+    <div class="faq-a">因為人有 18 種不同的需求。你想知道的是租房？銀行？整形？電商？每個情境我都有專門整理的檔案。不用買大包，買你需要的就好。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">可以退費嗎？</div>
+    <div class="faq-a">數位商品原則上不退費。但如果內容和描述不符，48 小時內聯繫我，一定處理。</div>
+  </div>
+</div>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta">
+  <h2>還沒決定？<br><em>先聊再說。</em></h2>
+  <p>告訴我你的情況，我直接說哪個最適合你。<br>第一次聊，免費。</p>
+  <div class="cta-acts">
+    <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="btn-line">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;flex-shrink:0"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      加 LINE 先聊
+    </a>
+    <a href="index.html" class="btn-light">回首頁 →</a>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const was=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!was)item.classList.add('open');
+  });
+});
+</script>
+</body>
+</html>
