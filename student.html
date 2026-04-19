@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEOULMATE 31 — 留學生在韓國，怎麼把家裡給的學費變成自己賺的錢</title>
+<meta name="description" content="留學生不只是學生。在首爾，你的IG、你的時間、你住在這裡的事實，都是錢。我教你怎麼變現。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f0e0c;--cream:#f5f0e8;--warm:#ede7da;--red:#c0392b;--gold:#c9a84c;--blue:#1a3a5c;--green:#2d6a4f;--mid:#7a7468;--border:#d4cfc4;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--cream);font-family:'Outfit',sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 1.4rem;height:54px;background:rgba(15,14,12,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06);}
+.nav-logo{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.05rem;color:var(--cream);text-decoration:none;}
+.nav-logo b{font-family:'Space Mono',monospace;font-style:normal;font-size:.6rem;color:var(--red);margin-left:.2rem;font-weight:400;}
+.nav-back{font-size:.72rem;color:rgba(245,240,232,.4);text-decoration:none;}
+.nav-cta{font-size:.75rem;font-weight:700;background:var(--red);color:#fff;padding:.45rem 1rem;text-decoration:none;border-radius:3px;}
+
+/* === HERO 強衝擊 === */
+.hero{min-height:100svh;padding:90px 1.4rem 3rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;top:48%;left:50%;transform:translate(-50%,-50%);font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(11rem,28vw,24rem);color:rgba(201,168,76,.04);line-height:1;user-select:none;pointer-events:none;}
+.hero-line{position:absolute;top:0;right:0;width:3px;height:100%;background:var(--gold);opacity:.6;}
+.hero-inner{position:relative;z-index:2;max-width:780px;margin:0 auto;width:100%;}
+.hero-badge{display:inline-flex;align-items:center;gap:.6rem;font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,232,.4);margin-bottom:1.6rem;}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+h1{font-family:'Noto Serif TC',serif;font-size:clamp(2.4rem,8vw,5.5rem);font-weight:900;line-height:1.06;letter-spacing:-.035em;margin-bottom:1.4rem;color:var(--cream);}
+h1 em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);display:block;}
+.hero-desc{font-size:clamp(.9rem,2vw,1.05rem);color:rgba(245,240,232,.55);line-height:1.85;max-width:540px;margin-bottom:2rem;border-left:2px solid var(--gold);padding-left:1.1rem;}
+.hero-desc strong{color:rgba(245,240,232,.95);font-weight:500;}
+
+.hero-money{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-bottom:2rem;max-width:520px;}
+.money-pill{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:1rem .8rem;border-radius:10px;text-align:center;}
+.money-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.4rem;color:var(--gold);line-height:1;margin-bottom:.3rem;}
+.money-label{font-size:.6rem;color:rgba(245,240,232,.5);font-family:'Space Mono',monospace;letter-spacing:.04em;line-height:1.4;}
+
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.7rem;}
+.cta-line{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.9rem;background:#06c755;color:#fff;padding:.9rem 1.7rem;border-radius:6px;text-decoration:none;transition:opacity .18s,transform .15s;}
+.cta-line:hover{opacity:.88;transform:translateY(-2px);}
+.cta-secondary{font-size:.85rem;color:rgba(245,240,232,.5);text-decoration:none;padding:.9rem 1.2rem;border:1px solid rgba(255,255,255,.15);border-radius:6px;transition:all .18s;}
+.cta-secondary:hover{border-color:var(--gold);color:var(--cream);}
+
+/* === 痛點區（誠實說） === */
+.pain{background:var(--cream);color:var(--ink);padding:4rem 1.4rem;}
+.pain-inner{max-width:680px;margin:0 auto;}
+.pain-tag{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;}
+.pain h2{font-family:'Noto Serif TC',serif;font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:900;line-height:1.25;margin-bottom:1.2rem;letter-spacing:-.02em;}
+.pain h2 em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+.pain-body{font-size:.92rem;color:var(--mid);line-height:1.9;}
+.pain-body p{margin-bottom:1.2rem;}
+.pain-body strong{color:var(--ink);font-weight:600;}
+.pain-quote{margin:2rem 0;padding:1.5rem;background:#fff;border-left:3px solid var(--red);font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:700;color:var(--ink);line-height:1.5;}
+.pain-quote em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+
+/* === 5 種變現方式 === */
+.methods{background:var(--warm);padding:4rem 1.4rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);color:var(--ink);}
+.methods-inner{max-width:1100px;margin:0 auto;}
+.methods-tag{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:1rem;text-align:center;}
+.methods-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.7rem,4vw,2.6rem);font-weight:900;line-height:1.2;margin-bottom:.7rem;letter-spacing:-.02em;text-align:center;}
+.methods-title em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+.methods-sub{font-size:.9rem;color:var(--mid);line-height:1.8;margin-bottom:2.5rem;text-align:center;max-width:560px;margin-left:auto;margin-right:auto;}
+.methods-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.method-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.8rem 1.6rem;display:flex;flex-direction:column;}
+.method-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:2.5rem;color:var(--red);line-height:1;margin-bottom:.8rem;}
+.method-name{font-family:'Noto Serif TC',serif;font-size:1.15rem;font-weight:900;margin-bottom:.5rem;line-height:1.3;}
+.method-name em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+.method-desc{font-size:.82rem;color:var(--mid);line-height:1.75;margin-bottom:1.2rem;flex:1;}
+.method-desc strong{color:var(--ink);}
+.method-bar{display:flex;justify-content:space-between;padding:.8rem 1rem;background:var(--warm);border-radius:8px;align-items:center;}
+.method-bar-l{font-size:.7rem;color:var(--mid);font-family:'Space Mono',monospace;letter-spacing:.04em;}
+.method-bar-v{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.25rem;color:var(--red);}
+.method-tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.8rem;}
+.method-tag{font-size:.62rem;background:var(--warm);color:var(--mid);padding:.18rem .55rem;border-radius:20px;font-family:'Space Mono',monospace;letter-spacing:.04em;}
+
+/* === 病毒效應區 === */
+.viral{background:var(--ink);padding:4rem 1.4rem;color:var(--cream);position:relative;overflow:hidden;}
+.viral-bg{position:absolute;top:50%;right:-3rem;transform:translateY(-50%);font-family:'DM Serif Display',serif;font-style:italic;font-size:clamp(10rem,22vw,20rem);color:rgba(201,168,76,.04);line-height:1;user-select:none;pointer-events:none;}
+.viral-inner{max-width:780px;margin:0 auto;position:relative;z-index:1;}
+.viral-tag{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+.viral h2{font-family:'Noto Serif TC',serif;font-size:clamp(1.7rem,4.5vw,2.8rem);font-weight:900;line-height:1.2;color:var(--cream);margin-bottom:1.2rem;letter-spacing:-.02em;}
+.viral h2 em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);}
+.viral-body{font-size:.92rem;color:rgba(245,240,232,.6);line-height:1.9;margin-bottom:2rem;}
+.viral-body strong{color:var(--cream);}
+.viral-flow{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;}
+.viral-step{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:1.2rem 1rem;border-radius:10px;text-align:center;}
+.viral-step-num{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.8rem;color:var(--gold);line-height:1;margin-bottom:.5rem;}
+.viral-step-text{font-size:.75rem;color:rgba(245,240,232,.7);line-height:1.5;}
+
+/* === 真實案例（社交證明） === */
+.proof{background:var(--cream);color:var(--ink);padding:4rem 1.4rem;}
+.proof-inner{max-width:1100px;margin:0 auto;}
+.proof-tag{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;text-align:center;}
+.proof-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.7rem,4vw,2.6rem);font-weight:900;line-height:1.2;margin-bottom:.7rem;letter-spacing:-.02em;text-align:center;}
+.proof-title em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+.proof-sub{font-size:.9rem;color:var(--mid);line-height:1.8;margin-bottom:2.5rem;text-align:center;}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
+.proof-card{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+.proof-img{height:120px;background:var(--ink);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'DM Serif Display',serif;font-style:italic;font-size:3rem;}
+.proof-img.c1{background:linear-gradient(135deg,#1a1a1a,#3a2818);}
+.proof-img.c2{background:linear-gradient(135deg,#1a3a5c,#0a2540);}
+.proof-img.c3{background:linear-gradient(135deg,#7a2018,#c0392b);}
+.proof-body{padding:1.4rem;}
+.proof-who{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem;}
+.proof-q{font-family:'Noto Serif TC',serif;font-size:1.05rem;font-weight:900;line-height:1.4;margin-bottom:.6rem;}
+.proof-q em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--red);}
+.proof-meta{font-size:.75rem;color:var(--mid);line-height:1.7;margin-bottom:1rem;}
+.proof-num{display:flex;justify-content:space-between;padding:.7rem .9rem;background:var(--warm);border-radius:8px;}
+.proof-num-l{font-size:.68rem;color:var(--mid);}
+.proof-num-v{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.2rem;color:var(--red);}
+
+/* === 數位包 === */
+.pack{background:var(--ink);color:var(--cream);padding:4rem 1.4rem;border-top:1px solid rgba(255,255,255,.06);}
+.pack-inner{max-width:600px;margin:0 auto;}
+.pack-tag{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;text-align:center;}
+.pack-title{font-family:'Noto Serif TC',serif;font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;line-height:1.25;color:var(--cream);margin-bottom:.7rem;text-align:center;}
+.pack-title em{font-family:'DM Serif Display',serif;font-style:italic;color:var(--gold);}
+.pack-sub{font-size:.85rem;color:rgba(245,240,232,.55);line-height:1.8;margin-bottom:2rem;text-align:center;}
+.pack-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;}
+.pack-head{padding:1.4rem;border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;}
+.pack-name{font-family:'Noto Serif TC',serif;font-size:1.1rem;font-weight:900;color:var(--cream);}
+.pack-price{font-family:'DM Serif Display',serif;font-style:italic;font-size:1.6rem;color:var(--gold);}
+.pack-list{padding:1.2rem 1.4rem;list-style:none;}
+.pack-list li{font-size:.82rem;color:rgba(245,240,232,.75);padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.05);display:flex;gap:.6rem;align-items:flex-start;line-height:1.5;}
+.pack-list li:last-child{border:none;}
+.pack-list li::before{content:'→';color:var(--gold);font-weight:700;flex-shrink:0;}
+.pack-foot{padding:1.2rem 1.4rem;border-top:1px solid rgba(255,255,255,.08);}
+.pack-btn{display:block;width:100%;text-align:center;font-weight:700;font-size:.88rem;background:var(--gold);color:var(--ink);padding:.95rem;border-radius:8px;text-decoration:none;transition:opacity .18s;}
+.pack-btn:hover{opacity:.88;}
+
+/* === Bottom CTA === */
+.cta-bottom{background:var(--red);padding:4rem 1.4rem;text-align:center;color:#fff;}
+.cta-bottom h2{font-family:'Noto Serif TC',serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:900;line-height:1.2;margin-bottom:.7rem;letter-spacing:-.02em;}
+.cta-bottom h2 em{font-family:'DM Serif Display',serif;font-style:italic;}
+.cta-bottom p{font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.8rem;line-height:1.75;max-width:480px;margin-left:auto;margin-right:auto;}
+.cta-bottom .cta-line{background:#fff;color:var(--red);}
+.cta-bottom .cta-line:hover{background:var(--ink);color:#fff;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.hero-badge{animation:fadeUp .6s cubic-bezier(.22,1,.36,1) .05s both;}
+h1{animation:fadeUp .75s cubic-bezier(.22,1,.36,1) .15s both;}
+.hero-desc{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .3s both;}
+.hero-money{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .42s both;}
+.hero-ctas{animation:fadeUp .7s cubic-bezier(.22,1,.36,1) .54s both;}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  .methods-grid,.viral-flow,.proof-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .hero-money{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">SEOULMATE<b>31</b></a>
+  <a href="index.html" class="nav-back">← 回首頁</a>
+  <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="nav-cta">先聊聊</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg">$$</div>
+  <div class="hero-line"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      留學生賺錢攻略 · 居韓 8 年實戰
+    </div>
+    <h1>
+      家裡給的學費，
+      <em>你能不能自己賺回來？</em>
+    </h1>
+    <p class="hero-desc">
+      你住在韓國，這件事本身就是錢。<br>
+      <strong>你的 IG、你的時間、你會中文這件事——都是別人花錢買不到的資源。</strong><br>
+      問題只是：你知不知道怎麼變現。
+    </p>
+
+    <div class="hero-money">
+      <div class="money-pill">
+        <div class="money-num">NT$30萬</div>
+        <div class="money-label">代購月營收<br>上限</div>
+      </div>
+      <div class="money-pill">
+        <div class="money-num">NT$8萬</div>
+        <div class="money-label">業配一檔<br>代接行情</div>
+      </div>
+      <div class="money-pill">
+        <div class="money-num">NT$22萬</div>
+        <div class="money-label">學費<br>一年 10 個月</div>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cta-line">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;flex-shrink:0"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        加 LINE 先聊聊
+      </a>
+      <a href="#methods" class="cta-secondary">先看 5 種變現方式 ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 痛點 ===== -->
+<section class="pain">
+  <div class="pain-inner reveal">
+    <div class="pain-tag">老實說</div>
+    <h2>你在韓國最大的優勢，<br><em>不是會韓文。</em></h2>
+    <div class="pain-body">
+      <p>是<strong>你住在這裡。</strong></p>
+      <p>台灣、香港、馬來西亞那些想做韓貨代購的人，付錢買的就是「有人在韓國」這件事。他們花 NT$5,000 機票飛來只能待 4 天，你住在這裡 365 天。</p>
+      <div class="pain-quote">
+        「<em>資訊差就是錢</em>。<br>你以為大家都知道的事，<br>其實外面的人根本不知道。」
+      </div>
+      <p>新羅免稅店今天哪個牌子打折、東大門哪間批發商給外國人加價、江南診所的真實本地報價——這些你<strong>順手就知道</strong>的事，外面的人願意付錢買。</p>
+      <p>留學生最大的問題不是錢不夠，是<strong>不知道身上的資源能變現</strong>。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5 種變現方式 ===== -->
+<section class="methods" id="methods">
+  <div class="methods-inner">
+    <div class="methods-tag reveal">行動方案</div>
+    <h2 class="methods-title reveal">留學生在韓國，<br><em>這 5 種錢可以賺。</em></h2>
+    <p class="methods-sub reveal">從零成本到高營收，從一個人到一個團隊。選你做得到的開始。</p>
+
+    <div class="methods-grid reveal">
+
+      <div class="method-card">
+        <div class="method-num">01</div>
+        <div class="method-name">代購 / 直接<em>賣衣服</em></div>
+        <div class="method-desc"><strong>零成本起步</strong>。家人朋友先當第一批客戶，東大門我帶你進。每月跑 1-2 次批貨，毛利 30-50%。做 3 個月就有穩定客源。</div>
+        <div class="method-tags">
+          <span class="method-tag">零庫存</span>
+          <span class="method-tag">先收訂金</span>
+          <span class="method-tag">利潤穩</span>
+        </div>
+        <div class="method-bar">
+          <span class="method-bar-l">月營收上限</span>
+          <span class="method-bar-v">NT$30 萬</span>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <div class="method-num">02</div>
+        <div class="method-name">IG 業配<em>代談代接</em></div>
+        <div class="method-desc">韓國品牌找不到台灣 IG 窗口。<strong>5K 粉絲就有業配</strong>，10K 開始穩定接案。我幫你對接品牌方，一檔抽 15-20%。</div>
+        <div class="method-tags">
+          <span class="method-tag">5K 起接</span>
+          <span class="method-tag">韓品牌</span>
+          <span class="method-tag">高單次</span>
+        </div>
+        <div class="method-bar">
+          <span class="method-bar-l">一檔行情</span>
+          <span class="method-bar-v">NT$3-12 萬</span>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <div class="method-num">03</div>
+        <div class="method-name">小紅書<em>代發 / 探店</em></div>
+        <div class="method-desc">你人在首爾，餐廳、咖啡廳、診所都付錢請你發筆記。<strong>一篇 200-2000 RMB</strong>，週末跑兩三家。中國品牌進韓最缺這種真實在地內容。</div>
+        <div class="method-tags">
+          <span class="method-tag">中國市場</span>
+          <span class="method-tag">免費吃喝</span>
+          <span class="method-tag">內容創作</span>
+        </div>
+        <div class="method-bar">
+          <span class="method-bar-l">一篇單價</span>
+          <span class="method-bar-v">NT$0.8-8 萬</span>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <div class="method-num">04</div>
+        <div class="method-name">陪同<em>翻譯 / 代辦</em></div>
+        <div class="method-desc">台港遊客來韓做整形、看演唱會、跑簽證——願意付錢請會中韓文的留學生陪同。<strong>一天 NT$3,000-8,000</strong>，週末做 2 天頂 4 天打工。</div>
+        <div class="method-tags">
+          <span class="method-tag">時間自由</span>
+          <span class="method-tag">人脈累積</span>
+          <span class="method-tag">無壓力</span>
+        </div>
+        <div class="method-bar">
+          <span class="method-bar-l">一日行情</span>
+          <span class="method-bar-v">NT$3-8 千</span>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <div class="method-num">05</div>
+        <div class="method-name">中文<em>家教 / 商務翻譯</em></div>
+        <div class="method-desc">韓國人想學中文、做台灣/香港/中國市場——找會中文的留學生最划算。<strong>一小時 30,000-80,000 韓元</strong>。固定學生一週 5 堂，月收 100 萬韓幣以上。</div>
+        <div class="method-tags">
+          <span class="method-tag">穩定收入</span>
+          <span class="method-tag">合法工作</span>
+          <span class="method-tag">高時薪</span>
+        </div>
+        <div class="method-bar">
+          <span class="method-bar-l">月收入</span>
+          <span class="method-bar-v">NT$2-5 萬</span>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <div class="method-num">06</div>
+        <div class="method-name">影片創作者<em>分潤</em></div>
+        <div class="method-desc">YouTube / 抖音「韓國留學生 vlog」這種題材永遠有人看。<strong>1 萬訂閱開始有廣告分潤</strong>，3 萬訂閱可以開始穩定接業配。你的日常就是內容。</div>
+        <div class="method-tags">
+          <span class="method-tag">長期資產</span>
+          <span class="method-tag">複利成長</span>
+          <span class="method-tag">不限時間</span>
+        </div>
+        <div class="method-bar">
+          <span class="method-bar-l">穩定後月收</span>
+          <span class="method-bar-v">NT$3-20 萬</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 病毒效應 ===== -->
+<section class="viral">
+  <div class="viral-bg">바이럴</div>
+  <div class="viral-inner reveal">
+    <div class="viral-tag">바이럴 효과 · 病毒效應</div>
+    <h2>留學生賺錢，<br><em>會自動傳播。</em></h2>
+    <p class="viral-body">
+      留學生圈是<strong>最密集的社交網絡</strong>——一個班 20 個人、一棟宿舍 100 個人，全部互看 IG、限動、聊天群組。<br><br>
+      <strong>一個人賺到，全班都會知道。</strong>不用打廣告，他自己就會講。「欸我上個月代購賺了多少」「我接了一個業配」——這些對話就是你的最強行銷。
+    </p>
+
+    <div class="viral-flow">
+      <div class="viral-step">
+        <div class="viral-step-num">1</div>
+        <div class="viral-step-text">你帶 1 個留學生<br>賺到第一桶金</div>
+      </div>
+      <div class="viral-step">
+        <div class="viral-step-num">2</div>
+        <div class="viral-step-text">她發 IG / 小紅書<br>炫耀成果</div>
+      </div>
+      <div class="viral-step">
+        <div class="viral-step-num">3</div>
+        <div class="viral-step-text">10 個朋友來問<br>「怎麼做的？」</div>
+      </div>
+      <div class="viral-step">
+        <div class="viral-step-num">4</div>
+        <div class="viral-step-text">她推薦你<br>3 個成為新客戶</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 真實案例 ===== -->
+<section class="proof">
+  <div class="proof-inner">
+    <div class="proof-tag reveal">真實成功案例</div>
+    <h2 class="proof-title reveal">這些留學生，<br><em>已經做到了。</em></h2>
+    <p class="proof-sub reveal">隨機選的 3 個案例。每個故事都從「身上沒錢」開始。</p>
+
+    <div class="proof-grid reveal">
+
+      <div class="proof-card">
+        <div class="proof-img c1">①</div>
+        <div class="proof-body">
+          <div class="proof-who">台灣 · 25歲 · 延世語學堂</div>
+          <div class="proof-q">「我以為自己<br>會撐不下去——<em>結果第三個月開始賺。</em>」</div>
+          <div class="proof-meta">家裡只給半年生活費。從幫朋友帶口紅開始，3 個月後 IG 1.2K 粉絲，正式接代購。現在每月幫家裡付學費。</div>
+          <div class="proof-num">
+            <span class="proof-num-l">月營收</span>
+            <span class="proof-num-v">NT$18 萬</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card">
+        <div class="proof-img c2">②</div>
+        <div class="proof-body">
+          <div class="proof-who">香港 · 22歲 · 高麗大學</div>
+          <div class="proof-q">「IG 5K 粉絲<br>居然真的接到<em>韓國品牌業配。</em>」</div>
+          <div class="proof-meta">本來覺得自己粉絲太少不可能接業配。透過我對接，半年內接了 4 檔，平均一檔 NT$8 萬。</div>
+          <div class="proof-num">
+            <span class="proof-num-l">半年總額</span>
+            <span class="proof-num-v">NT$32 萬</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card">
+        <div class="proof-img c3">③</div>
+        <div class="proof-body">
+          <div class="proof-who">中國 · 24歲 · 漢陽大學</div>
+          <div class="proof-q">「小紅書探店這件事<br><em>太適合留學生了。</em>」</div>
+          <div class="proof-meta">每週末跑 2-3 家餐廳/咖啡廳發小紅書筆記。一篇 1500-3000 RMB，月入 6 萬人民幣，免費吃遍首爾。</div>
+          <div class="proof-num">
+            <span class="proof-num-l">月收入</span>
+            <span class="proof-num-v">NT$26 萬</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 留學生賺錢包 ===== -->
+<section class="pack">
+  <div class="pack-inner reveal">
+    <div class="pack-tag">留學生專屬</div>
+    <h2 class="pack-title">留學生<br><em>賺錢包</em></h2>
+    <p class="pack-sub">不只是攻略——是我親自帶你做。從 0 到第一筆收入，最快 30 天。</p>
+
+    <div class="pack-card">
+      <div class="pack-head">
+        <div class="pack-name">留學生賺錢包</div>
+        <div class="pack-price">NT$2,800</div>
+      </div>
+      <ul class="pack-list">
+        <li>6 種變現方式完整 SOP（PDF）</li>
+        <li>東大門新手批貨陪同 1 次（首爾）</li>
+        <li>IG / 小紅書 帳號定位診斷</li>
+        <li>業配代談模板 + 報價建議</li>
+        <li>30 天 LINE 隨時追問</li>
+        <li>進入留學生賺錢交流群（限額）</li>
+      </ul>
+      <div class="pack-foot">
+        <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="pack-btn">加 LINE 了解 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Bottom CTA ===== -->
+<section class="cta-bottom">
+  <h2>家錢全威 vs <em>自己賺到。</em></h2>
+  <p>每個學期你都能多賺 NT$10 萬，畢業時口袋會多 NT$80 萬。<br>差別只在你今天有沒有開始。</p>
+  <a href="https://line.me/ti/p/~seoulmate31" target="_blank" class="cta-line">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;flex-shrink:0"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.281.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    加 LINE 開始
+  </a>
+</section>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
