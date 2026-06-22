@@ -18,65 +18,70 @@
   a{color:inherit;text-decoration:none}
 
   /* NAV */
-  nav{background:var(--black);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-  .logo{color:#fff;font-size:18px;font-weight:700;letter-spacing:2px}
+  nav{background:var(--black);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+  .logo{color:#fff;font-size:17px;font-weight:700;letter-spacing:2px}
   .logo span{color:var(--red)}
-  nav a.cta-nav{background:var(--green);color:#fff;padding:8px 20px;border-radius:4px;font-size:14px;font-weight:700}
+  .nav-line{background:var(--green);color:#fff;padding:8px 18px;border-radius:4px;font-size:13px;font-weight:700}
 
   /* HERO */
-  .hero{background:var(--black);color:#fff;padding:80px 24px 60px;text-align:center}
-  .hero .tag{font-size:13px;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:20px}
-  .hero h1{font-size:clamp(36px,6vw,72px);font-weight:900;line-height:1.1;margin-bottom:24px}
+  .hero{background:var(--black);color:#fff;padding:80px 24px 64px;text-align:center}
+  .hero-tag{font-size:12px;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:20px}
+  .hero h1{font-size:clamp(32px,5.5vw,68px);font-weight:900;line-height:1.1;margin-bottom:20px}
   .hero h1 em{color:var(--red);font-style:normal}
-  .hero p{font-size:18px;color:#ccc;max-width:520px;margin:0 auto 40px}
-  .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-  .btn-line-hero{display:inline-block;background:var(--green);color:#fff;padding:16px 36px;border-radius:6px;font-size:18px;font-weight:700}
-  .btn-line-hero:hover{background:#05a847}
-  .btn-outline{display:inline-block;background:transparent;color:#fff;padding:14px 32px;border-radius:6px;font-size:16px;font-weight:600;border:2px solid #fff}
-  .btn-outline:hover{background:rgba(255,255,255,.1)}
+  .hero-sub{font-size:17px;color:#bbb;max-width:480px;margin:0 auto 40px}
+  .btn-hero{display:inline-block;background:var(--green);color:#fff;padding:18px 44px;border-radius:8px;font-size:19px;font-weight:800}
+  .btn-hero:hover{background:#05a847}
 
   /* SECTION */
-  section{padding:60px 24px;max-width:760px;margin:0 auto}
-  h2{font-size:28px;font-weight:800;margin-bottom:32px;border-left:4px solid var(--red);padding-left:16px}
+  .wrap{padding:60px 24px;max-width:760px;margin:0 auto}
+  .section-title{font-size:26px;font-weight:800;margin-bottom:28px;border-left:4px solid var(--red);padding-left:14px}
 
   /* WHY */
-  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-  .why-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px}
-  .why-card .num{font-size:32px;font-weight:900;color:var(--red);margin-bottom:8px}
-  .why-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
-  .why-card p{font-size:14px;color:var(--gray)}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+  .why-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:22px}
+  .why-num{font-size:30px;font-weight:900;color:var(--red);margin-bottom:6px}
+  .why-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+  .why-card p{font-size:13px;color:var(--gray)}
 
-  /* SERVICE */
-  .service-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:32px;margin-bottom:20px}
-  .service-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:20px}
-  .service-info h3{font-size:20px;font-weight:800;margin-bottom:8px}
-  .service-info p{font-size:14px;color:var(--gray);max-width:400px}
-  .service-price-box{text-align:right;flex-shrink:0}
-  .service-price-box .price-original{font-size:16px;color:#aaa;text-decoration:line-through;margin-bottom:2px}
-  .service-price-box .price{font-size:36px;font-weight:900;color:var(--red);line-height:1}
-  .service-price-box .sub{font-size:12px;color:var(--gray);margin-top:4px}
-  .btn-buy{display:inline-block;background:var(--black);color:#fff;padding:12px 28px;border-radius:6px;font-size:15px;font-weight:700;white-space:nowrap}
-  .btn-buy:hover{background:#333}
+  /* SERVICE CARD */
+  .service-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px 28px 24px;margin-bottom:18px}
+  .service-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+  .service-info h3{font-size:19px;font-weight:800;margin-bottom:6px}
+  .service-info p{font-size:13px;color:var(--gray);max-width:380px;line-height:1.6}
+  .price-box{text-align:right;flex-shrink:0}
+  .price-orig{font-size:14px;color:#bbb;text-decoration:line-through}
+  .price-now{font-size:38px;font-weight:900;color:var(--red);line-height:1.1}
+  .price-unit{font-size:12px;color:var(--gray);margin-top:2px}
+  /* 付費服務按鈕 — 紅色醒目 */
+  .btn-pay{display:inline-block;background:var(--red);color:#fff;padding:14px 32px;border-radius:7px;font-size:16px;font-weight:800;letter-spacing:.5px}
+  .btn-pay:hover{background:#a93226}
+  /* 免費服務按鈕 — 綠色 */
+  .btn-free-card{display:inline-block;background:var(--green);color:#fff;padding:14px 32px;border-radius:7px;font-size:16px;font-weight:800}
+  .btn-free-card:hover{background:#05a847}
+  /* 免費標籤 */
+  .free-badge{display:inline-block;background:#e8f9ee;color:var(--green);font-size:12px;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid var(--green);margin-bottom:10px}
 
-  /* FREE CTA BANNER */
+  /* PAYMENT INFO */
+  .payment-section{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px;margin-top:32px}
+  .payment-section h3{font-size:17px;font-weight:800;margin-bottom:18px}
+  .bank-block{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+  .bank-block:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+  .bank-name{font-size:13px;font-weight:700;color:var(--gray);margin-bottom:10px}
+  .bank-row{display:flex;justify-content:space-between;font-size:14px;padding:3px 0}
+  .bank-row span:last-child{font-weight:700}
+  .payment-note{background:#f9f6f0;border-radius:8px;padding:14px 16px;font-size:13px;color:var(--gray);margin-top:18px;line-height:1.7}
+
+  /* FREE BANNER */
   .free-banner{background:#f0f9f4;border-top:3px solid var(--green);border-bottom:3px solid var(--green);padding:48px 24px;text-align:center}
-  .free-banner .label{font-size:12px;font-weight:700;letter-spacing:3px;color:var(--green);text-transform:uppercase;margin-bottom:12px}
-  .free-banner h2{border-left:none;padding-left:0;font-size:26px;margin-bottom:8px;color:var(--black)}
-  .free-banner p{color:var(--gray);font-size:15px;max-width:480px;margin:0 auto 28px}
-  .btn-line-free{display:inline-block;background:var(--green);color:#fff;padding:16px 44px;border-radius:8px;font-size:18px;font-weight:800}
-  .btn-line-free:hover{background:#05a847}
-  .free-note{font-size:12px;color:#aaa;margin-top:12px}
-
-  /* FLOW */
-  .flow{display:flex;flex-direction:column;gap:0}
-  .flow-step{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border)}
-  .flow-step:last-child{border-bottom:none}
-  .step-num{background:var(--red);color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;margin-top:2px}
-  .step-body h4{font-size:16px;font-weight:700;margin-bottom:4px}
-  .step-body p{font-size:14px;color:var(--gray)}
+  .free-label{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--green);text-transform:uppercase;margin-bottom:10px}
+  .free-banner h2{font-size:24px;font-weight:800;margin-bottom:8px}
+  .free-banner p{color:var(--gray);font-size:14px;max-width:440px;margin:0 auto 24px}
+  .btn-line-big{display:inline-block;background:var(--green);color:#fff;padding:16px 44px;border-radius:8px;font-size:18px;font-weight:800}
+  .btn-line-big:hover{background:#05a847}
+  .free-id{font-size:12px;color:#aaa;margin-top:10px}
 
   /* FOOTER */
-  footer{background:var(--black);color:#888;text-align:center;padding:32px 24px;font-size:13px}
+  footer{background:var(--black);color:#888;text-align:center;padding:28px 24px;font-size:13px}
   footer strong{color:#fff}
   footer a{color:var(--green)}
 </style>
@@ -86,131 +91,116 @@
 <!-- NAV -->
 <nav>
   <div class="logo">SEOULMATE <span>31</span></div>
-  <a class="cta-nav" href="https://line.me/R/ti/p/@933rjphz" target="_blank">📲 加 LINE 好友</a>
+  <a class="nav-line" href="https://line.me/R/ti/p/@933rjphz" target="_blank">📲 加 LINE 好友</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="tag">🇹🇼 × 🇰🇷 &nbsp; 居韓第10年</div>
+  <div class="hero-tag">🇹🇼 × 🇰🇷 &nbsp; 居韓第10年</div>
   <h1>你有 30 個朋友，<br>但沒有一個<em>在首爾</em>。</h1>
-  <p>韓國落地生活 · 就業創業 · 電商代購<br>你在韓國需要知道的，全在這裡。</p>
-  <div class="hero-btns">
-    <a class="btn-line-hero" href="https://line.me/R/ti/p/@933rjphz" target="_blank">📲 免費加好友，先問再說</a>
-    <a class="btn-outline" href="#service">查看服務方案</a>
-  </div>
+  <p class="hero-sub">韓國落地生活 · 就業創業 · 電商代購<br>你在韓國需要知道的，全在這裡。</p>
+  <a class="btn-hero" href="https://line.me/R/ti/p/@933rjphz" target="_blank">📲 免費加好友，先問再說</a>
 </div>
 
 <!-- WHY -->
-<section>
-  <h2>為什麼選 SEOULMATE31</h2>
+<div class="wrap">
+  <div class="section-title">為什麼選 SEOULMATE31</div>
   <div class="why-grid">
     <div class="why-card">
-      <div class="num">10</div>
+      <div class="why-num">10</div>
       <h3>年在地經驗</h3>
       <p>住過才知道，踩過才懂得。不是攻略，是真實發生的事。</p>
     </div>
     <div class="why-card">
-      <div class="num">100%</div>
+      <div class="why-num">100%</div>
       <h3>親身驗證</h3>
       <p>每一條資訊都是自己跑過的。網路免費資訊，通常最貴。</p>
     </div>
     <div class="why-card">
-      <div class="num">1:1</div>
+      <div class="why-num">1:1</div>
       <h3>真人諮詢</h3>
       <p>不是模板回覆。你說你的情況，我給你一個具體的答案。</p>
     </div>
   </div>
-</section>
+</div>
 
 <!-- SERVICE -->
-<section id="service">
-  <h2>服務與定價</h2>
+<div class="wrap" id="service">
+  <div class="section-title">服務與定價</div>
 
   <!-- 落地全包 -->
   <div class="service-card">
-    <div class="service-top">
+    <div class="service-head">
       <div class="service-info">
         <h3>🏠 落地全包 · Arrival Pack</h3>
         <p>租房、銀行開戶、外登證、手機門號——來韓國第一個月所有手續，一次搞定。</p>
       </div>
-      <div class="service-price-box">
-        <div class="price-original">$1,000 USD</div>
-        <div class="price">$999</div>
-        <div class="sub">USD · 一次性</div>
+      <div class="price-box">
+        <div class="price-orig">$1,000 USD</div>
+        <div class="price-now">$999</div>
+        <div class="price-unit">USD · 一次性</div>
       </div>
     </div>
-    <a class="btn-buy" href="https://line.me/R/ti/p/@933rjphz" target="_blank">💳 私訊購買</a>
+    <a class="btn-pay" href="https://line.me/R/ti/p/@933rjphz" target="_blank">💳 立即購買 →</a>
   </div>
 
   <!-- 就業全包 -->
   <div class="service-card">
-    <div class="service-top">
+    <div class="service-head">
       <div class="service-info">
         <h3>💼 就業全包 · Work Pack</h3>
         <p>E-7 簽證策略、履歷優化、面試準備、韓國職場潛規則——在韓國站穩腳步。</p>
       </div>
-      <div class="service-price-box">
-        <div class="price-original">$1,000 USD</div>
-        <div class="price">$999</div>
-        <div class="sub">USD · 一次性</div>
+      <div class="price-box">
+        <div class="price-orig">$1,000 USD</div>
+        <div class="price-now">$999</div>
+        <div class="price-unit">USD · 一次性</div>
       </div>
     </div>
-    <a class="btn-buy" href="https://line.me/R/ti/p/@933rjphz" target="_blank">💳 私訊購買</a>
+    <a class="btn-pay" href="https://line.me/R/ti/p/@933rjphz" target="_blank">💳 立即購買 →</a>
   </div>
 
-  <!-- 1:1 諮詢 -->
+  <!-- 1:1 諮詢（免費） -->
   <div class="service-card">
-    <div class="service-top">
+    <div class="service-head">
       <div class="service-info">
+        <div class="free-badge">免費</div>
         <h3>💬 1:1 諮詢 · Consultation</h3>
         <p>問題太複雜、情況太特殊？攻略沒辦法解決的，直接跟我說。30 分鐘一對一。</p>
       </div>
-      <div class="service-price-box">
-        <div class="price-original">$1,000 USD</div>
-        <div class="price">$999</div>
-        <div class="sub">USD · 一次性</div>
-      </div>
     </div>
-    <a class="btn-buy" href="https://line.me/R/ti/p/@933rjphz" target="_blank">💳 私訊預約</a>
+    <a class="btn-free-card" href="https://line.me/R/ti/p/@933rjphz" target="_blank">📲 免費預約 →</a>
   </div>
-</section>
 
-<!-- FREE CTA BANNER -->
-<div class="free-banner">
-  <div class="label">免費資源</div>
-  <h2>還沒準備好付費？先加好友</h2>
-  <p>加 LINE 好友後，可以免費問問題、收到韓國生活第一手資訊。不推銷，不騷擾。</p>
-  <a class="btn-line-free" href="https://line.me/R/ti/p/@933rjphz" target="_blank">📲 免費加好友</a>
-  <div class="free-note">LINE ID：@933rjphz</div>
+  <!-- 付款資訊 -->
+  <div class="payment-section">
+    <h3>💰 付款資訊</h3>
+    <div class="bank-block">
+      <div class="bank-name">🇹🇼 台灣 · 中國信託</div>
+      <div class="bank-row"><span>銀行代碼</span><span>822</span></div>
+      <div class="bank-row"><span>帳號</span><span>565540294413</span></div>
+      <div class="bank-row"><span>戶名</span><span>蔡翔恩</span></div>
+    </div>
+    <div class="bank-block">
+      <div class="bank-name">🇰🇷 韓國 · 하나은행</div>
+      <div class="bank-row"><span>銀行代碼</span><span>081</span></div>
+      <div class="bank-row"><span>帳號</span><span>188-910674-44307</span></div>
+      <div class="bank-row"><span>戶名</span><span>TSAI HSIANG EN</span></div>
+    </div>
+    <div class="payment-note">
+      💬 匯款完成後，請截圖傳至 LINE @933rjphz，我會在 24 小時內確認並安排開始服務。
+    </div>
+  </div>
 </div>
 
-<!-- FLOW -->
-<section>
-  <h2>購買流程</h2>
-  <div class="flow">
-    <div class="flow-step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <h4>點「私訊購買」，加 LINE 告訴我你想要哪個服務</h4>
-        <p>我會在 24 小時內回覆，確認細節。</p>
-      </div>
-    </div>
-    <div class="flow-step">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <h4>完成匯款</h4>
-        <p>台灣中國信託（822）或韓國하나은행（081），匯款後截圖傳給我。</p>
-      </div>
-    </div>
-    <div class="flow-step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <h4>確認後 24 小時內開始服務</h4>
-        <p>我確認收款後，立刻安排時間，開始跑流程。</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- FREE BANNER -->
+<div class="free-banner">
+  <div class="free-label">免費資源</div>
+  <h2>還沒準備好付費？先加好友</h2>
+  <p>加 LINE 好友後，可以免費問問題、收到韓國生活第一手資訊。不推銷，不騷擾。</p>
+  <a class="btn-line-big" href="https://line.me/R/ti/p/@933rjphz" target="_blank">📲 免費加好友</a>
+  <div class="free-id">LINE ID：@933rjphz</div>
+</div>
 
 <!-- FOOTER -->
 <footer>
