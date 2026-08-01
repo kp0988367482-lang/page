@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IG 留言自動化系統 - ManyChat + n8n + Notion | SEOULMATE 31</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --black:#0d0d0d;
+    --cream:#f5f0e8;
+    --red:#c0392b;
+    --gray:#6b6b6b;
+    --border:#e0dbd0;
+    --code-bg:#1a1a1a;
+  }
+  body{font-family:'Helvetica Neue',Arial,'PingFang TC','Microsoft JhengHei',sans-serif;background:var(--cream);color:var(--black);line-height:1.6}
+  a{color:inherit;text-decoration:none}
+
+  nav{background:var(--black);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+  .logo{color:#fff;font-size:18px;font-weight:700;letter-spacing:2px}
+  .logo span{color:var(--red)}
+  nav a.cta-nav{background:var(--red);color:#fff;padding:8px 20px;border-radius:4px;font-size:14px;font-weight:600}
+
+  .hero{background:var(--black);color:#fff;padding:64px 24px 48px;text-align:center}
+  .hero .tag{font-size:12px;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:16px}
+  .hero h1{font-size:clamp(26px,4.5vw,48px);font-weight:900;line-height:1.2;margin-bottom:16px}
+  .hero h1 em{color:var(--red);font-style:normal}
+  .hero .sub{font-size:15px;color:#999;max-width:520px;margin:0 auto}
+
+  .wrap{max-width:720px;margin:0 auto;padding:48px 24px 80px}
+  .back-link{display:inline-block;margin-bottom:32px;font-size:14px;color:var(--gray);border-bottom:1px solid var(--border);padding-bottom:2px}
+  .back-link:hover{color:var(--red)}
+
+  h2{font-size:20px;font-weight:800;margin:40px 0 16px;border-left:4px solid var(--red);padding-left:14px}
+  h3{font-size:15px;font-weight:700;margin:20px 0 8px;color:var(--black)}
+
+  /* FLOW */
+  .flow{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:28px}
+  .flow-steps{display:flex;flex-direction:column;gap:0}
+  .step{display:flex;align-items:flex-start;gap:16px;padding:12px 0;border-bottom:1px solid var(--border)}
+  .step:last-child{border-bottom:none}
+  .step-num{min-width:28px;height:28px;background:var(--red);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;margin-top:2px}
+  .step-body h4{font-size:14px;font-weight:700;margin-bottom:4px}
+  .step-body p{font-size:13px;color:var(--gray);line-height:1.6}
+
+  /* TABLE */
+  .tbl{width:100%;border-collapse:collapse;margin-bottom:24px;background:#fff;border-radius:8px;overflow:hidden;border:1px solid var(--border)}
+  .tbl th{background:var(--black);color:#fff;padding:10px 16px;text-align:left;font-size:13px;font-weight:600}
+  .tbl td{padding:10px 16px;font-size:13px;border-bottom:1px solid var(--border);color:var(--black)}
+  .tbl tr:last-child td{border-bottom:none}
+  .tbl td:first-child{font-weight:600}
+
+  /* CODE */
+  pre{background:var(--code-bg);color:#e8e8e8;border-radius:8px;padding:20px 24px;font-size:12px;line-height:1.8;overflow-x:auto;margin-bottom:20px;font-family:'Courier New',monospace}
+  code{font-family:'Courier New',monospace;font-size:12px}
+
+  /* NOTION TEMPLATE */
+  .notion-block{background:#fff;border:1px solid var(--border);border-radius:10px;padding:28px 32px;margin-bottom:24px}
+  .notion-block .notion-tag{font-size:11px;letter-spacing:2px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:12px}
+  .notion-block h3{font-size:17px;margin:0 0 12px}
+  .notion-block ul{padding-left:20px;font-size:14px;color:var(--gray);line-height:2}
+  .notion-block ol{padding-left:20px;font-size:14px;color:var(--gray);line-height:2}
+
+  /* DM TEMPLATES */
+  .dm-card{background:#fff;border-left:4px solid var(--red);border-radius:0 8px 8px 0;padding:20px 24px;margin-bottom:16px}
+  .dm-card .dm-label{font-size:11px;letter-spacing:2px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:10px}
+  .dm-card p{font-size:14px;line-height:2;color:#222}
+  .dm-card .var{background:#fdecea;color:var(--red);padding:2px 6px;border-radius:3px;font-family:'Courier New',monospace;font-size:12px}
+
+  .tip{background:#fff8f6;border:1px solid #f5c6bc;border-radius:8px;padding:16px 20px;font-size:13px;color:#8b3a2a;margin-bottom:24px}
+  .tip strong{color:var(--red)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">SEOULMATE <span>31</span></div>
+  <a href="index.html" class="cta-nav">回首頁</a>
+</nav>
+
+<div class="hero">
+  <div class="tag">自動化系統</div>
+  <h1>IG 留言<em>自動發送</em> Notion 系統</h1>
+  <div class="sub">ManyChat + n8n + Notion - 留言觸發，自動 DM 內容連結</div>
+</div>
+
+<div class="wrap">
+
+  <a href="index.html" class="back-link">- 返回 SEOULMATE 31</a>
+
+  <h2>一、完整自動化流程</h2>
+  <div class="flow">
+    <div class="flow-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>IG 貼文留言</h4>
+          <p>用戶在貼文留言指定關鍵字，例如「加油」、「模板」、「資源」。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>ManyChat Keyword Trigger</h4>
+          <p>ManyChat 偵測到關鍵字，觸發 Automation，呼叫 External Request（Webhook）。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>n8n Webhook 接收</h4>
+          <p>n8n 接收 ManyChat 傳來的 username、user_id、comment 等資料，開始 Workflow。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>Notion 建立頁面</h4>
+          <p>n8n 呼叫 Notion API，在指定 Database 建立新頁面，填入整理好的內容。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h4>取得 Notion 連結</h4>
+          <p>Notion API 回傳 page url，n8n 將連結傳給 ManyChat API。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <h4>Instagram DM 發送</h4>
+          <p>ManyChat 自動發送私訊給留言者，訊息包含 Notion 頁面連結。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>二、ManyChat 設定教學</h2>
+  <div class="notion-block">
+    <div class="notion-tag">步驟</div>
+    <h3>建立 Instagram Comment 觸發</h3>
+    <ol>
+      <li>進入 ManyChat 後台 - Automation - Instagram Comments</li>
+      <li>建立新規則，Trigger Type 選 Keyword</li>
+      <li>輸入關鍵字（如：加油、模板、資源）</li>
+      <li>新增動作：External Request</li>
+      <li>填入 n8n Webhook URL</li>
+    </ol>
+  </div>
+
+  <div class="tip"><strong>關鍵：</strong>DM 訊息只需發送連結，不要塞入大量文字，避免被 IG 標記為垃圾訊息。</div>
+
+  <h2>三、n8n Webhook 資料格式</h2>
+  <p style="font-size:14px;color:var(--gray);margin-bottom:16px">ManyChat 呼叫 Webhook 時，傳送的資料結構如下：</p>
+  <pre><code>{
+  "username": "user123",
+  "user_id": "1789xxxx",
+  "comment": "加油"
+}</code></pre>
+
+  <p style="font-size:14px;color:var(--gray);margin-bottom:16px">n8n 回傳 ManyChat 發送 DM 的 API 呼叫：</p>
+  <pre><code>POST https://api.manychat.com/fb/sending/sendContent
+
+{
+  "subscriber_id": "1789xxxx",
+  "message": {
+    "text": "這是您要的內容：https://notion.so/xxxxx"
+  }
+}</code></pre>
+
+  <h2>四、Notion 頁面模板結構</h2>
+  <div class="notion-block">
+    <div class="notion-tag">Notion Page 建議格式</div>
+    <h3>標題：資源名稱 / 教學名稱</h3>
+    <ul>
+      <li><strong>內容簡介</strong> - 一段說明這份資源的用途</li>
+      <li><strong>重點整理</strong> - 3-5 個核心重點（條列）</li>
+      <li><strong>操作步驟</strong> - 從頭到尾的操作流程</li>
+      <li><strong>使用工具</strong> - 工具名稱 + 用途表格</li>
+      <li><strong>延伸資源</strong> - 相關連結或模板</li>
+    </ul>
+  </div>
+
+  <h2>五、使用工具一覽</h2>
+  <table class="tbl">
+    <thead>
+      <tr><th>工具</th><th>用途</th><th>費用</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Instagram</td><td>接收留言、發送 DM</td><td>免費</td></tr>
+      <tr><td>ManyChat</td><td>監聽留言、觸發自動化</td><td>免費方案可用</td></tr>
+      <tr><td>n8n</td><td>串接 API、自動化邏輯</td><td>Self-host 免費</td></tr>
+      <tr><td>Notion</td><td>存放與整理內容頁面</td><td>免費方案可用</td></tr>
+    </tbody>
+  </table>
+
+  <h2>六、DM 訊息模板</h2>
+
+  <div class="dm-card">
+    <div class="dm-label">最簡版本</div>
+    <p>您好 👋<br>這是您要的內容：<br><span class="var">{{notion_url}}</span></p>
+  </div>
+
+  <div class="dm-card">
+    <div class="dm-label">Creator 常用版本</div>
+    <p>謝謝留言「加油」🔥<br>我把內容放在這裡：<br><span class="var">{{notion_url}}</span><br>點擊即可查看。</p>
+  </div>
+
+  <div class="dm-card">
+    <div class="dm-label">稍微完整版本</div>
+    <p>您好，<br>您剛剛留言索取的內容在這裡：<br><span class="var">{{notion_url}}</span><br>打開後即可查看完整內容。記得收藏起來 🙌</p>
+  </div>
+
+</div>
+
+</body>
+</html>
