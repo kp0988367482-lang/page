@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEOULMATE 31 - 你在首爾最信任的那個人</title>
-<meta name="description" content="旅韓台灣人最信任的首爾生活資訊站。簽證、租房、工作、商業觀察 - SEOULMATE 31 提供第一手韓國生活實用指南。">
+<title>SEOULMATE 31 - 在首爾第一線幫你找貨砍價談代理</title>
+<meta name="description" content="想找韓國爆紅選品、談代購通路、直接把商品搬進台灣？SEOULMATE 31 在首爾現場幫你找貨、砍價、談代理，直接對接能批貨能變現的韓國供應鏈。">
 <meta name="author" content="SEOULMATE 31">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0d0d0d">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SEOULMATE 31">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="SEOULMATE 31 - 你在首爾最信任的那個人">
-<meta property="og:description" content="旅韓台灣人最信任的首爾生活資訊站。簽證、租房、工作、商業觀察 - 提供第一手韓國生活實用指南。">
+<meta property="og:title" content="SEOULMATE 31 - 在首爾第一線幫你找貨砍價談代理">
+<meta property="og:description" content="想找韓國爆紅選品、談代購通路？SEOULMATE 31 在首爾現場直接對接能批貨能變現的韓國供應鏈。">
 <meta property="og:url" content="https://seoulmate31.vercel.app">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SEOULMATE 31 - 你在首爾最信任的那個人">
-<meta name="twitter:description" content="旅韓台灣人最信任的首爾生活資訊站。簽證、租房、工作、商業觀察。">
+<meta name="twitter:title" content="SEOULMATE 31 - 在首爾第一線幫你找貨砍價談代理">
+<meta name="twitter:description" content="想找韓國爆紅選品？SEOULMATE 31 在首爾現場直接對接能批貨能變現的韓國供應鏈。">
 <link rel="canonical" href="https://seoulmate31.vercel.app">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -37,264 +37,170 @@
   nav a.cta-nav{background:var(--red);color:#fff;padding:8px 20px;border-radius:4px;font-size:14px;font-weight:600}
 
   /* HERO */
-  .hero{background:var(--black);color:#fff;padding:80px 24px 60px;text-align:center}
-  .hero .tag{font-size:13px;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:20px}
-  .hero h1{font-size:clamp(36px,6vw,72px);font-weight:900;line-height:1.1;margin-bottom:24px}
+  .hero{background:var(--black);color:#fff;padding:80px 24px 72px;text-align:center}
+  .hero .tag{font-size:12px;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:20px}
+  .hero h1{font-size:clamp(24px,3.8vw,48px);font-weight:900;line-height:1.25;margin-bottom:24px;max-width:760px;margin-left:auto;margin-right:auto}
   .hero h1 em{color:var(--red);font-style:normal}
-  .hero p{font-size:18px;color:#ccc;max-width:520px;margin:0 auto 40px}
-  .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-  .btn-hero-form{display:inline-block;background:transparent;color:#fff;padding:14px 32px;border-radius:6px;font-size:16px;font-weight:600;border:2px solid #fff}
-  .btn-hero-form:hover{background:rgba(255,255,255,.1)}
-  .btn-hero-buy{display:inline-block;background:var(--red);color:#fff;padding:16px 36px;border-radius:6px;font-size:18px;font-weight:700;cursor:pointer;border:none}
-  .btn-hero-buy:hover{background:#a93226}
+  .hero .sub{font-size:15px;color:#bbb;max-width:580px;margin:0 auto 40px;line-height:1.85}
+  .btn-primary{display:inline-block;background:var(--red);color:#fff;padding:16px 40px;border-radius:6px;font-size:17px;font-weight:700;letter-spacing:0.5px}
+  .btn-primary:hover{background:#a93226}
 
   /* SECTION */
-  section{padding:60px 24px;max-width:760px;margin:0 auto}
-  h2{font-size:28px;font-weight:800;margin-bottom:32px;border-left:4px solid var(--red);padding-left:16px}
+  section{padding:64px 24px;max-width:760px;margin:0 auto}
+  .section-num{font-size:11px;letter-spacing:3px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:12px}
+  h2{font-size:22px;font-weight:800;margin-bottom:32px;border-left:4px solid var(--red);padding-left:14px}
 
-  /* WHY */
-  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-  .why-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px}
-  .why-card .num{font-size:32px;font-weight:900;color:var(--red);margin-bottom:8px}
-  .why-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
-  .why-card p{font-size:14px;color:var(--gray)}
+  /* PAIN LIST */
+  .pain-list{display:flex;flex-direction:column;gap:16px}
+  .pain-item{background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px 28px}
+  .pain-item h3{font-size:15px;font-weight:800;margin-bottom:8px}
+  .pain-item p{font-size:14px;color:var(--gray);line-height:1.7}
 
-  /* SERVICE */
-  .service-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:32px;margin-bottom:20px}
-  .service-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap;margin-bottom:20px}
-  .service-info h3{font-size:20px;font-weight:800;margin-bottom:8px}
-  .service-info p{font-size:14px;color:var(--gray);max-width:400px}
-  .service-price-box{text-align:right;flex-shrink:0}
-  .service-price-box .price{font-size:32px;font-weight:900;color:var(--red)}
-  .service-price-box .sub{font-size:12px;color:var(--gray)}
-  .service-btns{display:flex;gap:12px;flex-wrap:wrap}
-  .btn-form{display:inline-block;background:transparent;color:var(--black);padding:10px 22px;border-radius:6px;font-size:14px;font-weight:600;border:2px solid var(--black);white-space:nowrap}
-  .btn-form:hover{background:var(--black);color:#fff}
-  .btn-buy{display:inline-block;background:var(--black);color:#fff;padding:12px 28px;border-radius:6px;font-size:15px;font-weight:700;cursor:pointer;border:none;white-space:nowrap}
-  .btn-buy:hover{background:#333}
+  /* VALUE LIST */
+  .value-list{display:flex;flex-direction:column;gap:20px}
+  .value-item{display:flex;gap:20px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px 28px}
+  .value-icon{font-size:26px;flex-shrink:0;margin-top:2px}
+  .value-item h3{font-size:15px;font-weight:800;margin-bottom:6px}
+  .value-item p{font-size:14px;color:var(--gray);line-height:1.7}
 
-  /* FLOW */
-  .flow{display:flex;flex-direction:column;gap:0}
-  .flow-step{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border)}
-  .flow-step:last-child{border-bottom:none}
-  .step-num{background:var(--red);color:#fff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0;margin-top:2px}
-  .step-body h4{font-size:16px;font-weight:700;margin-bottom:4px}
-  .step-body p{font-size:14px;color:var(--gray)}
+  /* SCOPE */
+  .scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media(max-width:560px){.scope-grid{grid-template-columns:1fr}}
+  .scope-box{border-radius:8px;padding:24px}
+  .scope-box.no{background:#f0f0f0;border:1px solid #ddd}
+  .scope-box.yes{background:#fff;border:1px solid var(--border)}
+  .scope-label{font-size:11px;letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:14px}
+  .scope-box.no .scope-label{color:#999}
+  .scope-box.yes .scope-label{color:var(--red)}
+  .scope-box ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .scope-box li{font-size:13px;color:var(--gray);line-height:1.65;padding-left:14px;position:relative}
+  .scope-box li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:#bbb}
+  .scope-box.yes li::before{background:var(--red)}
+  .scope-box li strong{color:var(--black);display:block;font-size:14px;font-weight:700;margin-bottom:2px}
+
+  /* CTA BOX */
+  .cta-box{background:var(--black);border-radius:12px;padding:52px 40px;text-align:center;color:#fff;margin-bottom:80px}
+  .cta-box h2{color:#fff;border-left:none;padding-left:0;font-size:21px;margin-bottom:16px}
+  .cta-box p{color:#999;font-size:14px;margin-bottom:32px;line-height:1.9}
+  .cta-box .note{font-size:12px;color:#555;margin-top:16px}
 
   /* FOOTER */
-  footer{background:var(--black);color:#888;text-align:center;padding:32px 24px;font-size:13px}
-  footer strong{color:#fff}
-
-  /* MODAL */
-  .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:999;align-items:center;justify-content:center;padding:20px}
-  .modal-overlay.open{display:flex}
-  .modal{background:#fff;border-radius:12px;padding:36px;max-width:480px;width:100%;position:relative}
-  .modal h3{font-size:22px;font-weight:800;margin-bottom:8px}
-  .modal .subtitle{font-size:14px;color:var(--gray);margin-bottom:24px}
-  .bank-card{border:1px solid var(--border);border-radius:8px;padding:20px;margin-bottom:16px}
-  .bank-card .bank-name{font-size:13px;font-weight:700;color:var(--gray);margin-bottom:12px}
-  .bank-row{display:flex;justify-content:space-between;font-size:15px;padding:4px 0}
-  .bank-row span:last-child{font-weight:700}
-  .modal-note{background:#f9f6f0;border-radius:8px;padding:16px;font-size:13px;color:var(--gray);margin-bottom:20px;line-height:1.7}
-  .modal-amount{font-size:13px;color:var(--gray);margin-bottom:16px}
-  .modal-amount strong{color:var(--red);font-size:20px}
-  .btn-line{display:block;background:#06c755;color:#fff;text-align:center;padding:14px;border-radius:8px;font-size:16px;font-weight:700;margin-bottom:10px}
-  .btn-close{display:block;background:#eee;color:#333;text-align:center;padding:12px;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;border:none;width:100%}
-  .modal-x{position:absolute;top:16px;right:20px;font-size:24px;cursor:pointer;color:#999;background:none;border:none}
+  footer{background:var(--black);color:#555;text-align:center;padding:32px 24px;font-size:13px}
+  footer strong{color:#aaa}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">SEOULMATE <span>31</span></div>
-  <a class="cta-nav" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">免費諮詢</a>
+  <a class="cta-nav" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">填寫需求調查表</a>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="tag">🇹🇼 × 🇰🇷 &nbsp; 居韓第10年</div>
-  <h1>你有 30 個朋友，<br>但沒有一個<em>在首爾</em>。</h1>
-  <p>韓國落地生活 · 留學就業 · 電商代購<br>你在韓國需要知道的，全在這裡。</p>
-  <div class="hero-btns">
-    <a class="btn-hero-form" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">先填表諮詢（免費）</a>
-    <button class="btn-hero-buy" onclick="openModal('服務',60000)">直接購買 NT$60,000 →</button>
-  </div>
+  <div class="tag">韓國選品 · 代購通路 · 供應鏈對接</div>
+  <h1>想找韓國爆紅選品、談代購通路、<br>直接把商品搬進台灣？<br>你不缺代購群組，你缺一個<em>在首爾第一線</em><br>幫你找貨、砍價、談代理的人。</h1>
+  <p class="sub">我是延世在韓舍打滾的工作鼠。不賣代辦、不說廢話，<br>專門幫你從韓國現場直接對接能批貨、能買斷、能變現的實體商品與供應鏈。</p>
+  <a class="btn-primary" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">立即填寫 10 點需求調查表，直接進貨變現 ➔</a>
 </div>
 
-<!-- WHY -->
 <section>
-  <h2>為什麼選 SEOULMATE31</h2>
-  <div class="why-grid">
-    <div class="why-card">
-      <div class="num">10</div>
-      <h3>年在地經驗</h3>
-      <p>住過才知道，踩過才懂得。不是攻略，是真實發生的事。</p>
+  <div class="section-num">01</div>
+  <h2>你是不是也卡在這些進貨痛點？</h2>
+  <div class="pain-list">
+    <div class="pain-item">
+      <h3>找不到一手源頭</h3>
+      <p>想賣韓國當紅的服飾、美妝或選品，結果只能跟台灣二三線大盤拿貨，利潤都被剝光，根本沒辦法競爭。</p>
     </div>
-    <div class="why-card">
-      <div class="num">100%</div>
-      <h3>親身驗證</h3>
-      <p>每一條資訊都是自己跑過的。網路免費資訊，通常最貴。</p>
+    <div class="pain-item">
+      <h3>想找貨卻去不了首爾</h3>
+      <p>知道韓國東大門、聖水洞或各大展覽有賺錢的新品，但人飛不出去，網路上也找不到靠譜的韓國對口。</p>
     </div>
-    <div class="why-card">
-      <div class="num">1:1</div>
-      <h3>真人諮詢</h3>
-      <p>不是機器人，不是模板回覆。你說你的情況，我給你答案。</p>
+    <div class="pain-item">
+      <h3>有流量卻沒有供應商</h3>
+      <p>自己手上有一群會買單的粉絲或通路，但找不到願意配合小量試單、或是願意授權代理的韓國品牌方。</p>
     </div>
-  </div>
-</section>
-
-<!-- SERVICE -->
-<section id="service">
-  <h2>服務與定價</h2>
-
-  <div class="service-card">
-    <div class="service-top">
-      <div class="service-info">
-        <h3>🏠 落地全包 · Arrival Pack</h3>
-        <p>租房、銀行開戶、外登證、手機門號——來韓國第一個月所有手續，一次搞定。</p>
-      </div>
-      <div class="service-price-box">
-        <div class="price">NT$60,000</div>
-        <div class="sub">TWD · 一次性</div>
-      </div>
-    </div>
-    <div class="service-btns">
-      <a class="btn-form" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">📋 先填表諮詢</a>
-      <button class="btn-buy" onclick="openModal('落地全包',2499)">💳 立即購買</button>
-    </div>
-  </div>
-
-  <div class="service-card">
-    <div class="service-top">
-      <div class="service-info">
-        <h3>📚 留學全包 · Study Pack</h3>
-        <p>語學堂選校、入學申請、簽證辦理、打工度假規劃——從台灣到首爾，全程陪跑。</p>
-      </div>
-      <div class="service-price-box">
-        <div class="price">NT$60,000</div>
-        <div class="sub">TWD · 一次性</div>
-      </div>
-    </div>
-    <div class="service-btns">
-      <a class="btn-form" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">📋 先填表諮詢</a>
-      <button class="btn-buy" onclick="openModal('留學全包',2499)">💳 立即購買</button>
-    </div>
-  </div>
-
-  <div class="service-card">
-    <div class="service-top">
-      <div class="service-info">
-        <h3>💼 就業全包 · Work Pack</h3>
-        <p>E-7 簽證策略、履歷優化、面試準備、韓國職場潛規則——在韓國站穩腳步。</p>
-      </div>
-      <div class="service-price-box">
-        <div class="price">NT$60,000</div>
-        <div class="sub">TWD · 一次性</div>
-      </div>
-    </div>
-    <div class="service-btns">
-      <a class="btn-form" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">📋 先填表諮詢</a>
-      <button class="btn-buy" onclick="openModal('就業全包',2499)">💳 立即購買</button>
-    </div>
-  </div>
-
-  <div class="service-card">
-    <div class="service-top">
-      <div class="service-info">
-        <h3>💬 1:1 諮詢 · Consultation</h3>
-        <p>問題太複雜、情況太特殊？攻略沒辦法解決的，直接跟我說。30 分鐘一對一。</p>
-      </div>
-      <div class="service-price-box">
-        <div class="price">NT$60,000</div>
-        <div class="sub">TWD · 一次性</div>
-      </div>
-    </div>
-    <div class="service-btns">
-      <a class="btn-form" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">📋 先填表諮詢</a>
-      <button class="btn-buy" onclick="openModal('1:1 諮詢',2499)">💳 立即預約</button>
+    <div class="pain-item">
+      <h3>怕踩雷、怕卡庫存</h3>
+      <p>看到代購群組賣得很好，自己進貨卻因為不懂韓國端的交期、品質跟物流，搞到卡關又賠錢。</p>
     </div>
   </div>
 </section>
 
-<!-- FLOW -->
 <section>
-  <h2>購買流程</h2>
-  <div class="flow">
-    <div class="flow-step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <h4>選擇方式</h4>
-        <p>「先填表諮詢」→ 我收到後主動聯絡你。「直接購買」→ 看到匯款帳號，完成付款。</p>
+  <div class="section-num">02</div>
+  <h2>工作鼠能幫你變現什麼？</h2>
+  <div class="value-list">
+    <div class="value-item">
+      <div class="value-icon">🔎</div>
+      <div>
+        <h3>精準選品與現場跑貨</h3>
+        <p>人就在首爾第一線，幫你直接盯著韓國市場最新爆品、代購熱款或冷門高利潤選品，不買二手資訊，直接看實品。</p>
       </div>
     </div>
-    <div class="flow-step">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <h4>匯款後截圖傳給我（LINE）</h4>
-        <p>選擇台灣中國信託（822）或韓國하나은행（081），匯款後截圖傳到 LINE @933rjphz。</p>
+    <div class="value-item">
+      <div class="value-icon">🤝</div>
+      <div>
+        <h3>供應商與品牌對接</h3>
+        <p>不管是想找東大門檔口、工廠，還是想把韓國小眾品牌談成台灣獨家代理，直接幫你把韓國端的窗口牽起來。</p>
       </div>
     </div>
-    <div class="flow-step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <h4>確認後開始服務</h4>
-        <p>我確認收款後，24 小時內傳送服務連結並安排時間開始。</p>
+    <div class="value-item">
+      <div class="value-icon">📦</div>
+      <div>
+        <h3>打通跨境供應鏈</h3>
+        <p>從韓國現場採購、打包、清關到台灣交貨的實際流程，幫你把能賺錢的商品順暢運回台灣。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<section>
+  <div class="section-num">03</div>
+  <h2>我們能幫你賺錢的項目（與不能幫的）</h2>
+  <div class="scope-grid">
+    <div class="scope-box no">
+      <div class="scope-label">這裡沒有的</div>
+      <ul>
+        <li>旅遊攻略、網美打卡點推薦</li>
+        <li>無聊的市場大方向分析</li>
+        <li>只談不做的純顧問空話</li>
+      </ul>
+    </div>
+    <div class="scope-box yes">
+      <div class="scope-label">這裡實際能接的</div>
+      <ul>
+        <li>
+          <strong>韓國商品代購與批發對接</strong>
+          幫你找到能直接下單、出貨的韓國一手貨源。
+        </li>
+        <li>
+          <strong>品牌代理與通路媒合</strong>
+          想把韓國商品賣進台灣，協助評估與牽線韓國原廠或總代理。
+        </li>
+        <li>
+          <strong>實體選品與採購協助</strong>
+          針對你的受眾，直接在首爾現場幫你過濾、挑選、測試有變現能力的產品。
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-num">04</div>
+  <div class="cta-box">
+    <h2>下一步：直接把商品搬回台灣</h2>
+    <p>如果你不是來交朋友的，而是手上有通路、有客群，<br>急著找韓國商品直接上架變現：<br><br>不要廢話，把你想賣什麼、缺什麼貨直接寫出來。</p>
+    <a class="btn-primary" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">點擊填寫 10 點需求調查表</a>
+    <div class="note">表單填寫約需 3-5 分鐘。我們只跟想拿貨、想賺錢的人談正事。</div>
+  </div>
+</section>
+
 <footer>
   <strong>SEOULMATE 31</strong><br>
-  居韓第10年。台灣人在韓國的第一手資訊基地。<br><br>
-  LINE：@933rjphz &nbsp;|&nbsp; © 2025 SEOULMATE 31. All rights reserved.
+  韓國選品代購 · 供應鏈對接 · 品牌代理媒合<br><br>
+  LINE：@933rjphz &nbsp;|&nbsp; © 2026 SEOULMATE 31. All rights reserved.
 </footer>
 
-<!-- MODAL -->
-<div class="modal-overlay" id="payModal">
-  <div class="modal">
-    <button class="modal-x" onclick="closeModal()">✕</button>
-    <h3>匯款資訊</h3>
-    <p class="subtitle">請選擇以下任一帳戶完成匯款，匯款後截圖傳給我確認。</p>
-
-    <div class="bank-card">
-      <div class="bank-name">🇹🇼 台灣 · 中國信託</div>
-      <div class="bank-row"><span>銀行代碼</span><span>822</span></div>
-      <div class="bank-row"><span>帳號</span><span>565540294413</span></div>
-      <div class="bank-row"><span>戶名</span><span>蔡翔恩</span></div>
-    </div>
-
-    <div class="bank-card">
-      <div class="bank-name">🇰🇷 韓國 · 하나은행</div>
-      <div class="bank-row"><span>銀行代碼</span><span>081</span></div>
-      <div class="bank-row"><span>帳號</span><span>188-910674-44307</span></div>
-      <div class="bank-row"><span>戶名</span><span>TSAI HSIANG EN</span></div>
-    </div>
-
-    <div class="modal-note">
-      💬 匯款完成後，請截圖傳至 LINE @933rjphz，我會在 24 小時內確認並發送服務連結。
-    </div>
-    <div class="modal-amount">金額：<strong id="modal-price">USD $2,499</strong>　服務：<span id="modal-service">—</span></div>
-
-    <a class="btn-line" href="https://line.me/ti/g/PsFEeHcYJ5" target="_blank">📲 傳截圖給我（LINE）</a>
-    <button class="btn-close" onclick="closeModal()">關閉</button>
-  </div>
-</div>
-
-<script>
-function openModal(service, price){
-  document.getElementById('modal-service').textContent = service;
-  document.getElementById('modal-price').textContent = 'USD $' + price.toLocaleString();
-  document.getElementById('payModal').classList.add('open');
-}
-function closeModal(){
-  document.getElementById('payModal').classList.remove('open');
-}
-document.getElementById('payModal').addEventListener('click', function(e){
-  if(e.target === this) closeModal();
-});
-</script>
 </body>
 </html>
