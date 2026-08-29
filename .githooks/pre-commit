@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# commit 前自動修好能修的一致性問題，修不掉的擋下來。
+# 啟用：git config core.hooksPath .githooks
+set -e
+
+# 只在有 .html 進 staging 時才跑
+git diff --cached --name-only --diff-filter=ACM | grep -q '\.html$' || exit 0
+
+repo=$(git rev-parse --show-toplevel)
+status=0
+out=$(python3 "$repo/.claude/skills/site-check/sitecheck.py" --fix) || status=$?
+
+# 自動修好的內容一併加進這次 commit
+changed=$(git diff --name-only -- '*.html')
+if [ -n "$changed" ]; then
+  echo "$out" | sed -n '/^自動修復/,/^$/p'
+  echo "$changed" | xargs git add
+  echo "以上修正已自動加入這次 commit。"
+fi
+
+if [ "$status" -ne 0 ]; then
+  echo
+  echo "$out" | sed -n '/^\[/,$p'
+  echo
+  echo "上述問題無法自動修（需人為判斷），commit 已中止。"
+  echo "確定要略過檢查請用：git commit --no-verify"
+  exit 1
+fi
