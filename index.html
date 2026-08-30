@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SEOULMATE 31 - 在首爾第一線幫你找貨砍價談代理</title>
-<meta name="description" content="想找韓國爆紅選品、談代購通路、直接把商品搬進台灣？SEOULMATE 31 在首爾現場幫你找貨、砍價、談代理，直接對接能批貨能變現的韓國供應鏈。">
+<title>SEOULMATE 31 - 韓國資源搜尋與現場驗證</title>
+<meta name="description" content="想進韓國市場、找品牌供應商、談通路代理，卻找不到真正能談的人？工作鼠人在首爾現場，幫你搜尋、過濾、驗證韓國端資源，交出精準名單。">
 <meta name="author" content="SEOULMATE 31">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0d0d0d">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SEOULMATE 31">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="SEOULMATE 31 - 在首爾第一線幫你找貨砍價談代理">
-<meta property="og:description" content="想找韓國爆紅選品、談代購通路？SEOULMATE 31 在首爾現場直接對接能批貨能變現的韓國供應鏈。">
+<meta property="og:title" content="SEOULMATE 31 - 韓國資源搜尋與現場驗證">
+<meta property="og:description" content="想進韓國市場卻找不到真的能談的人？工作鼠人在首爾現場，幫你搜尋、過濾、驗證韓國端資源。">
 <meta property="og:url" content="https://seoulmate31.vercel.app">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SEOULMATE 31 - 在首爾第一線幫你找貨砍價談代理">
-<meta name="twitter:description" content="想找韓國爆紅選品？SEOULMATE 31 在首爾現場直接對接能批貨能變現的韓國供應鏈。">
+<meta name="twitter:title" content="SEOULMATE 31 - 韓國資源搜尋與現場驗證">
+<meta name="twitter:description" content="想進韓國市場卻找不到真的能談的人？工作鼠人在首爾現場，幫你搜尋過濾驗證韓國端資源。">
 <link rel="canonical" href="https://seoulmate31.vercel.app">
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
@@ -37,56 +37,54 @@
   nav a.cta-nav{background:var(--red);color:#fff;padding:8px 20px;border-radius:4px;font-size:14px;font-weight:600}
 
   /* HERO */
-  .hero{background:var(--black);color:#fff;padding:80px 24px 72px;text-align:center}
-  .hero .tag{font-size:12px;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:20px}
-  .hero h1{font-size:clamp(24px,3.8vw,48px);font-weight:900;line-height:1.25;margin-bottom:24px;max-width:760px;margin-left:auto;margin-right:auto}
+  .hero{background:var(--black);color:#fff;padding:88px 24px 80px;text-align:center}
+  .hero .tag{font-size:11px;letter-spacing:3px;color:var(--red);text-transform:uppercase;margin-bottom:24px;font-weight:700}
+  .hero h1{font-size:clamp(26px,4vw,52px);font-weight:900;line-height:1.2;margin-bottom:28px;max-width:720px;margin-left:auto;margin-right:auto}
   .hero h1 em{color:var(--red);font-style:normal}
-  .hero .sub{font-size:15px;color:#bbb;max-width:580px;margin:0 auto 40px;line-height:1.85}
-  .btn-primary{display:inline-block;background:var(--red);color:#fff;padding:16px 40px;border-radius:6px;font-size:17px;font-weight:700;letter-spacing:0.5px}
+  .hero .sub{font-size:16px;color:#aaa;max-width:560px;margin:0 auto 48px;line-height:1.9}
+  .hero .sub strong{color:#fff;font-weight:700}
+  .btn-primary{display:inline-block;background:var(--red);color:#fff;padding:18px 44px;border-radius:6px;font-size:16px;font-weight:700;letter-spacing:0.5px;line-height:1}
   .btn-primary:hover{background:#a93226}
 
   /* SECTION */
-  section{padding:64px 24px;max-width:760px;margin:0 auto}
-  .section-num{font-size:11px;letter-spacing:3px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:12px}
-  h2{font-size:22px;font-weight:800;margin-bottom:32px;border-left:4px solid var(--red);padding-left:14px}
+  .section{padding:72px 24px;max-width:760px;margin:0 auto}
+  .section-label{font-size:11px;letter-spacing:3px;color:var(--red);font-weight:700;text-transform:uppercase;margin-bottom:14px}
+  h2{font-size:22px;font-weight:800;margin-bottom:36px;border-left:4px solid var(--red);padding-left:14px;line-height:1.4}
 
-  /* PAIN LIST */
-  .pain-list{display:flex;flex-direction:column;gap:16px}
-  .pain-item{background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px 28px}
-  .pain-item h3{font-size:15px;font-weight:800;margin-bottom:8px}
-  .pain-item p{font-size:14px;color:var(--gray);line-height:1.7}
+  /* PAIN POINTS */
+  .pain-list{display:flex;flex-direction:column;gap:2px}
+  .pain-item{background:#fff;padding:28px 32px;border-bottom:1px solid var(--border)}
+  .pain-item:first-child{border-radius:8px 8px 0 0}
+  .pain-item:last-child{border-radius:0 0 8px 8px;border-bottom:none}
+  .pain-item h3{font-size:15px;font-weight:800;margin-bottom:10px;color:var(--black)}
+  .pain-item p{font-size:14px;color:var(--gray);line-height:1.75}
+  .pain-item p em{color:var(--black);font-style:normal;font-weight:600}
 
-  /* VALUE LIST */
+  /* VALUE */
   .value-list{display:flex;flex-direction:column;gap:20px}
-  .value-item{display:flex;gap:20px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:8px;padding:24px 28px}
-  .value-icon{font-size:26px;flex-shrink:0;margin-top:2px}
-  .value-item h3{font-size:15px;font-weight:800;margin-bottom:6px}
-  .value-item p{font-size:14px;color:var(--gray);line-height:1.7}
+  .value-item{display:grid;grid-template-columns:48px 1fr;gap:20px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:28px 32px;align-items:start}
+  .value-num{font-size:13px;font-weight:900;color:var(--red);letter-spacing:1px;padding-top:2px}
+  .value-item h3{font-size:15px;font-weight:800;margin-bottom:8px}
+  .value-item p{font-size:14px;color:var(--gray);line-height:1.75}
 
-  /* SCOPE */
-  .scope-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  @media(max-width:560px){.scope-grid{grid-template-columns:1fr}}
-  .scope-box{border-radius:8px;padding:24px}
-  .scope-box.no{background:#f0f0f0;border:1px solid #ddd}
-  .scope-box.yes{background:#fff;border:1px solid var(--border)}
-  .scope-label{font-size:11px;letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:14px}
-  .scope-box.no .scope-label{color:#999}
-  .scope-box.yes .scope-label{color:var(--red)}
-  .scope-box ul{list-style:none;display:flex;flex-direction:column;gap:10px}
-  .scope-box li{font-size:13px;color:var(--gray);line-height:1.65;padding-left:14px;position:relative}
-  .scope-box li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:#bbb}
-  .scope-box.yes li::before{background:var(--red)}
-  .scope-box li strong{color:var(--black);display:block;font-size:14px;font-weight:700;margin-bottom:2px}
+  /* EDGE */
+  .edge{background:#fff;border:1px solid var(--border);border-radius:8px;padding:28px 32px;margin-top:32px}
+  .edge .edge-label{font-size:11px;letter-spacing:2px;font-weight:700;text-transform:uppercase;color:#999;margin-bottom:12px}
+  .edge ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  .edge li{font-size:13px;color:#aaa;padding-left:16px;position:relative}
+  .edge li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:#ddd}
 
-  /* CTA BOX */
-  .cta-box{background:var(--black);border-radius:12px;padding:52px 40px;text-align:center;color:#fff;margin-bottom:80px}
-  .cta-box h2{color:#fff;border-left:none;padding-left:0;font-size:21px;margin-bottom:16px}
-  .cta-box p{color:#999;font-size:14px;margin-bottom:32px;line-height:1.9}
-  .cta-box .note{font-size:12px;color:#555;margin-top:16px}
+  /* CTA SECTION */
+  .cta-section{background:var(--black);margin:0 24px 80px;border-radius:12px;padding:56px 40px;text-align:center;color:#fff}
+  @media(max-width:600px){.cta-section{margin:0 16px 64px;padding:40px 24px}}
+  .cta-section h2{color:#fff;border-left:none;padding-left:0;font-size:22px;margin-bottom:20px}
+  .cta-section .cta-body{font-size:15px;color:#888;margin-bottom:40px;line-height:2}
+  .cta-section .cta-body strong{color:#ccc;font-weight:600}
+  .cta-note{font-size:12px;color:#444;margin-top:18px;line-height:1.7}
 
   /* FOOTER */
-  footer{background:var(--black);color:#555;text-align:center;padding:32px 24px;font-size:13px}
-  footer strong{color:#aaa}
+  footer{background:var(--black);color:#444;text-align:center;padding:32px 24px;font-size:13px}
+  footer strong{color:#666}
 </style>
 </head>
 <body>
@@ -96,109 +94,94 @@
   <a class="cta-nav" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">填寫需求調查表</a>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
-  <div class="tag">韓國選品 · 代購通路 · 供應鏈對接</div>
-  <h1>想找韓國爆紅選品、談代購通路、<br>直接把商品搬進台灣？<br>你不缺代購群組，你缺一個<em>在首爾第一線</em><br>幫你找貨、砍價、談代理的人。</h1>
-  <p class="sub">我是延世在韓舍打滾的工作鼠。不賣代辦、不說廢話，<br>專門幫你從韓國現場直接對接能批貨、能買斷、能變現的實體商品與供應鏈。</p>
-  <a class="btn-primary" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">立即填寫 10 點需求調查表，直接進貨變現 ➔</a>
+  <div class="tag">韓國資源搜尋 · 現場驗證 · 精準名單</div>
+  <h1>想進韓國、找品牌、<br>找供應商、找通路，<br>卻不知道怎麼找到<em>真的能談</em>的人？</h1>
+  <p class="sub">工作鼠人就在首爾現場。<br><strong>不猜、不等、不轉發二手消息。</strong><br>幫你搜尋、過濾、驗證韓國端資源，交出精準名單與可行性判斷。</p>
+  <a class="btn-primary" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">填寫 10 點需求調查表 ➔</a>
 </div>
 
-<section>
-  <div class="section-num">01</div>
-  <h2>你是不是也卡在這些進貨痛點？</h2>
+<!-- PAIN POINTS -->
+<div class="section">
+  <div class="section-label">01</div>
+  <h2>你是不是也卡在這些地方？</h2>
   <div class="pain-list">
     <div class="pain-item">
-      <h3>找不到一手源頭</h3>
-      <p>想賣韓國當紅的服飾、美妝或選品，結果只能跟台灣二三線大盤拿貨，利潤都被剝光，根本沒辦法競爭。</p>
+      <h3>想找韓國品牌談代理，對方直接消失</h3>
+      <p>聯絡了一圈，要麼根本找不到窗口，要麼對方回一封制式郵件就再也沒有下文。<em>你不是不認真，是根本沒找到能說話的人。</em></p>
     </div>
     <div class="pain-item">
-      <h3>想找貨卻去不了首爾</h3>
-      <p>知道韓國東大門、聖水洞或各大展覽有賺錢的新品，但人飛不出去，網路上也找不到靠譜的韓國對口。</p>
+      <h3>找到供應商，不知道是不是真的</h3>
+      <p>網路上查得到一堆工廠名單，但誰是真的在做、誰只是搬運二手貨，完全沒有辦法從外部判斷。<em>踩雷的成本你扛不起。</em></p>
     </div>
     <div class="pain-item">
-      <h3>有流量卻沒有供應商</h3>
-      <p>自己手上有一群會買單的粉絲或通路，但找不到願意配合小量試單、或是願意授權代理的韓國品牌方。</p>
+      <h3>想找韓國 KOL 合作，完全接不上線</h3>
+      <p>看到某個韓國創作者很火，找了半天找不到商業聯絡方式，聯絡了也沒有回應。<em>不是對方不想談，是你沒走對門。</em></p>
     </div>
     <div class="pain-item">
-      <h3>怕踩雷、怕卡庫存</h3>
-      <p>看到代購群組賣得很好，自己進貨卻因為不懂韓國端的交期、品質跟物流，搞到卡關又賠錢。</p>
+      <h3>想進韓國通路，找不到真正的決策者</h3>
+      <p>知道自己的產品適合某個通路，但不知道誰才是真的能拍板的人，email 發出去沒有回音。<em>資訊很多，但沒有人幫你把事情串起來、過濾掉騙子。</em></p>
     </div>
   </div>
-</section>
+</div>
 
-<section>
-  <div class="section-num">02</div>
-  <h2>工作鼠能幫你變現什麼？</h2>
+<!-- VALUE PROP -->
+<div class="section">
+  <div class="section-label">02</div>
+  <h2>工作鼠能幫你做什麼？</h2>
   <div class="value-list">
     <div class="value-item">
-      <div class="value-icon">🔎</div>
+      <div class="value-num">01</div>
       <div>
-        <h3>精準選品與現場跑貨</h3>
-        <p>人就在首爾第一線，幫你直接盯著韓國市場最新爆品、代購熱款或冷門高利潤選品，不買二手資訊，直接看實品。</p>
+        <h3>人就在首爾第一線</h3>
+        <p>不是在台灣幫你轉發二手消息，也不是坐在辦公室抄資料。人就在首爾現場，可以直接去跑、去問、去確認，今天要查的事，今天就能動。</p>
       </div>
     </div>
     <div class="value-item">
-      <div class="value-icon">🤝</div>
+      <div class="value-num">02</div>
       <div>
-        <h3>供應商與品牌對接</h3>
-        <p>不管是想找東大門檔口、工廠，還是想把韓國小眾品牌談成台灣獨家代理，直接幫你把韓國端的窗口牽起來。</p>
+        <h3>資源搜尋、過濾、初步驗證</h3>
+        <p>你開需求，工作鼠在首爾幫你找到真實對口、過濾掉假的、驗證可行性，交出精準名單和初步判斷報告。不是給你一堆資料自己看，是直接告訴你哪個能談、哪個別浪費時間。</p>
       </div>
     </div>
     <div class="value-item">
-      <div class="value-icon">📦</div>
+      <div class="value-num">03</div>
       <div>
-        <h3>打通跨境供應鏈</h3>
-        <p>從韓國現場採購、打包、清關到台灣交貨的實際流程，幫你把能賺錢的商品順暢運回台灣。</p>
+        <h3>主打小而美，不接空包彈</h3>
+        <p>不接幾百萬的大型總代理空談，只做能實際落地的資源搜尋與驗證。有具體需求、有預算、想解決問題，才是這裡的目標客戶。</p>
       </div>
     </div>
   </div>
-</section>
-
-<section>
-  <div class="section-num">03</div>
-  <h2>我們能幫你賺錢的項目（與不能幫的）</h2>
-  <div class="scope-grid">
-    <div class="scope-box no">
-      <div class="scope-label">這裡沒有的</div>
-      <ul>
-        <li>旅遊攻略、網美打卡點推薦</li>
-        <li>無聊的市場大方向分析</li>
-        <li>只談不做的純顧問空話</li>
-      </ul>
-    </div>
-    <div class="scope-box yes">
-      <div class="scope-label">這裡實際能接的</div>
-      <ul>
-        <li>
-          <strong>韓國商品代購與批發對接</strong>
-          幫你找到能直接下單、出貨的韓國一手貨源。
-        </li>
-        <li>
-          <strong>品牌代理與通路媒合</strong>
-          想把韓國商品賣進台灣，協助評估與牽線韓國原廠或總代理。
-        </li>
-        <li>
-          <strong>實體選品與採購協助</strong>
-          針對你的受眾，直接在首爾現場幫你過濾、挑選、測試有變現能力的產品。
-        </li>
-      </ul>
-    </div>
+  <div class="edge">
+    <div class="edge-label">這裡沒有的</div>
+    <ul>
+      <li>旅遊攻略、網美咖啡廳、打卡景點</li>
+      <li>模糊的市場分析報告</li>
+      <li>只談不做的純顧問空話</li>
+    </ul>
   </div>
-</section>
+</div>
 
-<section>
-  <div class="section-num">04</div>
-  <div class="cta-box">
-    <h2>下一步：直接把商品搬回台灣</h2>
-    <p>如果你不是來交朋友的，而是手上有通路、有客群，<br>急著找韓國商品直接上架變現：<br><br>不要廢話，把你想賣什麼、缺什麼貨直接寫出來。</p>
-    <a class="btn-primary" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">點擊填寫 10 點需求調查表</a>
-    <div class="note">表單填寫約需 3-5 分鐘。我們只跟想拿貨、想賺錢的人談正事。</div>
+<!-- CTA -->
+<div class="cta-section">
+  <h2>下一步</h2>
+  <p class="cta-body">
+    如果你手邊有韓國相關的事要推進、正在卡關、<br>
+    或需要找到能實際幫你在首爾現場動手的人：<br><br>
+    <strong>不要私訊敲安安。</strong><br>
+    直接把你的需求、預算、時間線寫清楚。
+  </p>
+  <a class="btn-primary" href="https://docs.google.com/forms/d/1iXH2wPzvOxlNNS-US7Y0hUNtT05TI8BhcxqdWJ3SYk8/viewform" target="_blank">點擊填寫 10 點需求調查表</a>
+  <div class="cta-note">
+    表單填寫約需 3-5 分鐘。<br>
+    只跟想解決問題的人對話。如果你只是在收集資訊，這裡不適合你。
   </div>
-</section>
+</div>
 
 <footer>
   <strong>SEOULMATE 31</strong><br>
-  韓國選品代購 · 供應鏈對接 · 品牌代理媒合<br><br>
+  韓國資源搜尋 · 現場驗證 · 跨國資訊落地<br><br>
   LINE：@933rjphz &nbsp;|&nbsp; © 2026 SEOULMATE 31. All rights reserved.
 </footer>
 
